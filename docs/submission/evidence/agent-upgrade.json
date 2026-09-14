@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-09-14T22:41:37.447582+00:00",
+  "checked_at": "2026-09-14T23:02:32.137470+00:00",
   "purpose": "Apply evaluation-inspired model/context changes to the pantry workflow. No SemEval labels, examples or expected answers enter production context.",
-  "limitations": "Reused synthetic regression scenarios; sequential adaptive changes; few runs; provider/network timing varies; no population reliability, causal gain, pantry accuracy or time-saving estimate. All failed and interrupted attempts retained. Full raw JSON exports redact only local workflow database paths; original hashes are listed.",
+  "limitations": "Reused synthetic regression scenarios; sequential adaptive changes; few runs; provider/network timing varies; no population reliability, causal gain, pantry accuracy or time-saving estimate. All failed and interrupted attempts retained. JSON exports redact local workflow database paths and internal deployment command/mount metadata; original hashes are listed.",
   "runs": [
     {
       "arm": "lite",
@@ -1291,7 +1291,7 @@
   ],
   "archive": {
     "url": "https://github.com/shinushibu17/pantry-recall-response-agent/releases/download/agent-context-upgrade-2026-09-14/agent-context-evidence-2026-09-14.zip",
-    "sha256": "bd548af77236975788130c48dc9347304569ff33fff2e2b804fbb0673b6a6f80",
-    "bytes": 523469
+    "sha256": "77bce4862df0c6eb91e4c013d994681578df9419f95b8944cd5e378c27030cad",
+    "bytes": 523472
   }
 }

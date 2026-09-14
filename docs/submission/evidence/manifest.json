@@ -62,7 +62,7 @@
                       },
 {
     "artifact": "agent-upgrade.json",
-    "sha256": "5e6e6f68bf9fbbe1bcb2fa8f84179889f417de30ac00834199b1f0467a441f78",
+    "sha256": "c3c12e45654653a8047219528ee7125c086ee74d0830d8c356225863ab24536e",
     "source_path": "outputs/agent-upgrade",
     "transformation": "Descriptive summary of all recorded upgrade attempts; checksum-linked archive retains exported traces and original hashes."
 }
