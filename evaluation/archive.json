@@ -1,0 +1,10 @@
+{
+  "release_url": "https://github.com/shinushibu17/pantry-recall-response-agent/releases/tag/benchmark-evidence-2026-09-14",
+  "download_url": "https://github.com/shinushibu17/pantry-recall-response-agent/releases/download/benchmark-evidence-2026-09-14/semeval-st1-evidence-2026-09-14.zip",
+  "sha256": "458d6a302b9770e6e3cda77af6e83f5a4ffc7fa63653ce491bcc21c8c00eb63c",
+  "bytes": 12275098,
+  "source_commit": "78314eb5dab1d3ad8c4cee34fc40d5eb1561f58a",
+  "archive_entries": 274,
+  "preserved_publication_hashes": 257,
+  "contents": "All eight benchmark experiments, submission freeze, pinned public CSVs and task page; original paths and per-file checksums included."
+}

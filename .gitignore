@@ -19,3 +19,23 @@ outputs/
 *.key
 *.pfx
 *.p12
+
+# Local submission drafts and historical benchmark archives
+/evaluation/submission-freeze.json
+/CLAUDE.md
+/docs/RECORDING.md
+/docs/submission/BUILDER-ARTICLE.md
+/docs/submission/BUILDER-UPLOAD.md
+/docs/submission/DEVPOST.md
+/docs/submission/START-HERE.md
+/docs/submission/VIDEO-SCRIPT.md
+/evaluation/semeval-st1/
+/evaluation/semeval-st1-v2/
+/evaluation/semeval-st1-v3/
+/evaluation/semeval-st1-v4/
+/evaluation/semeval-st1-v5/
+/evaluation/semeval-st1-v6/
+/evaluation/semeval-st1-v7/
+/evaluation/semeval-st1-v8/
+/evaluation/ARCHIVE-MANIFEST.json
+/evaluation/RESTORE.md

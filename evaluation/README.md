@@ -1,75 +1,57 @@
-# Evaluation results at the submission freeze
+# Evaluation results
 
-**Best completed ST1 composite: 0.789229 on all 997 released
-test reports. The 0.90 target was not reached.** This is a separate model
-classification benchmark, not accuracy or a measurement of the deployed
-PantryRecall agent workflow.
+The deployed pantry workflow and the SemEval classifier are separate evaluations.
+The application still uses Nova Lite; benchmark model changes were not deployed.
 
-The user set a September 14, 2026 **5 p.m. Eastern / 21:00 UTC** experiment
-cutoff and asked to retain the best completed result. V5 remains that result.
-The final experiment's frozen 4:40 p.m. test-launch deadline prevented a late
-test run; subsequent validation results are preserved separately.
+## Pantry workflow
 
-| Experiment | Main change | Completed 997-report test ST1 |
-| --- | --- | ---: |
-| [v1](semeval-st1/README.md) | Nova Lite, full body, zero-shot baseline | 0.566941 |
-| [v2](semeval-st1-v2/README.md) | Typed category IDs and training retrieval | 0.679364 |
-| [v3](semeval-st1-v3/README.md) | Title plus full text, title-weighted retrieval | 0.735795 |
-| [v4](semeval-st1-v4/README.md) | Nova Pro, otherwise same inputs | 0.765878 |
-| **[v5](semeval-st1-v5/README.md)** | **Full training-derived taxonomy and title/body guidance** | **0.789229** |
-| [v6](semeval-st1-v6/README.md) | Validation-selected supervised product head, archived v5 hazard head | 0.742656 |
-| [v7](semeval-st1-v7/README.md) | Evidence descriptions, Nova Pro vs Nova 2 low reasoning | No test: validation gain not met |
-| [v8](semeval-st1-v8/README.md) | DeepSeek / Qwen / v5 category combinations | No test: frozen gain/time rule |
+- **159 tests pass:** 112 pantry tests and 47 benchmark harness tests.
+- **18/18 frozen scenarios:** eight Pearl Milling and ten Jif stock groups.
+- **Four recorded public workflow stages completed**, with eight comparisons per
+  stage, two simulated human hold receipts and zero agent confirmations.
 
-V5's hazard macro F1 is **0.781372** and its product macro F1
-on hazard-correct rows is **0.797086**.
-Their mean is ST1. Hazard accuracy is **95.59%**,
-product accuracy **82.05%**, and joint accuracy
-**78.54%**. All 997 final outputs are valid; 145 throttled
-attempts were retried. Raw attempts and usage are preserved. These quantities
-must not be presented interchangeably as “accuracy.”
+[Agent evidence](../docs/submission/EVIDENCE.md) includes the original Jif
+coverage failure and the later citation-failure recovery.
 
-Later complexity did not consistently help. V6's validation gain was only
-0.000102, then test ST1 fell by 0.046572. V7's two validation scores were
-0.787191 and 0.768294, below the incumbent's 0.796612. V8 direct validation scores
-were DeepSeek **0.796325** and Qwen
-**0.733694**; all fixed combinations are archived with their
-actual selection outcome. The best combination, v5's hazard head plus DeepSeek's
-product head, reached **0.807327 on validation**, but it finished after the
-test-launch cutoff and has no test result. It does not replace v5's completed
-test score. No partial run is presented as a complete result.
+## SemEval ST1
 
-## What these results establish
+| Experiment | Completed test ST1 |
+| --- | ---: |
+| Nova Lite baseline | 0.566941 |
+| Category IDs and training retrieval | 0.679364 |
+| Title-aware retrieval | 0.735795 |
+| Nova Pro | 0.765878 |
+| Nova Pro with full training taxonomy | **0.789229** |
+| Supervised product-head hybrid | 0.742656 |
 
-Every experiment retains frozen protocols, predictions, raw responses, strict
-invalid-output handling and verification records. Training labels build the
-taxonomy and examples; target category annotations are absent from model
-requests. No evaluation labels, split membership or denominators were changed.
-The original 41 invalid baseline outputs and subsequent negative results remain
-available. Individual READMEs document reproducibility and token usage.
+Each test run used all 997 released reports. ST1 averages hazard macro F1 and
+product macro F1 on hazard-correct rows; it is not accuracy. For the best run,
+those components were 0.781372 and 0.797086. All 997 outputs were valid.
 
-These are repeated comparisons on an **already exposed test set**. Retaining
-the best observed test result further limits unbiased generalization claims.
-Seven validation and seven test reports have exact normalized body matches in
-training. Retrieval excludes exact target bodies per query; the v6 supervised
-models use the original training split. Foundation-model training contamination
-is unknown. ST2 was not evaluated and no leaderboard rank is claimed.
+The later Nova Pro/DeepSeek combination reached **0.807327 on validation**;
+no test run followed because the frozen launch deadline had passed. The 0.90
+stretch target was not reached. Earlier test results informed development, so
+these are exposed-test regressions. Seven validation and seven test reports
+match training bodies; possible foundation-model contamination is unknown.
+ST2 and real-world pantry outcomes were not evaluated.
 
-The [published task and scoring definition](https://food-hazard-detection-semeval-2025.github.io/)
-use hazard macro F1 and conditional product macro F1. Rare categories therefore
-matter even when overall accuracy is high. See the [dataset attribution and
-license](semeval-st1/DATA-LICENSE.md); its terms are separate from the project's
-Apache-2.0 source-code license.
+## Full evidence archive
 
-## Pantry workflow checks are separate
+[Download all experiment evidence](https://github.com/shinushibu17/pantry-recall-response-agent/releases/tag/benchmark-evidence-2026-09-14).
+The release preserves all eight experiments, including failures, frozen
+protocols, predictions, raw responses, manifests and pinned public dataset
+sources. [archive.json](archive.json) records the ZIP checksum and source commit.
+The matching source revision is available from the release tag.
 
-The deployed Nova Lite Strands agent uses reviewed historical recalls and
-synthetic inventory. It has **112 pantry tests and 18 frozen scope cases**,
-plus recorded public workflow checks. The combined local suite, including all
-eight benchmark harnesses, has **159 passing tests** (112 + 47), with no failures,
-errors or skips. See [the test record](semeval-st1-v8/harness-tests.json) and
-[the portable pantry evidence](../docs/submission/EVIDENCE.md).
+To restore the original paths, download the ZIP to `outputs/` and extract it
+from the repository root:
 
-Independent expectation review, an untouched recall evaluation and a volunteer
-pilot remain future validation. The prototype does not establish field accuracy,
-physical action completion or general food safety.
+```powershell
+Expand-Archive -LiteralPath outputs/semeval-st1-evidence-2026-09-14.zip -DestinationPath .
+```
+
+The extracted `evaluation/RESTORE.md` and experiment READMEs explain rescoring.
+Verify the ZIP against the release's `.sha256` file before extraction. Restored
+archives are ignored by Git; the application and unit tests need no archive or
+AWS calls. [Dataset attribution and terms](DATA-LICENSE.md) apply separately
+from the code license.

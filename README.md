@@ -1,15 +1,80 @@
 # Pantry Recall Response Agent
 
-A Strands agent on Amazon Bedrock helps a food pantry check recalled inventory,
-request missing label evidence, and track human-confirmed stock holds.
+An AI-assisted recall workflow for community food pantries, built with
+**Strands Agents, Amazon Bedrock and Python**.
 
-**[Live demo](https://d1vhm9p26zmdc7.cloudfront.net)** ? no password or AWS account
-required. The demo uses historical recall notices and synthetic inventory.
+A recall notice identifies a product; a volunteer still needs to find the right
+stock, inspect its labels and record what happened next. Pantry Recall connects
+those steps: the agent investigates inventory, asks for missing evidence and
+revisits open work after a person confirms an action.
 
-## Run locally
+**[Live demo](https://d1vhm9p26zmdc7.cloudfront.net)** ?
+[Walkthrough](docs/submission/JUDGE-GUIDE.md) ? [Evaluation evidence](docs/submission/EVIDENCE.md)
 
-Requires Python 3.11+, [uv](https://docs.astral.sh/uv/), and an AWS profile with
-Bedrock access to `amazon.nova-lite-v1:0` in `us-east-1` for live agent runs.
+The public demo requires no password or visitor AWS account. It uses historical
+recall notices and a separate synthetic pantry for each visitor.
+
+## Overview
+
+The system combines:
+
+- **Source-grounded matching:** pinned notices, exact evidence spans and reviewed
+  product scope. Missing identifiers remain unknown rather than becoming mismatches.
+- **Agent-directed investigation:** Nova Lite uses seven typed tools to compare
+  inventory, inspect histories and recommend up to three next checks.
+- **Event-triggered follow-ups:** accepted label evidence and hold receipts
+  prompt a new briefing after the first manual start.
+- **Human-confirmed actions:** separate endpoints record quantities and receipts.
+  The agent cannot confirm that a volunteer physically handled stock.
+
+For example, four boxes with a missing printed code need inspection. Supplying a
+matching code resolves identification, but leaves the hold task open. Confirming
+two boxes leaves two outstanding; confirming the remainder closes that hold and
+returns the agent to other open work.
+
+## Architecture
+
+![System architecture: CloudFront and EC2 host the pantry workflow; Strands calls Bedrock and deterministic tools; human confirmations are stored separately in SQLite on EBS.](docs/submission/architecture.png)
+
+| Layer | Implementation |
+| --- | --- |
+| Investigation | Strands Agents SDK with Amazon Nova Lite on Bedrock |
+| Scope and action rules | Python comparators and validated workflow transitions |
+| Persistence | SQLite events, evidence versions, tasks and human receipts |
+| Interface | Python HTTP service with HTML, CSS and JavaScript |
+| AWS hosting | EC2 behind CloudFront HTTPS; encrypted EBS; private S3 release bucket; IAM instance role and Systems Manager |
+
+The model chooses which histories and tasks to investigate. The application
+checks coverage, current state and quantities, then attaches the selected tasks'
+exact stored evidence. Details: [agent design](docs/AGENT-ROLE.md) and
+[deployment guide](docs/DEPLOYMENT.md).
+
+## Repository layout
+
+```text
+pantry_recall/
+  agent.py          Strands agent and tool wrappers
+  matching.py       Pearl Milling scope comparisons
+  jif.py            Jif scope comparisons
+  store.py          Persistent evidence, tasks and receipts
+  workflow.py       Evidence updates and human confirmations
+  web.py            Web server
+  static/           Browser interface
+fixtures/           Pinned sources, synthetic stock and frozen expectations
+tests/              Unit tests and stubbed SDK integration tests
+tools/              Acquisition, deployment, verification and benchmark tools
+deployment/         AWS bootstrap script
+docs/               User guide, architecture, operations and agent evidence
+evaluation/         Results summary and downloadable benchmark archive link
+pyproject.toml      Dependencies and evaluation group
+uv.lock             Locked dependency versions
+```
+
+## Setup
+
+Requirements: **Python 3.11+** and **[uv](https://docs.astral.sh/uv/)**.
+Local live inference also requires an AWS profile with Bedrock access to
+`amazon.nova-lite-v1:0` in `us-east-1`.
 
 ```sh
 git clone https://github.com/shinushibu17/pantry-recall-response-agent.git
@@ -17,53 +82,85 @@ cd pantry-recall-response-agent
 uv sync --frozen
 ```
 
-Set your AWS profile and start the app. In PowerShell:
+Set your AWS profile before starting the server. In PowerShell:
 
 ```powershell
 $env:AWS_PROFILE = "your-profile"
 $env:AWS_REGION = "us-east-1"
+```
+
+In Bash or Zsh, use `export AWS_PROFILE=your-profile` and
+`export AWS_REGION=us-east-1`. Local inference uses your AWS account; the hosted
+demo uses its instance role. No AWS access is needed for the offline tests.
+
+## Running the app
+
+```sh
 uv run --frozen python -m pantry_recall.web
 ```
 
-Open **http://127.0.0.1:8080**. Local live inference uses your AWS account.
-See the [walkthrough and setup guide](docs/submission/JUDGE-GUIDE.md) for details.
+Open **http://127.0.0.1:8080**:
 
-## Tests
+1. Select **Start recall agent** and inspect the comparisons and next checks.
+2. Use **Label inspection ? Fill demo inspection** to supply the missing code.
+3. Record a simulated two-box hold using the separate human confirmation form.
+4. Confirm the remaining two boxes and inspect the event history and next briefing.
+
+All stock and actions are synthetic. The shared public demo permits 20 agent
+starts per UTC day and one concurrent run. Pause follow-ups when finished.
+
+## Evaluation results
+
+Run the test suite, both recall fixtures and workflow checks without model calls:
 
 ```sh
 uv run --frozen --group evaluation python -m pantry_recall.evaluate --tests
 ```
 
-Runs the tests, both recall fixtures and workflow checks without model calls.
-
-## Results
-
-| Check | Result |
+| Evaluation | Observed result |
 | --- | --- |
-| Automated tests | **159 passed** |
-| Frozen recall scenarios | **18/18** across Pearl Milling and Jif |
-| Recorded public agent workflow | **4/4 stages completed** |
-| Separate SemEval ST1 benchmark | **0.7892** best completed test composite on 997 reports |
+| Automated tests | **159 passed**: 112 pantry tests and 47 benchmark harness tests |
+| Frozen recall scenarios | **18/18**: eight Pearl Milling and ten Jif cases |
+| Recorded public agent workflow | **4/4 stages completed**, with eight comparisons per stage |
+| Action confirmation boundary | Two simulated human receipts; **zero agent confirmations** in the recorded workflow |
 
-ST1 measures a separate classifier, not the deployed agent. It is a comparison
-on an already exposed test set, not an accuracy percentage. Full
-[benchmark results](evaluation/README.md) and
-[agent evidence](docs/submission/EVIDENCE.md) include failures and limitations.
+### How evaluation changed the agent
 
-## Architecture
+| Finding | Change | Follow-up result |
+| --- | --- | --- |
+| The first Jif run skipped scope comparisons: **0/10 executed** | Added one bounded continuation naming missing tools and stock IDs | Forced SDK tests cover recovery; the later live run completed **10/10** without needing the continuation |
+| A browser run repeatedly invented citation identifiers and exhausted its call limit | The agent selects existing task IDs; the application attaches exact stored evidence | The same previously failing session completed without a reset; the subsequent four-stage public check also completed |
 
-Strands and Nova Lite investigate cases through typed tools. Deterministic code
-checks recall scope; separate human endpoints record confirmations. SQLite on
-EBS stores events and evidence. EC2 runs the app behind CloudFront HTTPS.
+These checks show how concrete failures changed the agent interface and execution
+controls. The Jif rerun alone does not establish a causal reliability gain, and
+no volunteer time savings or general success rate has been measured. Original
+failures and subsequent checks remain in the [evidence record](docs/submission/EVIDENCE.md).
 
-[Architecture diagram](docs/submission/architecture.png) ?
-[Agent design](docs/AGENT-ROLE.md) ? [Deployment](docs/DEPLOYMENT.md)
+### Separate classification benchmark
 
-The prototype supports two reviewed product projections, has no live recall
-feed, and is not field-validated. Agent recommendations cannot confirm physical
-actions. The shared demo allows 20 agent starts per UTC day.
+On all **997 released SemEval test reports**, the best completed ST1 composite
+increased from **0.5669** with the Nova Lite baseline to **0.7892** with Nova Pro,
+training-example retrieval and full training-derived taxonomy guidance. A later
+Nova Pro/DeepSeek combination scored **0.8073 on validation only**; it has no
+test result.
+
+These experiments informed classifier and model comparisons; **they did not
+change the deployed Nova Lite agent**. ST1 is not an accuracy percentage or an
+agent-workflow score. The test set had already been exposed during development,
+and training/split overlaps limit generalization claims. The
+[benchmark summary](evaluation/README.md) links all results, protocols and raw
+responses in the downloadable evidence archive.
+
+## Scope and limitations
+
+The prototype supports two reviewed product projections, not arbitrary notices
+or a live recall feed. Exclusion from one recall is not a general safety
+clearance. Confirmations are human assertions, and model reasoning remains
+advisory. Independent expectation review, a new untouched recall evaluation and
+a pantry usability pilot remain future validation.
 
 ## License
 
-[Apache 2.0](LICENSE) for project code. Recall sources retain their attribution;
-the SemEval dataset has [separate terms](evaluation/semeval-st1/DATA-LICENSE.md).
+Project code is [Apache 2.0](LICENSE). Pinned recall sources retain their
+attribution in the fixture reviews. SemEval data and derived materials have
+[separate CC BY-NC-SA 4.0 terms](evaluation/DATA-LICENSE.md).
