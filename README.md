@@ -144,10 +144,13 @@ training-example retrieval and full training-derived taxonomy guidance. A later
 Nova Pro/DeepSeek combination scored **0.8073 on validation only**; it has no
 test result.
 
-These experiments informed classifier and model comparisons; **they did not
-change the deployed Nova Lite agent**. ST1 is not an accuracy percentage or an
-agent-workflow score. The test set had already been exposed during development,
-and training/split overlaps limit generalization claims. The
+SemEval evaluates report classification; the deployed agent uses reviewed recall
+scope and tools to investigate inventory. Its coverage and citation fixes came
+from the workflow evaluations above. **Nova Pro has not been compared with Nova
+Lite on the full agent workflow**, so the deployment still uses Nova Lite. ST1
+is not an accuracy percentage or an agent-workflow score. The test set was
+already exposed during development, and training/split overlaps limit
+generalization claims. The
 [benchmark summary](evaluation/README.md) links all results, protocols and raw
 responses in the downloadable evidence archive.
 
