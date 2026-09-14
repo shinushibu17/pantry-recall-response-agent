@@ -1,0 +1,8 @@
+{
+  "started_at": "2026-09-14T16:30:08.019356+00:00",
+  "protocol_sha256": "8bca77b98f9561de04618eda1e588a38135817a708022642590b878e884db90c",
+  "planned_rows": 997,
+  "status": "COMPLETE",
+  "finished_at": "2026-09-14T16:32:23.919325+00:00",
+  "persisted_rows": 997
+}

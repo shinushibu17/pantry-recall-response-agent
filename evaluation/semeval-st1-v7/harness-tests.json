@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "recorded_at": "2026-09-14T19:57:15.454037+00:00",
+  "command": "uv run --frozen --group evaluation python -m unittest discover -s tests",
+  "tests_run": 155,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "runtime_seconds": 110.448,
+  "new_tests": 5,
+  "note": "Cutoff enforcement, strict evidence schema, target-answer isolation and validation threshold covered; pantry app unchanged."
+}

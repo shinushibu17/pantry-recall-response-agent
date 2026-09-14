@@ -1,0 +1,105 @@
+{
+  "recall_number": "F-0553-2025",
+  "version": "pearl-milling-2025-v1",
+  "split": "development",
+  "review": {
+    "method": "Authored by Codex directly from the pinned notice before matcher implementation; checked against enforcement product_description and code_info.",
+    "human_signoff": "pending",
+    "scope_status": "reviewed",
+    "firm_attribution_note": "The enforcement record names Frito-Lay, Inc. Headquarters; the FDA-hosted announcement is issued by The Quaker Oats Company. Product, size, printed UPC, code and initiation date agree. Preserve both firm names; use the notice issuer for instructions."
+  },
+  "variant": {
+    "brand": "Pearl Milling Company",
+    "product_name": "Original Pancake & Waffle Mix",
+    "package_size": "32 OZ (2LB) 907g",
+    "upc": "30000 65040",
+    "lot_codes": [
+      "BBD SEP 13 25 P"
+    ],
+    "lot_scope": "bounded_list",
+    "lot_semantics": "lot_code stores the complete printed Code Date & Manufacturing Code, including BBD date and suffix; neither date alone nor suffix alone establishes applicability.",
+    "evidence_refs": [
+      "notice.product_table"
+    ]
+  },
+  "distribution": {
+    "listed_states": [
+      "AR",
+      "IL",
+      "IN",
+      "IA",
+      "KS",
+      "KY",
+      "MN",
+      "MS",
+      "NE",
+      "UT",
+      "WI"
+    ],
+    "exhaustive_for_pantry_stock": false,
+    "evidence_refs": [
+      "notice.distribution"
+    ]
+  },
+  "instructions": [
+    {
+      "id": "conditional_consumer_instruction",
+      "action": "Do not consume the recalled product; discard it immediately.",
+      "audience": "consumers",
+      "trigger": "The consumer has an allergy or sensitivity to milk AND has the recalled product.",
+      "issuer": "The Quaker Oats Company",
+      "source_kind": "company_announcement_hosted_by_fda",
+      "evidence_refs": [
+        "notice.consumer_instruction"
+      ],
+      "automatic_pantry_instruction": false
+    }
+  ],
+  "evidence": {
+    "notice.product_table": {
+      "quote": "Pearl Milling Company Original Pancake & Waffle Mix 32 OZ (2LB) 907g 30000 65040 BBD SEP 13 25 P",
+      "source_file": "sources/notice.txt",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/quaker-issues-limited-recall-undeclared-milk-pearl-milling-company-original-pancake-waffle-mix",
+      "source_sha256": "6a673602e79ce12b0942eaac97d730d6686099e33953f503797eefa2d3edd650",
+      "text_sha256": "4edd12dcdc9c5b2c6300fe401a8a555babe667478dac9297e1a5b11ac2580ca7",
+      "start": 3644,
+      "end": 3740
+    },
+    "notice.other_products": {
+      "quote": "No other Pearl Milling Company products are recalled.",
+      "source_file": "sources/notice.txt",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/quaker-issues-limited-recall-undeclared-milk-pearl-milling-company-original-pancake-waffle-mix",
+      "source_sha256": "6a673602e79ce12b0942eaac97d730d6686099e33953f503797eefa2d3edd650",
+      "text_sha256": "4edd12dcdc9c5b2c6300fe401a8a555babe667478dac9297e1a5b11ac2580ca7",
+      "start": 3384,
+      "end": 3437
+    },
+    "notice.label_location": {
+      "quote": "The recalled product is in a cardboard box, and the “BBD” information listed below can be found on the top panel of the box:",
+      "source_file": "sources/notice.txt",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/quaker-issues-limited-recall-undeclared-milk-pearl-milling-company-original-pancake-waffle-mix",
+      "source_sha256": "6a673602e79ce12b0942eaac97d730d6686099e33953f503797eefa2d3edd650",
+      "text_sha256": "4edd12dcdc9c5b2c6300fe401a8a555babe667478dac9297e1a5b11ac2580ca7",
+      "start": 3438,
+      "end": 3562
+    },
+    "notice.distribution": {
+      "quote": "The product included in this recall was distributed to certain retailers in the following 11 states: Arkansas, Illinois, Indiana, Iowa, Kansas, Kentucky, Minnesota, Mississippi, Nebraska, Utah and Wisconsin.",
+      "source_file": "sources/notice.txt",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/quaker-issues-limited-recall-undeclared-milk-pearl-milling-company-original-pancake-waffle-mix",
+      "source_sha256": "6a673602e79ce12b0942eaac97d730d6686099e33953f503797eefa2d3edd650",
+      "text_sha256": "4edd12dcdc9c5b2c6300fe401a8a555babe667478dac9297e1a5b11ac2580ca7",
+      "start": 3103,
+      "end": 3310
+    },
+    "notice.consumer_instruction": {
+      "quote": "If consumers have an allergy or sensitivity to milk, they should not consume the product and discard it immediately.",
+      "source_file": "sources/notice.txt",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/quaker-issues-limited-recall-undeclared-milk-pearl-milling-company-original-pancake-waffle-mix",
+      "source_sha256": "6a673602e79ce12b0942eaac97d730d6686099e33953f503797eefa2d3edd650",
+      "text_sha256": "4edd12dcdc9c5b2c6300fe401a8a555babe667478dac9297e1a5b11ac2580ca7",
+      "start": 3757,
+      "end": 3873
+    }
+  }
+}

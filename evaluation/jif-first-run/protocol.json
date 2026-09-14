@@ -1,0 +1,17 @@
+{
+  "frozen_at": "2026-09-12T22:49:22.695701+00:00",
+  "phase": "After 75 offline tests passed, before first live Jif Bedrock call",
+  "model": "amazon.nova-lite-v1:0",
+  "region": "us-east-1",
+  "protocol": "Run once with the generic prompt. Preserve failures. No prompt changes from Jif model results. This is agent-held-out only; deterministic adapter was developed using frozen source expectations.",
+  "files": {
+    "pantry_recall/agent.py": "dd9e80193e8794aa48630a80131a949b2bc9a009b0c3380df62ffb8ac967d629",
+    "pantry_recall/fixtures.py": "816e73f1ed7548358fb930592c65a4b92f8f959dd8a9887a9d0fcac7dc824702",
+    "pantry_recall/jif.py": "20164aef90b755da59138dff98994b388314db56989e97ea12c0280795e430e7",
+    "pantry_recall/matching.py": "45b9976c98a44a20a64c40b479ac023d8f740ad5048738c7b2ffab669ed4ecf4",
+    "pantry_recall/store.py": "32573e834cdc52f0ed001125760f0a475988fe529cea7f36f8632eb4023da91b",
+    "fixtures/evaluation-manifest.json": "8b7566742db8d91e9e1a1d6c6abeba1b795961adccfb94fdc7a5e7d84254ac19",
+    "fixtures/jif_2022/fixture.lock.json": "81a4a1a03c7c81c6354d2ec7a52422cf83fbd303ea2f1e1d587b905667d84745",
+    "fixtures/jif_2022/expected.json": "6f9d70f88b2f013b6a1e6f010f03210d3794496f29fcf3103c913ca9063b9389"
+  }
+}

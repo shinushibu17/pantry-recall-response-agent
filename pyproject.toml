@@ -1,0 +1,15 @@
+[project]
+name = "pantry-recall-response"
+version = "0.2.0"
+description = "Source-grounded historical pantry recall replay with a Strands Bedrock agent"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = ["strands-agents==1.55.1", "boto3==1.43.93", "botocore[crt]==1.43.93"]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+evaluation = [
+    "scikit-learn>=1.9.1",
+]

@@ -1,0 +1,206 @@
+{
+    "packaged_at":  "2026-09-14T14:02:52.3362330Z",
+    "offline_report_written_at":  "2026-09-14T13:53:12.9141358Z",
+    "offline_command":  "uv run --frozen python -m pantry_recall.evaluate --tests --output outputs/submission/evaluation.json",
+    "provenance_note":  "Builder-produced verification records, not independent certification. Hashes record integrity, not authorship. Public live checks retain their September 13 timestamps; offline evaluation was rerun September 14. Legacy Jif split labels describe the initial protocol; subsequent development uses Jif as regression data.",
+    "artifacts":  [
+                      {
+                          "artifact":  "offline-evaluation.json",
+                          "sha256":  "aaab074b54e4b1545ea444496bfc461a3367b774f1039ab0dcbd2849b8712d93",
+                          "source_path":  "outputs/submission/evaluation.json",
+                          "source_sha256":  "aaab074b54e4b1545ea444496bfc461a3367b774f1039ab0dcbd2849b8712d93",
+                          "transformation":  "Exact byte copy"
+                      },
+                      {
+                          "artifact":  "public-workflow.json",
+                          "sha256":  "003b12459369fd0f39d3227fc11b8c8713cca32a216a695460b3f363a8fbd790",
+                          "source_path":  "outputs/deployment/citation-fix-check/verification.json",
+                          "source_sha256":  "003b12459369fd0f39d3227fc11b8c8713cca32a216a695460b3f363a8fbd790",
+                          "transformation":  "Exact byte copy"
+                      },
+                      {
+                          "artifact":  "browser-recovery.json",
+                          "sha256":  "3410013c6cb3fd36b818dff0da46de8c9709cd84116fa90469499e60d1130d79",
+                          "source_path":  "outputs/deployment/citation-fix-browser.json",
+                          "source_sha256":  "3410013c6cb3fd36b818dff0da46de8c9709cd84116fa90469499e60d1130d79",
+                          "transformation":  "Exact byte copy"
+                      },
+                      {
+                          "artifact":  "public-boundaries.json",
+                          "sha256":  "882f89df6ef67d8b1a8a115e26a8baad8af5264100e7e6170a403349ed315f52",
+                          "source_path":  "outputs/deployment/agent-role-boundary-check/verification.json",
+                          "source_sha256":  "45ea18719b998401d2b2f91d0b3732f3c3d115296e39a319f3f1024aa0ad0925",
+                          "transformation":  "Omitted SSM command identifier and mount output; retained all checks and original check time"
+                      },
+                      {
+                          "artifact":  "public-initial.json",
+                          "sha256":  "6aba10a52c231db2669173d47aa312b61caaab1de9b66fffad0783514875851b",
+                          "source_path":  "outputs/deployment/citation-fix-check/initial.json",
+                          "source_sha256":  "8545bca7993fd14767615529a99b892b39804cd00f4c130713eeb9b0dc7e52ac",
+                          "transformation":  "Omitted report.workflow_database local server path; retained tool calls, model output, findings, evidence and original timing"
+                      },
+                      {
+                          "artifact":  "public-after-evidence.json",
+                          "sha256":  "9c64e4e2edb10dabacf534648e0fb516c5835281a29797a357442916a21b2ed1",
+                          "source_path":  "outputs/deployment/citation-fix-check/after-evidence.json",
+                          "source_sha256":  "5f444185461b4ec3ac102fb359693d5730369ed2beea24f3ce5f0b8a36ac8b53",
+                          "transformation":  "Omitted report.workflow_database local server path; retained tool calls, model output, findings, evidence and original timing"
+                      },
+                      {
+                          "artifact":  "public-partial-hold.json",
+                          "sha256":  "b1fab88c08c415fb0d083847d9342a8b54c7e6251ef828e427e08c36188497c2",
+                          "source_path":  "outputs/deployment/citation-fix-check/partial-hold.json",
+                          "source_sha256":  "6cbe22628775ebff3407dd7cb76489c7fa77cfd556ae7576c634ae3b8d356a13",
+                          "transformation":  "Omitted report.workflow_database local server path; retained tool calls, model output, findings, evidence and original timing"
+                      },
+                      {
+                          "artifact":  "public-completed-hold.json",
+                          "sha256":  "d168bead53c5a97b0b00fd885f88d29ca5e9074b02d48c191162bc34c2857045",
+                          "source_path":  "outputs/deployment/citation-fix-check/completed-hold.json",
+                          "source_sha256":  "fdd43da0635344a9094386add0ec4d7692549a53e07f873010cc0eb95be0dfe5",
+                          "transformation":  "Omitted report.workflow_database local server path; retained tool calls, model output, findings, evidence and original timing"
+                      }
+                  ],
+    "current_source_files":  [
+                                 {
+                                     "path":  "fixtures/jif_2022/fixture.lock.json",
+                                     "sha256":  "81a4a1a03c7c81c6354d2ec7a52422cf83fbd303ea2f1e1d587b905667d84745"
+                                 },
+                                 {
+                                     "path":  "fixtures/pearl_milling_2025/fixture.lock.json",
+                                     "sha256":  "78530b721159de636342e12a0737c8dad35a0dcd303fc6428c6e54e9599479e0"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/__init__.py",
+                                     "sha256":  "e8f118b62df5cedd965acfd56b2dd720dfd4e4307984ad140d8ac8c47cbac4c1"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/__main__.py",
+                                     "sha256":  "5e123f2ea0ce8ab493314cf83549692ea11174be5edc7cd03b1250542748c45c"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/agent.py",
+                                     "sha256":  "0141bb1a0072c5a6247069a0c9dac8a481bbaca504a0d9e9e72cf9d212273d9f"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/aws_access.py",
+                                     "sha256":  "b31d57d50caad02cc0e5171f2b3b748d499ccf2ad2de62a787e9d96b77bc9342"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/confirmations.py",
+                                     "sha256":  "4657036f86b967824c2ff6101deea56eeedee18e282b95c4144de99a7323ed85"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/demo.py",
+                                     "sha256":  "4c22a6eaa22b080c24d83c009c01ba54d9714b5d569a8b27b1599a78165f98b6"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/evaluate.py",
+                                     "sha256":  "7daea6b8079cf74c0c0d79c67e058cc3d7b1dc84192818882f3fe46d3060e88d"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/fixtures.py",
+                                     "sha256":  "816e73f1ed7548358fb930592c65a4b92f8f959dd8a9887a9d0fcac7dc824702"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/followup.py",
+                                     "sha256":  "310044d4f5ccad36bb377f4c45bf667a7d71f4b721b1018d06444517b2462895"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/investigation.py",
+                                     "sha256":  "57460948041adcf347fd8e4378809ce9c20c52096156e57eae7e1a6c0f43b759"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/jif.py",
+                                     "sha256":  "20164aef90b755da59138dff98994b388314db56989e97ea12c0280795e430e7"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/matching.py",
+                                     "sha256":  "45b9976c98a44a20a64c40b479ac023d8f740ad5048738c7b2ffab669ed4ecf4"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/static/app.js",
+                                     "sha256":  "212d9ba3005c55bf2d982571afa9cbac6f38610299e8a10673b52265505df63a"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/static/index.html",
+                                     "sha256":  "08f3606f1cd6787f59e7bae699358af8caa845c1c3c684b10e7a7f7cde6b8d2c"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/static/polish.css",
+                                     "sha256":  "b18e69d2b98145fd7894a3a1f71b558c9a8cff5481db60cba97d1fbd2d600cf9"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/static/style.css",
+                                     "sha256":  "d25598a89c5f9fdc0e5f9a30fdcad6c93e366a83d2993713cdcd4111ae63502e"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/store.py",
+                                     "sha256":  "cf6c6dd74f4ce2e087d10d2ca2d019325b80ee772dd7638347439d40ba2c36e3"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/web.py",
+                                     "sha256":  "b02c0ad3246d6e970e2fb320cd0550cb8bf32f8d29701164cca798b61121c057"
+                                 },
+                                 {
+                                     "path":  "pantry_recall/workflow.py",
+                                     "sha256":  "404a1e580116d138bfcd8325f41d06f46b7cfe4d631ff023ea8d2bed4c26e2e5"
+                                 },
+                                 {
+                                     "path":  "pyproject.toml",
+                                     "sha256":  "82e56594aee2fe40f22e1c7bb1f171472eb4c28152399c9772eef85934543cc7"
+                                 },
+                                 {
+                                     "path":  "tests/__init__.py",
+                                     "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                                 },
+                                 {
+                                     "path":  "tests/test_acquisition.py",
+                                     "sha256":  "286982fd4ccdd85d59e5549d026feb1a2d645a057e204639c1d9873ac62237a3"
+                                 },
+                                 {
+                                     "path":  "tests/test_agent.py",
+                                     "sha256":  "02a7143dc85ccb41840a5ac681dbc3beca8341f452323fa3680ac05986f67e8c"
+                                 },
+                                 {
+                                     "path":  "tests/test_aws_access.py",
+                                     "sha256":  "5eefbd793a60a3609131506d136e0b71a7ffd05615a2791492a1286d9ffa32b6"
+                                 },
+                                 {
+                                     "path":  "tests/test_deployment.py",
+                                     "sha256":  "0e98c96d93f9f9ffa62820fc8fd2f657259e8e680b9fee4db7d7e6aac158cf0a"
+                                 },
+                                 {
+                                     "path":  "tests/test_followup.py",
+                                     "sha256":  "d3f65ac285e162cf82d287bb88c48080e8c5d83f910bd9706383111d1c3cbca8"
+                                 },
+                                 {
+                                     "path":  "tests/test_foundation.py",
+                                     "sha256":  "30378786c99401185e2f37896582a573aa474f589a56f04f3e42e266f3fc5210"
+                                 },
+                                 {
+                                     "path":  "tests/test_investigation.py",
+                                     "sha256":  "381451b9955966c67db66697ee620696bb8d2cce1ba1c127709efa09162260de"
+                                 },
+                                 {
+                                     "path":  "tests/test_jif.py",
+                                     "sha256":  "68d0e39c9b9479540a554486f7182439f03005c5f76910a4f60083b0c7886921"
+                                 },
+                                 {
+                                     "path":  "tests/test_public_demo.py",
+                                     "sha256":  "f1f24d9cf93585c573ef0ed3349be368df10c27e119d59a56700e2ac88c21eb8"
+                                 },
+                                 {
+                                     "path":  "tests/test_web.py",
+                                     "sha256":  "14495caf20be93311699aacfa39dee082f0e47e4b6d3bb842800d7cd38c5633f"
+                                 },
+                                 {
+                                     "path":  "tests/test_workflow.py",
+                                     "sha256":  "c9a47dcc9745037247948412f3a05451b40d38af1fe1df652761f4c4bf10e900"
+                                 },
+                                 {
+                                     "path":  "uv.lock",
+                                     "sha256":  "22fa0a981741f298b1884503f5ce37e33556f88ef8997f6b7fbf8aabcdf22a90"
+                                 }
+                             ]
+}

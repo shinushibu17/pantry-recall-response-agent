@@ -1,0 +1,23 @@
+{
+  "decided_at": "2026-09-14T18:50:11.898818+00:00",
+  "winner": "pro-taxonomy",
+  "improved_on_validation": true,
+  "incumbent_validation_metrics": {
+    "product_accuracy": 0.7805309734513274,
+    "hazard_accuracy": 0.9398230088495575,
+    "official_st1_score": 0.7850097662137301
+  },
+  "product_accuracy": {
+    "pro-taxonomy": 0.7805309734513274,
+    "nova2-taxonomy": 0.7752212389380531
+  },
+  "hazard_accuracy": {
+    "pro-taxonomy": 0.9469026548672567,
+    "nova2-taxonomy": 0.9451327433628318
+  },
+  "candidate_scores": {
+    "pro-taxonomy": 0.7966116136945308,
+    "nova2-taxonomy": 0.7679824453220981
+  },
+  "plan_sha256": "63397440e1755b8708ee258fce78409ce874ed8502bb55daf499f3915ddec802"
+}

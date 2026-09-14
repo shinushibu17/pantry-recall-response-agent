@@ -1,0 +1,20 @@
+{
+  "frozen_at": "2026-09-12T19:48:05.267904+00:00",
+  "phase": "V2 source/schema corrections frozen before matcher migration and first agent run; V1 frozen fixture preserved",
+  "human_signoff": "pending",
+  "previous_version": {
+    "path": "../archive/pearl_milling_2025_v1",
+    "lock_sha256": "bd720155613813fef33adac9d527631009d7c12775f6df8e19769e72fad2d0b6"
+  },
+  "files": {
+    "scope.json": "81d90f72412e813affa2f33bf374a2172dd8c45db4d252e3184d43679c13aaa0",
+    "inventory.json": "f2ead677df0cea651b0fbbbf647970a20f9cf01092eb8b8fc024074d0e92e0e3",
+    "expected.json": "807e28742920f26de98fd8be04c5ad131ac128f49a12b1be0f2014815cb10c62",
+    "policy.json": "6c0f2943dde2d5382c357fb3fe4719de714b069f083048b62ed776e55d35a5e6",
+    "REVIEW.md": "f2a84d66599f117fc08445bdfb5f94eeb570bb5a45a28114c725c4dfabc61668",
+    "sources/acquisition.json": "6284fb847f75bad152d6dd44d95d09b3af1682a76d00dda1a5db4e16cbb94498",
+    "sources/enforcement.json": "4d9b99cb4a0472c1c7d2d3fa454ef08767c379be337aa7c797a5214b1920a3df",
+    "sources/notice.html": "6a673602e79ce12b0942eaac97d730d6686099e33953f503797eefa2d3edd650",
+    "sources/notice.txt": "4edd12dcdc9c5b2c6300fe401a8a555babe667478dac9297e1a5b11ac2580ca7"
+  }
+}

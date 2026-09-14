@@ -1,0 +1,11 @@
+{
+  "decided_at": "2026-09-14T17:51:16.285259+00:00",
+  "winner": "pro-four",
+  "improved_on_validation": true,
+  "incumbent_validation_score": 0.7239850784928603,
+  "candidate_scores": {
+    "lite-eight": 0.7433677541337664,
+    "pro-four": 0.7850097662137301
+  },
+  "plan_sha256": "031d88d582f688c8fb1da026170e83de9489ca67220a3262d2f4fe7899c8f09d"
+}

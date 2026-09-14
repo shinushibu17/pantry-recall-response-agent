@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-09-14T19:44:10.100803+00:00",
+  "phases": [
+    {
+      "phase": "validation-svm-standard-both",
+      "rows": 565,
+      "score_reproduced": 0.7441801636170848,
+      "supervised": true,
+      "model_attempts": 0,
+      "error_attempts": {},
+      "rows_with_exact_training_body": 7
+    },
+    {
+      "phase": "validation-svm-standard-hazard",
+      "rows": 565,
+      "score_reproduced": 0.7638989158487064,
+      "supervised": true,
+      "model_attempts": 0,
+      "error_attempts": {},
+      "rows_with_exact_training_body": 7
+    },
+    {
+      "phase": "validation-svm-standard-product",
+      "rows": 565,
+      "score_reproduced": 0.7820280705677515,
+      "supervised": true,
+      "model_attempts": 0,
+      "error_attempts": {},
+      "rows_with_exact_training_body": 7
+    },
+    {
+      "phase": "validation-svm-standard-margin",
+      "rows": 565,
+      "score_reproduced": 0.7933183328572961,
+      "supervised": true,
+      "model_attempts": 0,
+      "error_attempts": {},
+      "rows_with_exact_training_body": 7
+    },
+    {
+      "phase": "validation-svm-balanced-both",
+      "rows": 565,
+      "score_reproduced": 0.757550131279203,
+      "supervised": true,
+      "model_attempts": 0,
+      "error_attempts": {},
+      "rows_with_exact_training_body": 7
+    },
+    {
+      "phase": "validation-svm-balanced-hazard",
+      "rows": 565,
+      "score_reproduced": 0.762246586910877,
+      "supervised": true,
+      "model_attempts": 0,
+      "error_attempts": {},
+      "rows_with_exact_training_body": 7
+    },
+    {
+      "phase": "validation-svm-balanced-product",
+      "rows": 565,
+      "score_reproduced": 0.7967133559890355,
+      "supervised": true,
+      "model_attempts": 0,
+      "error_attempts": {},
+      "rows_with_exact_training_body": 7
+    },
+    {
+      "phase": "validation-svm-balanced-margin",
+      "rows": 565,
+      "score_reproduced": 0.7963860957660418,
+      "supervised": true,
+      "model_attempts": 0,
+      "error_attempts": {},
+      "rows_with_exact_training_body": 7
+    },
+    {
+      "phase": "validation-pro-balanced-retrieval",
+      "rows": 565,
+      "score_reproduced": 0.7767119654029087,
+      "supervised": false,
+      "model_attempts": 680,
+      "error_attempts": {
+        "ThrottlingException": 115
+      },
+      "rows_with_exact_training_body": 7
+    },
+    {
+      "phase": "test-regression-svm-balanced-product",
+      "rows": 997,
+      "score_reproduced": 0.7426563389172891,
+      "supervised": true,
+      "model_attempts": 0,
+      "error_attempts": {},
+      "rows_with_exact_training_body": 7
+    }
+  ],
+  "unchanged_prior_manifested_artifacts": 105,
+  "selected_by_frozen_validation_rule": true,
+  "target_annotations_absent_from_rebuilt_inference": true,
+  "svm_refitted_on_training_only": true,
+  "training_examples_and_requests_reconstructed": true,
+  "raw_responses_equal_originals": true,
+  "credentials_pattern_scan": "no matches",
+  "note": "Builder reproduction, not independent certification; prior test exposure and train/split overlaps remain disclosed."
+}

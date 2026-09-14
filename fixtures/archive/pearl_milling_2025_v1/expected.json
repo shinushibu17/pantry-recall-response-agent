@@ -1,0 +1,77 @@
+{
+  "recall_version": "pearl-milling-2025-v1",
+  "inventory_version": "synthetic-pantry-v1",
+  "split": "development",
+  "authorship": "Codex source-checked annotations, authored before matcher implementation, not generated from matcher outputs. Independent human review is pending.",
+  "conventions": {
+    "conditions": "true/false/unknown refer to observed label conditions; whole-stock coverage gates any disposition.",
+    "source_derived": ["brand", "product_name", "package_size", "upc", "lot_code"],
+    "policy_derived": ["candidate", "stock_group", "identification_state", "proposed_identification_state", "missing_fields", "review_fields", "action_state", "task_type"],
+    "all_cases": "No physical action is confirmed or completed in this milestone. Exclusions are proposals for human review."
+  },
+  "cases": [
+    {
+      "inventory_id": "affected", "candidate": true,
+      "conditions": {"brand": "true", "product_name": "true", "package_size": "true", "upc": "true", "lot_code": "true", "stock_group": "true"},
+      "identification_state": "AFFECTED", "proposed_identification_state": null,
+      "missing_fields": [], "review_fields": [], "action_state": "HOLD_RECOMMENDED", "task_type": "PERFORM_ACTION",
+      "evidence_refs": ["notice.product_table", "policy.hold"],
+      "rationale": "All required conditions match across all six boxes. NY and pre-recall receipt do not exclude this stock. Affected identification does not confirm any physical action."
+    },
+    {
+      "inventory_id": "missing_lot", "candidate": true,
+      "conditions": {"brand": "true", "product_name": "true", "package_size": "true", "upc": "true", "lot_code": "unknown", "stock_group": "true"},
+      "identification_state": "NEEDS_EVIDENCE", "proposed_identification_state": null,
+      "missing_fields": ["lot_code"], "review_fields": [], "action_state": "HOLD_RECOMMENDED", "task_type": "IDENTIFY_STOCK",
+      "evidence_refs": ["notice.product_table", "notice.label_location", "policy.hold"],
+      "rationale": "The printed UPC matches but the complete top-panel code is absent. Inspect all four boxes on Shelf A2; do not guess affected or excluded."
+    },
+    {
+      "inventory_id": "excluded_lot", "candidate": true,
+      "conditions": {"brand": "true", "product_name": "true", "package_size": "true", "upc": "true", "lot_code": "false", "stock_group": "true"},
+      "identification_state": "NEEDS_REVIEW", "proposed_identification_state": "NOT_AFFECTED_BY_THIS_RECALL",
+      "missing_fields": [], "review_fields": [], "action_state": "REVIEW_REQUIRED", "task_type": "REVIEW_SCOPE",
+      "evidence_refs": ["notice.product_table", "policy.exclusion_review"],
+      "rationale": "Complete SEP 14 code on all three correctly identified boxes lies outside the single bounded SEP 13 code. Propose exclusion from this recall version for reviewer acceptance; no release decision."
+    },
+    {
+      "inventory_id": "similar_product", "candidate": true,
+      "conditions": {"brand": "true", "product_name": "false", "package_size": "true", "upc": "false", "lot_code": "true", "stock_group": "true"},
+      "identification_state": "NEEDS_REVIEW", "proposed_identification_state": "NOT_AFFECTED_BY_THIS_RECALL",
+      "missing_fields": [], "review_fields": [], "action_state": "REVIEW_REQUIRED", "task_type": "REVIEW_SCOPE",
+      "evidence_refs": ["notice.product_table", "notice.other_products", "policy.exclusion_review"],
+      "rationale": "Shared brand/category merits retrieval, but the checked Buttermilk Complete variant and invented different printed UPC are not Original. A matching lot string on a different product cannot establish affected status."
+    },
+    {
+      "inventory_id": "mixed_lots", "candidate": true,
+      "conditions": {"brand": "true", "product_name": "true", "package_size": "true", "upc": "true", "lot_code": "false", "stock_group": "unknown"},
+      "identification_state": "NEEDS_EVIDENCE", "proposed_identification_state": null,
+      "missing_fields": ["stock_group"], "review_fields": [], "action_state": "HOLD_RECOMMENDED", "task_type": "IDENTIFY_STOCK",
+      "evidence_refs": ["notice.product_table", "policy.stock_coverage", "policy.hold"],
+      "rationale": "One observed excluded code cannot exclude nine boxes in a mixed-lot bin. Inspect and split all nine by complete label identity/code."
+    },
+    {
+      "inventory_id": "unrelated", "candidate": false, "conditions": {},
+      "identification_state": "PENDING", "proposed_identification_state": null,
+      "missing_fields": [], "review_fields": [], "action_state": "NOT_ASSESSED", "task_type": null,
+      "evidence_refs": ["policy.candidate"],
+      "rationale": "No brand/category/printed UPC retrieval feature; report nonselection separately, leave stock unassessed, make no recall exclusion or safety claim."
+    },
+    {
+      "inventory_id": "ambiguous_code", "candidate": true,
+      "conditions": {"brand": "true", "product_name": "true", "package_size": "true", "upc": "true", "lot_code": "unknown", "stock_group": "true"},
+      "identification_state": "NEEDS_REVIEW", "proposed_identification_state": null,
+      "missing_fields": [], "review_fields": ["lot_code"], "action_state": "HOLD_RECOMMENDED", "task_type": "REVIEW_SCOPE",
+      "evidence_refs": ["notice.product_table", "policy.hold"],
+      "rationale": "Non-source numeric date notation is unresolved interpretation, not missing and not a proved mismatch."
+    },
+    {
+      "inventory_id": "contradictory_label", "candidate": true,
+      "conditions": {"brand": "true", "product_name": "true", "package_size": "true", "upc": "true", "lot_code": "true", "stock_group": "true"},
+      "identification_state": "NEEDS_REVIEW", "proposed_identification_state": null,
+      "missing_fields": [], "review_fields": ["best_by_date"], "action_state": "HOLD_RECOMMENDED", "task_type": "REVIEW_SCOPE",
+      "evidence_refs": ["notice.product_table", "policy.hold"],
+      "rationale": "The separately transcribed best-by date conflicts with the date in the matching full code. Preserve both values and request review."
+    }
+  ]
+}

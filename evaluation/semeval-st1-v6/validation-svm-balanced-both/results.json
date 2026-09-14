@@ -1,0 +1,215 @@
+{
+  "execution_status": "COMPLETE",
+  "scored_at": "2026-09-14T19:35:59.574119+00:00",
+  "split": "validation",
+  "variant": "svm-balanced-both",
+  "rows": 565,
+  "official_st1_score": 0.757550131279203,
+  "hazard_macro_f1": 0.7723230934861023,
+  "product_macro_f1_on_hazard_correct_rows": 0.7427771690723038,
+  "hazard_accuracy": 0.9132743362831859,
+  "product_accuracy": 0.7628318584070797,
+  "joint_accuracy": 0.695575221238938,
+  "hazard_correct_rows": 516,
+  "valid_outputs": 565,
+  "invalid_outputs": 0,
+  "error_rows": 0,
+  "model_attempts": 0,
+  "reported_usage": {},
+  "per_category": {
+    "hazard-category": {
+      "allergens": {
+        "precision": 0.9383886255924171,
+        "recall": 0.9565217391304348,
+        "f1-score": 0.9473684210526315,
+        "support": 207.0
+      },
+      "biological": {
+        "precision": 0.9595959595959596,
+        "recall": 0.979381443298969,
+        "f1-score": 0.9693877551020408,
+        "support": 194.0
+      },
+      "chemical": {
+        "precision": 0.8076923076923077,
+        "recall": 0.75,
+        "f1-score": 0.7777777777777778,
+        "support": 28.0
+      },
+      "food additives and flavourings": {
+        "precision": 1.0,
+        "recall": 0.5,
+        "f1-score": 0.6666666666666666,
+        "support": 2.0
+      },
+      "foreign bodies": {
+        "precision": 0.8939393939393939,
+        "recall": 0.9365079365079365,
+        "f1-score": 0.9147286821705426,
+        "support": 63.0
+      },
+      "fraud": {
+        "precision": 0.7317073170731707,
+        "recall": 0.7317073170731707,
+        "f1-score": 0.7317073170731707,
+        "support": 41.0
+      },
+      "organoleptic aspects": {
+        "precision": 0.8333333333333334,
+        "recall": 0.625,
+        "f1-score": 0.7142857142857143,
+        "support": 8.0
+      },
+      "other hazard": {
+        "precision": 0.8888888888888888,
+        "recall": 0.5714285714285714,
+        "f1-score": 0.6956521739130435,
+        "support": 14.0
+      },
+      "packaging defect": {
+        "precision": 0.5714285714285714,
+        "recall": 0.5,
+        "f1-score": 0.5333333333333333,
+        "support": 8.0
+      },
+      "accuracy": 0.9132743362831859,
+      "macro avg": {
+        "precision": 0.8472193775048935,
+        "recall": 0.7278385563821202,
+        "f1-score": 0.7723230934861023,
+        "support": 565.0
+      },
+      "weighted avg": {
+        "precision": 0.9115471996023942,
+        "recall": 0.9132743362831859,
+        "f1-score": 0.9108417496482848,
+        "support": 565.0
+      }
+    },
+    "product-category": {
+      "alcoholic beverages": {
+        "precision": 1.0,
+        "recall": 0.8571428571428571,
+        "f1-score": 0.9230769230769231,
+        "support": 7.0
+      },
+      "cereals and bakery products": {
+        "precision": 0.7391304347826086,
+        "recall": 0.68,
+        "f1-score": 0.7083333333333334,
+        "support": 75.0
+      },
+      "cocoa and cocoa preparations, coffee and tea": {
+        "precision": 0.6363636363636364,
+        "recall": 0.9333333333333333,
+        "f1-score": 0.7567567567567568,
+        "support": 15.0
+      },
+      "confectionery": {
+        "precision": 0.875,
+        "recall": 0.5384615384615384,
+        "f1-score": 0.6666666666666666,
+        "support": 26.0
+      },
+      "dietetic foods, food supplements, fortified foods": {
+        "precision": 0.5263157894736842,
+        "recall": 0.7142857142857143,
+        "f1-score": 0.6060606060606061,
+        "support": 14.0
+      },
+      "fats and oils": {
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1-score": 0.8571428571428571,
+        "support": 4.0
+      },
+      "feed materials": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 1.0
+      },
+      "fruits and vegetables": {
+        "precision": 0.6551724137931034,
+        "recall": 0.7307692307692307,
+        "f1-score": 0.6909090909090909,
+        "support": 52.0
+      },
+      "herbs and spices": {
+        "precision": 0.5652173913043478,
+        "recall": 0.6842105263157895,
+        "f1-score": 0.6190476190476191,
+        "support": 19.0
+      },
+      "ices and desserts": {
+        "precision": 0.8695652173913043,
+        "recall": 0.8333333333333334,
+        "f1-score": 0.851063829787234,
+        "support": 24.0
+      },
+      "meat, egg and dairy products": {
+        "precision": 0.8571428571428571,
+        "recall": 0.9041095890410958,
+        "f1-score": 0.88,
+        "support": 146.0
+      },
+      "non-alcoholic beverages": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 19.0
+      },
+      "nuts, nut products and seeds": {
+        "precision": 0.8529411764705882,
+        "recall": 0.8787878787878788,
+        "f1-score": 0.8656716417910447,
+        "support": 33.0
+      },
+      "other food product / mixed": {
+        "precision": 0.75,
+        "recall": 0.3,
+        "f1-score": 0.42857142857142855,
+        "support": 10.0
+      },
+      "pet feed": {
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1-score": 0.6666666666666666,
+        "support": 1.0
+      },
+      "prepared dishes and snacks": {
+        "precision": 0.5535714285714286,
+        "recall": 0.5535714285714286,
+        "f1-score": 0.5535714285714286,
+        "support": 56.0
+      },
+      "seafood": {
+        "precision": 0.9166666666666666,
+        "recall": 0.8148148148148148,
+        "f1-score": 0.8627450980392157,
+        "support": 27.0
+      },
+      "soups, broths, sauces and condiments": {
+        "precision": 0.75,
+        "recall": 0.6666666666666666,
+        "f1-score": 0.7058823529411765,
+        "support": 36.0
+      },
+      "accuracy": 0.7628318584070797,
+      "macro avg": {
+        "precision": 0.7803937228866791,
+        "recall": 0.7688603839735378,
+        "f1-score": 0.757898127742336,
+        "support": 565.0
+      },
+      "weighted avg": {
+        "precision": 0.7713561687479356,
+        "recall": 0.7628318584070797,
+        "f1-score": 0.7610704069878599,
+        "support": 565.0
+      }
+    }
+  },
+  "protocol_sha256": "bbaae256b09d8a007ab9e6af80aa4218d7eafb6e2902ee358700052fef051d3d",
+  "test_exposure": "Five prior test regressions exposed. This design used training counts and validation errors only. Repeated-validation development and exposed-test regression, not fresh held-out or official leaderboard evidence."
+}

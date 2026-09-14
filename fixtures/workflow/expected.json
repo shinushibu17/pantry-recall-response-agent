@@ -1,0 +1,36 @@
+{
+  "version": "workflow-expectations-v1",
+  "basis": "Authored application-policy expectations before workflow implementation. Source scope is the unchanged, pinned pearl-milling-2025-v2 fixture. These are synthetic confirmations, not reports of real physical actions.",
+  "recall_version": "pearl-milling-2025-v2",
+  "inventory_id": "missing_code",
+  "initial_inventory_version": "synthetic-pantry-v2",
+  "updated_inventory_version": "synthetic-pantry-v3",
+  "new_code": "BBD SEP 13 25 P",
+  "quantity": 4,
+  "unit": "boxes",
+  "location": "Shelf A2",
+  "evidence_refs": ["notice.product_table", "notice.label_location", "policy.hold", "policy.stock_coverage"],
+  "stages": [
+    {"stage": "initial", "identification_state": "NEEDS_EVIDENCE", "action_state": "HOLD_RECOMMENDED", "identify_status": "OPEN", "hold_status": null, "confirmed_quantity": 0, "remaining_quantity": null},
+    {"stage": "evidence_arrived", "identification_state": "AFFECTED", "action_state": "HOLD_RECOMMENDED", "identify_status": "DONE", "hold_status": "OPEN", "confirmed_quantity": 0, "remaining_quantity": 4},
+    {"stage": "partial_confirmation", "identification_state": "AFFECTED", "action_state": "AWAITING_CONFIRMATION", "identify_status": "DONE", "hold_status": "OPEN", "confirmed_quantity": 2, "remaining_quantity": 2},
+    {"stage": "full_confirmation", "identification_state": "AFFECTED", "action_state": "COMPLETED_CONFIRMED", "identify_status": "DONE", "hold_status": "DONE", "confirmed_quantity": 4, "remaining_quantity": 0}
+  ],
+  "guards": {
+    "identical_initialization": "No reset, duplicate tasks or events",
+    "identical_evidence_replay": "No new version, duplicate tasks or events",
+    "identical_confirmation_replay": "Return original receipt; do not add quantity or events",
+    "reused_confirmation_id_with_changed_payload": "Reject and audit; no state mutation",
+    "stale_inventory_version": "Reject and audit; no action completion",
+    "stale_recall_version": "Reject and audit; no action completion",
+    "wrong_stock_group_or_unit": "Reject and audit; no action completion",
+    "quantity_exceeds_remaining": "Reject and audit; no action completion",
+    "nonpositive_or_noninteger_quantity": "Reject and audit; no action completion",
+    "confirmation_on_inspection_or_review_task": "Reject and audit; no action completion",
+    "inventory_update_after_partial_confirmation": "Preserve old receipt and supersede old open hold task; new version requires its own confirmation",
+    "ambiguous_new_code": "Identification unresolved; replace inspection with review, do not mark inspection done",
+    "excluded_new_code": "Identification evidence resolved; exclusion remains a review proposal, no hold confirmation or release",
+    "model_fabricates_confirmation": "No tool or argument exists that can record it",
+    "event_update_or_delete": "SQLite rejects mutation of append-only history"
+  }
+}

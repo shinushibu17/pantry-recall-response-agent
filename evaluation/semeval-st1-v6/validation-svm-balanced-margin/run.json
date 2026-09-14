@@ -1,0 +1,10 @@
+{
+  "status": "COMPLETE",
+  "started_at": "2026-09-14T19:27:49.337001+00:00",
+  "finished_at": "2026-09-14T19:27:56.724904+00:00",
+  "rows": 565,
+  "protocol_sha256": "9480744d21762ba0ef64d199856e15358cb84c986bafc1773f07ba0fdf21b144",
+  "svm_trace_file": "validation-svm-balanced-trace.json",
+  "svm_trace_sha256": "bfccd33deae498896a7c7022f74eecc6da75902355c71ea91c6a1ee56b253d48",
+  "new_bedrock_calls": 0
+}

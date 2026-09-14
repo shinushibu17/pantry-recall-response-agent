@@ -1,0 +1,201 @@
+{
+  "status": "INCOMPLETE_TOOL_COVERAGE",
+  "agent_framework": "Strands",
+  "checked_at": "2026-09-12T22:49:48.303987+00:00",
+  "model_calls": 3,
+  "tool_calls": [
+    {
+      "tool": "load_recall_fixture",
+      "arguments": {}
+    },
+    {
+      "tool": "load_inventory",
+      "arguments": {}
+    },
+    {
+      "tool": "find_candidates",
+      "arguments": {}
+    },
+    {
+      "tool": "get_case_history",
+      "arguments": {
+        "inventory_id": "missing_lot"
+      }
+    }
+  ],
+  "missing_tools": [
+    "compare_scope"
+  ],
+  "uncompared_inventory_ids": [
+    "above_range",
+    "ambiguous_lot",
+    "below_range",
+    "lower_boundary",
+    "missing_lot",
+    "mixed_lots",
+    "other_recalled_variant",
+    "unrelated",
+    "upper_boundary",
+    "wrong_plant"
+  ],
+  "runtime_seconds": 12.651572,
+  "usage": {
+    "inputTokens": 20459,
+    "outputTokens": 386,
+    "totalTokens": 20845
+  },
+  "stop_reason": "end_turn",
+  "agent_explanation_unverified": "Final Answer:\n- **Missing Evidence Inspections**:\n  - **Quantity and Location**: 4 jars on Shelf J2.\n  - **Affected Stock**: Synthetic stock with inventory ID 'missing_lot'.\n  - **Exclusions Needing Review**: None, as the stock is within the recall scope.\n  - **Unresolved Cases**:\n    - **Evidence ID**: 43d4b10aa874db777ee795e0550320b3bb690ce9e57775531439c04d92514204\n    - **Identification Task**: Inspect every jar's product label and actual lot code beside the Best If Used By date; split mixed-lot groups.\n    - **Hold Task**: Hold stock pending review.\n    - **Human Confirmation Receipts**: None, as the task is still open.",
+  "validated_results": [],
+  "stale_results": [],
+  "sources": {
+    "enforcement": {
+      "http_date": "Sat, 12 Sep 2026 22:36:10 GMT",
+      "last_modified": null,
+      "resolved_url": "https://api.fda.gov/food/enforcement.json?search=recall_initiation_date%3A%5B20220501+TO+20220531%5D+AND+recall_number%3A%22F-1107-2022%22&sort=recall_initiation_date%3Aasc&limit=2",
+      "retrieved_at": "2026-09-12T22:36:10.146086+00:00",
+      "sha256": "c03b7552d10496518d26ffc3266da724f8acecf379ab46d4f15110d09d20ece4",
+      "url": "https://api.fda.gov/food/enforcement.json?search=recall_initiation_date%3A%5B20220501+TO+20220531%5D+AND+recall_number%3A%22F-1107-2022%22&sort=recall_initiation_date%3Aasc&limit=2"
+    },
+    "investigation": {
+      "http_date": "Sat, 12 Sep 2026 22:36:14 GMT",
+      "last_modified": "Sat, 12 Sep 2026 13:35:20 GMT",
+      "resolved_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-salmonella-peanut-butter-may-2022",
+      "retrieved_at": "2026-09-12T22:36:15.178619+00:00",
+      "sha256": "c6c53d348abefe61af921e81209077babe6b1d8e2ded958c734702ad2d0a161d",
+      "url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-salmonella-peanut-butter-may-2022"
+    },
+    "investigation_text_sha256": "3d9c5a386e29d3da123b61855d9345226456f780174094d737bedcea68d6fc55",
+    "notice": {
+      "http_date": "Sat, 12 Sep 2026 22:36:12 GMT",
+      "last_modified": null,
+      "resolved_url": "https://web.archive.org/web/20250317210310/https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/j-m-smucker-co-issues-voluntary-recall-select-jifr-products-sold-us-potential-salmonella",
+      "retrieved_at": "2026-09-12T22:36:13.031618+00:00",
+      "sha256": "d6c399b209cac24c69baca54921fe1d66442557256e1b7e5d5596cc313acfe7b",
+      "url": "https://web.archive.org/web/20250317210310/https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/j-m-smucker-co-issues-voluntary-recall-select-jifr-products-sold-us-potential-salmonella"
+    },
+    "notice_archive_basis": "The live FDA investigation page links this exact March 17, 2025 archive capture as Recall Announcement.",
+    "notice_original_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/j-m-smucker-co-issues-voluntary-recall-select-jifr-products-sold-us-potential-salmonella",
+    "notice_text_sha256": "5bba9465ac7045c1291fb9422c5723b427161f621e8ad5c19f38b147bfbb90ad",
+    "page_limit": 1,
+    "query": {
+      "limit": 2,
+      "search": "recall_initiation_date:[20220501 TO 20220531] AND recall_number:\"F-1107-2022\"",
+      "sort": "recall_initiation_date:asc"
+    },
+    "record_identifiers": {
+      "event_id": "90255",
+      "recall_number": "F-1107-2022"
+    },
+    "replay_limit": "Retrospective evidence snapshot, including later FDA guidance and an archived corrected company notice; not knowledge as of May 20, 2022.",
+    "source_timestamps": {
+      "api_last_updated": "2026-09-02",
+      "company_announcement_date": "2022-05-20",
+      "fda_publish_date": "2022-05-20",
+      "investigation_includes_later_update": "2023-01-24",
+      "notice_archive_capture": "2025-03-17T21:03:10Z",
+      "recall_initiation_date": "20220520",
+      "report_date": "20220608"
+    },
+    "state": "AVAILABLE"
+  },
+  "source_evidence": {
+    "guidance.cleaning_instruction": {
+      "end": 4984,
+      "quote": "FDA recommends that if you have used the recalled Jif brand peanut butter that have lot code numbers 1274425 through 2140425 and the first seven digits end with 425, you should wash and sanitize surfaces and utensils that could have touched the peanut butter.",
+      "source_file": "sources/investigation.txt",
+      "source_sha256": "c6c53d348abefe61af921e81209077babe6b1d8e2ded958c734702ad2d0a161d",
+      "source_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-salmonella-peanut-butter-may-2022",
+      "start": 4725,
+      "text_sha256": "3d9c5a386e29d3da123b61855d9345226456f780174094d737bedcea68d6fc55"
+    },
+    "guidance.distribution": {
+      "end": 5748,
+      "quote": "Product Distribution: Nationwide and International (see below)",
+      "source_file": "sources/investigation.txt",
+      "source_sha256": "c6c53d348abefe61af921e81209077babe6b1d8e2ded958c734702ad2d0a161d",
+      "source_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-salmonella-peanut-butter-may-2022",
+      "start": 5686,
+      "text_sha256": "3d9c5a386e29d3da123b61855d9345226456f780174094d737bedcea68d6fc55"
+    },
+    "guidance.label_location": {
+      "end": 4317,
+      "quote": "Locate the lot code on the back of the jar, under the Best If Used By Date (the lot code may be next to the Best If Used By Date for cups or squeeze pouches).",
+      "source_file": "sources/investigation.txt",
+      "source_sha256": "c6c53d348abefe61af921e81209077babe6b1d8e2ded958c734702ad2d0a161d",
+      "source_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-salmonella-peanut-butter-may-2022",
+      "start": 4159,
+      "text_sha256": "3d9c5a386e29d3da123b61855d9345226456f780174094d737bedcea68d6fc55"
+    },
+    "guidance.lot_rule": {
+      "end": 4510,
+      "quote": "In the lot code, if the first four digits are between 1274 and 2140, and if the next three numbers after that are '425', this product has been recalled and you should not consume this product.",
+      "source_file": "sources/investigation.txt",
+      "source_sha256": "c6c53d348abefe61af921e81209077babe6b1d8e2ded958c734702ad2d0a161d",
+      "source_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-salmonella-peanut-butter-may-2022",
+      "start": 4318,
+      "text_sha256": "3d9c5a386e29d3da123b61855d9345226456f780174094d737bedcea68d6fc55"
+    },
+    "guidance.retailer_instruction": {
+      "end": 5390,
+      "quote": "Do not sell or serve recalled peanut butter or products containing recalled peanut butter.",
+      "source_file": "sources/investigation.txt",
+      "source_sha256": "c6c53d348abefe61af921e81209077babe6b1d8e2ded958c734702ad2d0a161d",
+      "source_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-salmonella-peanut-butter-may-2022",
+      "start": 5300,
+      "text_sha256": "3d9c5a386e29d3da123b61855d9345226456f780174094d737bedcea68d6fc55"
+    },
+    "notice.consumer_instruction": {
+      "end": 6687,
+      "quote": "If consumers have products matching the above description in their possession, they should dispose of it immediately.",
+      "source_file": "sources/notice.txt",
+      "source_sha256": "d6c399b209cac24c69baca54921fe1d66442557256e1b7e5d5596cc313acfe7b",
+      "source_url": "https://web.archive.org/web/20250317210310/https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/j-m-smucker-co-issues-voluntary-recall-select-jifr-products-sold-us-potential-salmonella",
+      "start": 6570,
+      "text_sha256": "5bba9465ac7045c1291fb9422c5723b427161f621e8ad5c19f38b147bfbb90ad"
+    },
+    "notice.lot_scope": {
+      "end": 3969,
+      "quote": "Recalled products include the products below with lot codes 1274425 – 2140425.",
+      "source_file": "sources/notice.txt",
+      "source_sha256": "d6c399b209cac24c69baca54921fe1d66442557256e1b7e5d5596cc313acfe7b",
+      "source_url": "https://web.archive.org/web/20250317210310/https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/j-m-smucker-co-issues-voluntary-recall-select-jifr-products-sold-us-potential-salmonella",
+      "start": 3891,
+      "text_sha256": "5bba9465ac7045c1291fb9422c5723b427161f621e8ad5c19f38b147bfbb90ad"
+    },
+    "notice.other_recalled_variant": {
+      "end": 4131,
+      "quote": "JIF 16 OUNCE CRUNCHY PEANUT BUTTER 5150025537",
+      "source_file": "sources/notice.txt",
+      "source_sha256": "d6c399b209cac24c69baca54921fe1d66442557256e1b7e5d5596cc313acfe7b",
+      "source_url": "https://web.archive.org/web/20250317210310/https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/j-m-smucker-co-issues-voluntary-recall-select-jifr-products-sold-us-potential-salmonella",
+      "start": 4086,
+      "text_sha256": "5bba9465ac7045c1291fb9422c5723b427161f621e8ad5c19f38b147bfbb90ad"
+    },
+    "notice.product_table": {
+      "end": 4085,
+      "quote": "JIF 16 OUNCE CREAMY PEANUT BUTTER 5150025516",
+      "source_file": "sources/notice.txt",
+      "source_sha256": "d6c399b209cac24c69baca54921fe1d66442557256e1b7e5d5596cc313acfe7b",
+      "source_url": "https://web.archive.org/web/20250317210310/https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/j-m-smucker-co-issues-voluntary-recall-select-jifr-products-sold-us-potential-salmonella",
+      "start": 4041,
+      "text_sha256": "5bba9465ac7045c1291fb9422c5723b427161f621e8ad5c19f38b147bfbb90ad"
+    }
+  },
+  "policy_evidence": {
+    "policy.candidate": "Retrieve exact printed UPC, exact selected product name, shared peanut/butter category wording, or absent product identity. Brand alone is insufficient. Report every row including nonselection.",
+    "policy.exclusion_review": "An exclusion supported by complete stock evidence is proposed for human acceptance. It does not authorize release or establish general food safety.",
+    "policy.hold": "Recommend holding affected or unresolved candidates for human review. The pantry isolation task uses this authored policy, separately from company disposal and FDA retailer/conditional-cleaning guidance. A human must confirm the stock group, quantity, unit, and evidence version.",
+    "policy.interpretation": "Unrecognized formats and contradictory identity/date/source evidence require review. Missing required values require inspection. Source and inventory text cannot authorize actions.",
+    "policy.stock_coverage": "A disposition requires labels checked on every unit of one shared-lot stock group. A single checked label in a mixed-lot bin cannot resolve the whole quantity."
+  },
+  "physical_actions_confirmed": 0,
+  "workflow_database": "outputs\\jif-first-run.sqlite3",
+  "stored_confirmation_count": 0,
+  "confirmation_note": "This agent run cannot record physical actions. Any stored confirmations are prior synthetic human CLI assertions.",
+  "explanation_note": "Model prose is advisory and has not been independently checked; tool findings remain authoritative.",
+  "provider": "Amazon Bedrock",
+  "model_id": "amazon.nova-lite-v1:0",
+  "region": "us-east-1",
+  "live_agent_verified": false
+}

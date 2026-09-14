@@ -1,0 +1,18 @@
+{
+  "decided_at": "2026-09-14T19:36:04.369267+00:00",
+  "winner": "svm-balanced-product",
+  "improved_on_validation": true,
+  "candidate_scores": {
+    "svm-standard-both": 0.7441801636170848,
+    "svm-standard-hazard": 0.7638989158487064,
+    "svm-standard-product": 0.7820280705677515,
+    "svm-standard-margin": 0.7933183328572961,
+    "svm-balanced-both": 0.757550131279203,
+    "svm-balanced-hazard": 0.762246586910877,
+    "svm-balanced-product": 0.7967133559890355,
+    "svm-balanced-margin": 0.7963860957660418,
+    "pro-balanced-retrieval": 0.7767119654029087
+  },
+  "incumbent_score": 0.7966116136945308,
+  "plan_sha256": "b4676a6f3a87372f92d24ef58d818d8b5a03e825979b46c7534c46bd27e93886"
+}

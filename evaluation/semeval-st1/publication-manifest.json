@@ -1,0 +1,38 @@
+{
+    "packaged_at":  "2026-09-14T16:34:08.9518591Z",
+    "artifacts":  [
+                      {
+                          "path":  "protocol.json",
+                          "sha256":  "8bca77b98f9561de04618eda1e588a38135817a708022642590b878e884db90c"
+                      },
+                      {
+                          "path":  "harness-tests.json",
+                          "sha256":  "7d2f983a7885f6dcd8f916be355f5f500628b95430c68cb924b59abfc3e501e6"
+                      },
+                      {
+                          "path":  "results.json",
+                          "sha256":  "d0d4fe7a0447c8932276b9fb8113abd5b663b10fb187f576e6814bc8f63b05f2"
+                      },
+                      {
+                          "path":  "predictions.csv",
+                          "sha256":  "2a58e27b7a2aaf1e39a4af206c8fbd0227a0be3ea6c524fcc0eb675682d586af"
+                      },
+                      {
+                          "path":  "run.json",
+                          "sha256":  "84e6f3bb66d08700e6510e1dd272132239b49dfda870812121c9ca64eff228dd"
+                      },
+                      {
+                          "path":  "record-manifest.json",
+                          "sha256":  "3dc4d94208003b29f870a7bb991726ebbbcc0118e375fbe4ba03a1119e3480fd"
+                      },
+                      {
+                          "path":  "responses.jsonl",
+                          "sha256":  "4fc9b9fdd72cc488aef541473a8647f59459e9fb72732beaf304fbab6c5118db"
+                      },
+                      {
+                          "path":  "error-analysis.json",
+                          "sha256":  "c7b5197142603bd68b5a206ebf6b14e33ebb6f1aca3a451a9cd8cf426a84306d"
+                      }
+                  ],
+    "provenance":  "Results, predictions, execution metadata and individual-record hash manifest copied byte-for-byte from the completed local run. responses.jsonl reserializes those individual records in frozen CSV order and omits no fields. Original row files remain in outputs. No benchmark response was retried for content, removed, repaired or relabeled."
+}

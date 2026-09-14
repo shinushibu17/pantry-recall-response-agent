@@ -1,0 +1,3 @@
+# Fixture locks and evaluation protocols hash exact file bytes.
+# Preserve those bytes on Windows and on other checkout platforms.
+* -text

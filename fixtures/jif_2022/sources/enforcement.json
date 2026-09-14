@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "disclaimer": "Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.",
+    "terms": "https://open.fda.gov/terms/",
+    "license": "https://open.fda.gov/license/",
+    "last_updated": "2026-09-02",
+    "results": {
+      "skip": 0,
+      "limit": 2,
+      "total": 1
+    }
+  },
+  "results": [
+    {
+      "status": "Terminated",
+      "city": "Orrville",
+      "state": "OH",
+      "country": "United States",
+      "classification": "Class I",
+      "openfda": {},
+      "product_type": "Food",
+      "event_id": "90255",
+      "recalling_firm": "The JM Smucker Company LLC",
+      "address_1": "1 Strawberry Ln",
+      "address_2": "N/A",
+      "postal_code": "44667-1241",
+      "voluntary_mandated": "Voluntary: Firm initiated",
+      "initial_firm_notification": "Two or more of the following: Email, Fax, Letter, Press Release, Telephone, Visit",
+      "distribution_pattern": "AK, AL, AR, AZ, CA, CO, CT, DE, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SC, TN, TX, UT, VA, VT, WA, WI, WV, WY",
+      "recall_number": "F-1107-2022",
+      "product_description": "JIF CREAMY PEANUT BUTTER packaged in 18gram, 500gram, 1 kilogram, 1.1oz (120 count)12oz, 16oz, 28oz, 40oz, 48oz, 4lb  packaged in twin pack 80oz and 96oz",
+      "product_quantity": "5,859,227 cases total",
+      "reason_for_recall": "Products are potentially contaminated with Salmonella.",
+      "recall_initiation_date": "20220520",
+      "center_classification_date": "20220601",
+      "termination_date": "20230317",
+      "report_date": "20220608",
+      "code_info": "Lot codes: 1274425   2140425 UPC: 5150040200, 5150075002, 5150075005, 5150092100, 5150024191, 5150025516, 5150024177, 5150024090, 51500720015150024094, 5150024331, 5150024769, 5150024705 Best By Date: 10/01/23 - 05/20/24, 06/28/22 - 02/24/23, 10/01/22 - 05/20/23"
+    }
+  ]
+}

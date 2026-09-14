@@ -1,0 +1,89 @@
+{
+  "url": "https://d1vhm9p26zmdc7.cloudfront.net",
+  "synthetic": true,
+  "runs": [
+    {
+      "scene": "initial",
+      "trigger": "manual",
+      "status": "COMPLETE",
+      "model_calls": 6,
+      "tools": 10,
+      "runtime_seconds": 10.109427,
+      "history_inspected": [
+        "affected",
+        "excluded_code",
+        "missing_code"
+      ],
+      "selected_stock": [
+        "affected",
+        "missing_code",
+        "excluded_code"
+      ],
+      "evidence_binding": "stored_task"
+    },
+    {
+      "scene": "after-evidence",
+      "trigger": "workflow_change",
+      "status": "COMPLETE",
+      "model_calls": 4,
+      "tools": 11,
+      "runtime_seconds": 7.218473,
+      "history_inspected": [
+        "affected",
+        "contradictory_label",
+        "missing_code",
+        "mixed_codes"
+      ],
+      "selected_stock": [
+        "missing_code",
+        "mixed_codes",
+        "contradictory_label"
+      ],
+      "evidence_binding": "stored_task"
+    },
+    {
+      "scene": "partial-hold",
+      "trigger": "workflow_change",
+      "status": "COMPLETE",
+      "model_calls": 7,
+      "tools": 11,
+      "runtime_seconds": 10.15883,
+      "history_inspected": [
+        "excluded_code",
+        "missing_code",
+        "mixed_codes",
+        "similar_product"
+      ],
+      "selected_stock": [
+        "missing_code",
+        "excluded_code",
+        "mixed_codes"
+      ],
+      "evidence_binding": "stored_task"
+    },
+    {
+      "scene": "completed-hold",
+      "trigger": "workflow_change",
+      "status": "COMPLETE",
+      "model_calls": 7,
+      "tools": 12,
+      "runtime_seconds": 13.015601,
+      "history_inspected": [
+        "affected",
+        "excluded_code",
+        "missing_code",
+        "mixed_codes"
+      ],
+      "selected_stock": [
+        "affected",
+        "excluded_code",
+        "mixed_codes"
+      ],
+      "evidence_binding": "stored_task"
+    }
+  ],
+  "status": "PASS",
+  "checked_at": "2026-09-13T19:36:43.190750+00:00",
+  "human_receipts": 2,
+  "agent_confirmations": 0
+}

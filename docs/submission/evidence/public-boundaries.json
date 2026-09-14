@@ -1,0 +1,25 @@
+{
+    "url":  "https://d1vhm9p26zmdc7.cloudfront.net",
+    "checks":  [
+                   "HTTPS health",
+                   "Password-free eight-stock workspace",
+                   "Missing code becomes affected with supplied evidence",
+                   "Other visitor remains untouched",
+                   "Partial hold leaves two boxes open",
+                   "Exact replay does not double-count",
+                   "Final hold closes only its specified quantity",
+                   "Cross-origin writes rejected",
+                   "Restart target matches the owned deployment",
+                   "Service restarted with a mounted persistent data disk",
+                   "Same visitor\u0027s complete history survives service restart",
+                   "Confirmation replay stays idempotent after service restart",
+                   "Visitor isolation survives service restart"
+               ],
+    "synthetic":  true,
+    "persistence":  {
+                        "status":  "Success",
+                        "note":  "SSM command identifier and mount output omitted from public copy. Original check list and time preserved."
+                    },
+    "status":  "PASS",
+    "checked_at":  "2026-09-13T18:32:21Z"
+}

@@ -1,0 +1,16 @@
+{
+    "verified_at":  "2026-09-14T16:27:09.0442345Z",
+    "command":  "uv run --frozen --group evaluation python -m pantry_recall.evaluate --tests --output outputs/semeval-st1/offline-check.json",
+    "status":  "PASS",
+    "unit_tests":  {
+                       "run":  121,
+                       "failures":  0,
+                       "errors":  0,
+                       "skipped":  0
+                   },
+    "pantry_scope_scenarios":  18,
+    "benchmark_harness_tests":  9,
+    "live_model_calls":  0,
+    "source_report_sha256":  "03fbae8ab7a3aa7446732487e83f295ac99ac3aa41ee736f6491d164660b896d",
+    "note":  "Synthetic unit and stubbed SDK tests only. These are not the SemEval dataset predictions."
+}

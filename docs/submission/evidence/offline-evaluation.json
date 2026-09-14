@@ -1,0 +1,157 @@
+{
+  "status": "PASS",
+  "recall_families": 2,
+  "scenarios": 18,
+  "evaluations": [
+    {
+      "split": "development",
+      "distinct_recalls": 1,
+      "scenarios": 8,
+      "passed": 8,
+      "expected_candidates": 7,
+      "retrieved_candidates": 7,
+      "candidate_retrieval_misses": 0,
+      "incorrect_exclusion_proposals": 0,
+      "incorrect_affected_matches": 0,
+      "unexpected_holds": 0,
+      "failures": [],
+      "agent_held_out_recalls": 0,
+      "held_out_recalls": 0,
+      "model_calls": 0,
+      "human_label_signoff": "pending",
+      "physical_action_transitions": "not scored by this scope-only comparison",
+      "fixture": "pearl_milling_2025",
+      "family": "pearl-milling-2025",
+      "expectation_freeze": "2026-09-12T19:48:05.267904+00:00",
+      "source_derived_conditions": 35,
+      "expected_exclusion_proposals": 2,
+      "expected_affected": 1
+    },
+    {
+      "split": "agent-held-out",
+      "distinct_recalls": 1,
+      "scenarios": 10,
+      "passed": 10,
+      "expected_candidates": 9,
+      "retrieved_candidates": 9,
+      "candidate_retrieval_misses": 0,
+      "incorrect_exclusion_proposals": 0,
+      "incorrect_affected_matches": 0,
+      "unexpected_holds": 0,
+      "failures": [],
+      "agent_held_out_recalls": 1,
+      "held_out_recalls": 0,
+      "model_calls": 0,
+      "human_label_signoff": "pending",
+      "physical_action_transitions": "not scored by this scope-only comparison",
+      "fixture": "jif_2022",
+      "family": "jif-event-90255",
+      "expectation_freeze": "2026-09-12T22:38:49.190631+00:00",
+      "source_derived_conditions": 45,
+      "expected_exclusion_proposals": 3,
+      "expected_affected": 2
+    }
+  ],
+  "workflow": {
+    "status": "PASS",
+    "stage_checks": [
+      {
+        "stage": "initial",
+        "passed": true,
+        "expected": {
+          "stage": "initial",
+          "identification_state": "NEEDS_EVIDENCE",
+          "action_state": "HOLD_RECOMMENDED",
+          "identify_status": "OPEN",
+          "hold_status": null,
+          "confirmed_quantity": 0,
+          "remaining_quantity": null
+        },
+        "actual": {
+          "stage": "initial",
+          "identification_state": "NEEDS_EVIDENCE",
+          "action_state": "HOLD_RECOMMENDED",
+          "identify_status": "OPEN",
+          "hold_status": null,
+          "confirmed_quantity": 0,
+          "remaining_quantity": null
+        }
+      },
+      {
+        "stage": "evidence_arrived",
+        "passed": true,
+        "expected": {
+          "stage": "evidence_arrived",
+          "identification_state": "AFFECTED",
+          "action_state": "HOLD_RECOMMENDED",
+          "identify_status": "DONE",
+          "hold_status": "OPEN",
+          "confirmed_quantity": 0,
+          "remaining_quantity": 4
+        },
+        "actual": {
+          "stage": "evidence_arrived",
+          "identification_state": "AFFECTED",
+          "action_state": "HOLD_RECOMMENDED",
+          "identify_status": "DONE",
+          "hold_status": "OPEN",
+          "confirmed_quantity": 0,
+          "remaining_quantity": 4
+        }
+      },
+      {
+        "stage": "partial_confirmation",
+        "passed": true,
+        "expected": {
+          "stage": "partial_confirmation",
+          "identification_state": "AFFECTED",
+          "action_state": "AWAITING_CONFIRMATION",
+          "identify_status": "DONE",
+          "hold_status": "OPEN",
+          "confirmed_quantity": 2,
+          "remaining_quantity": 2
+        },
+        "actual": {
+          "stage": "partial_confirmation",
+          "identification_state": "AFFECTED",
+          "action_state": "AWAITING_CONFIRMATION",
+          "identify_status": "DONE",
+          "hold_status": "OPEN",
+          "confirmed_quantity": 2,
+          "remaining_quantity": 2
+        }
+      },
+      {
+        "stage": "full_confirmation",
+        "passed": true,
+        "expected": {
+          "stage": "full_confirmation",
+          "identification_state": "AFFECTED",
+          "action_state": "COMPLETED_CONFIRMED",
+          "identify_status": "DONE",
+          "hold_status": "DONE",
+          "confirmed_quantity": 4,
+          "remaining_quantity": 0
+        },
+        "actual": {
+          "stage": "full_confirmation",
+          "identification_state": "AFFECTED",
+          "action_state": "COMPLETED_CONFIRMED",
+          "identify_status": "DONE",
+          "hold_status": "DONE",
+          "confirmed_quantity": 4,
+          "remaining_quantity": 0
+        }
+      }
+    ]
+  },
+  "live_agent": null,
+  "limits": "Jif withheld from agent prompt tuning; source adapter developed using its frozen answers. No blind deterministic generalization score or model-training-contamination claim. Related Jif products share one split.",
+  "independent_human_signoff": "pending",
+  "unit_tests": {
+    "run": 112,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

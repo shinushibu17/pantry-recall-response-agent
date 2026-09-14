@@ -1,0 +1,566 @@
+id,status,hazard-category,product-category
+0,VALID,biological,"meat, egg and dairy products"
+1,VALID,biological,"meat, egg and dairy products"
+2,VALID,biological,"meat, egg and dairy products"
+3,VALID,allergens,ices and desserts
+4,VALID,foreign bodies,"meat, egg and dairy products"
+5,VALID,foreign bodies,cereals and bakery products
+6,VALID,biological,"meat, egg and dairy products"
+7,VALID,biological,non-alcoholic beverages
+8,VALID,foreign bodies,"meat, egg and dairy products"
+9,VALID,biological,"meat, egg and dairy products"
+10,VALID,foreign bodies,"meat, egg and dairy products"
+11,VALID,biological,alcoholic beverages
+12,VALID,chemical,seafood
+13,VALID,chemical,"soups, broths, sauces and condiments"
+14,VALID,foreign bodies,other food product / mixed
+15,VALID,chemical,fats and oils
+16,VALID,allergens,prepared dishes and snacks
+17,VALID,biological,"meat, egg and dairy products"
+18,VALID,biological,other food product / mixed
+19,VALID,biological,non-alcoholic beverages
+20,VALID,biological,"meat, egg and dairy products"
+21,VALID,allergens,cereals and bakery products
+22,VALID,foreign bodies,prepared dishes and snacks
+23,VALID,biological,confectionery
+24,VALID,fraud,other food product / mixed
+25,VALID,foreign bodies,"soups, broths, sauces and condiments"
+26,VALID,allergens,prepared dishes and snacks
+27,VALID,biological,"meat, egg and dairy products"
+28,VALID,allergens,prepared dishes and snacks
+29,VALID,allergens,other food product / mixed
+30,VALID,biological,ices and desserts
+31,VALID,biological,"meat, egg and dairy products"
+32,VALID,allergens,other food product / mixed
+33,VALID,chemical,non-alcoholic beverages
+34,VALID,allergens,other food product / mixed
+35,VALID,foreign bodies,"meat, egg and dairy products"
+36,VALID,foreign bodies,other food product / mixed
+37,VALID,foreign bodies,"meat, egg and dairy products"
+38,VALID,biological,seafood
+39,VALID,allergens,"meat, egg and dairy products"
+40,VALID,allergens,other food product / mixed
+41,VALID,biological,non-alcoholic beverages
+42,VALID,biological,prepared dishes and snacks
+43,VALID,biological,"meat, egg and dairy products"
+44,VALID,foreign bodies,other food product / mixed
+45,VALID,allergens,prepared dishes and snacks
+46,VALID,biological,"meat, egg and dairy products"
+47,VALID,allergens,other food product / mixed
+48,VALID,allergens,ices and desserts
+49,VALID,foreign bodies,fruits and vegetables
+50,VALID,foreign bodies,fruits and vegetables
+51,VALID,foreign bodies,"nuts, nut products and seeds"
+52,VALID,fraud,"meat, egg and dairy products"
+53,VALID,foreign bodies,prepared dishes and snacks
+54,VALID,foreign bodies,other food product / mixed
+55,VALID,allergens,"soups, broths, sauces and condiments"
+56,VALID,allergens,other food product / mixed
+57,VALID,biological,"meat, egg and dairy products"
+58,VALID,chemical,other food product / mixed
+59,VALID,foreign bodies,prepared dishes and snacks
+60,VALID,foreign bodies,other food product / mixed
+61,VALID,biological,"meat, egg and dairy products"
+62,VALID,allergens,herbs and spices
+63,VALID,biological,"nuts, nut products and seeds"
+64,VALID,biological,ices and desserts
+65,VALID,biological,ices and desserts
+66,VALID,biological,ices and desserts
+67,VALID,biological,"nuts, nut products and seeds"
+68,VALID,biological,prepared dishes and snacks
+69,VALID,foreign bodies,"soups, broths, sauces and condiments"
+70,VALID,fraud,"nuts, nut products and seeds"
+71,VALID,other hazard,"meat, egg and dairy products"
+72,VALID,allergens,ices and desserts
+73,VALID,biological,"meat, egg and dairy products"
+74,VALID,biological,"meat, egg and dairy products"
+75,VALID,biological,fruits and vegetables
+76,VALID,biological,prepared dishes and snacks
+77,VALID,allergens,"meat, egg and dairy products"
+78,VALID,biological,herbs and spices
+79,VALID,food additives and flavourings,confectionery
+80,VALID,foreign bodies,cereals and bakery products
+81,VALID,biological,prepared dishes and snacks
+82,VALID,allergens,non-alcoholic beverages
+83,VALID,chemical,"meat, egg and dairy products"
+84,VALID,biological,prepared dishes and snacks
+85,VALID,biological,prepared dishes and snacks
+86,VALID,allergens,"soups, broths, sauces and condiments"
+87,VALID,allergens,ices and desserts
+88,VALID,biological,"meat, egg and dairy products"
+89,VALID,biological,prepared dishes and snacks
+90,VALID,biological,herbs and spices
+91,VALID,allergens,confectionery
+92,VALID,allergens,prepared dishes and snacks
+93,VALID,foreign bodies,non-alcoholic beverages
+94,VALID,allergens,prepared dishes and snacks
+95,VALID,chemical,"soups, broths, sauces and condiments"
+96,VALID,foreign bodies,ices and desserts
+97,VALID,biological,"meat, egg and dairy products"
+98,VALID,biological,"meat, egg and dairy products"
+99,VALID,allergens,"meat, egg and dairy products"
+100,VALID,biological,ices and desserts
+101,VALID,biological,"meat, egg and dairy products"
+102,VALID,biological,"meat, egg and dairy products"
+103,VALID,biological,prepared dishes and snacks
+104,VALID,fraud,"meat, egg and dairy products"
+105,VALID,biological,other food product / mixed
+106,VALID,allergens,confectionery
+107,VALID,biological,non-alcoholic beverages
+108,VALID,allergens,fruits and vegetables
+109,VALID,allergens,"meat, egg and dairy products"
+110,VALID,foreign bodies,prepared dishes and snacks
+111,VALID,biological,"meat, egg and dairy products"
+112,VALID,allergens,"meat, egg and dairy products"
+113,VALID,allergens,"meat, egg and dairy products"
+114,VALID,biological,herbs and spices
+115,VALID,allergens,prepared dishes and snacks
+116,VALID,chemical,"dietetic foods, food supplements, fortified foods"
+117,VALID,biological,"nuts, nut products and seeds"
+118,VALID,biological,"nuts, nut products and seeds"
+119,VALID,biological,"meat, egg and dairy products"
+120,VALID,biological,"nuts, nut products and seeds"
+121,VALID,biological,other food product / mixed
+122,VALID,biological,"nuts, nut products and seeds"
+123,VALID,biological,"meat, egg and dairy products"
+124,VALID,biological,"nuts, nut products and seeds"
+125,VALID,allergens,cereals and bakery products
+126,VALID,allergens,"meat, egg and dairy products"
+127,VALID,chemical,"dietetic foods, food supplements, fortified foods"
+128,VALID,fraud,"meat, egg and dairy products"
+129,VALID,foreign bodies,ices and desserts
+130,VALID,biological,herbs and spices
+131,VALID,biological,"meat, egg and dairy products"
+132,VALID,biological,"meat, egg and dairy products"
+133,VALID,allergens,prepared dishes and snacks
+134,VALID,allergens,other food product / mixed
+135,VALID,allergens,other food product / mixed
+136,VALID,allergens,prepared dishes and snacks
+137,VALID,biological,"meat, egg and dairy products"
+138,VALID,fraud,"meat, egg and dairy products"
+139,VALID,allergens,ices and desserts
+140,VALID,biological,seafood
+141,VALID,other hazard,"meat, egg and dairy products"
+142,VALID,biological,"meat, egg and dairy products"
+143,VALID,allergens,other food product / mixed
+144,VALID,other hazard,"meat, egg and dairy products"
+145,VALID,allergens,cereals and bakery products
+146,VALID,biological,"meat, egg and dairy products"
+147,VALID,foreign bodies,prepared dishes and snacks
+148,VALID,allergens,"nuts, nut products and seeds"
+149,VALID,biological,"meat, egg and dairy products"
+150,VALID,biological,other food product / mixed
+151,VALID,biological,other food product / mixed
+152,VALID,allergens,"meat, egg and dairy products"
+153,VALID,allergens,"meat, egg and dairy products"
+154,VALID,fraud,"meat, egg and dairy products"
+155,VALID,allergens,"meat, egg and dairy products"
+156,VALID,allergens,other food product / mixed
+157,VALID,allergens,"nuts, nut products and seeds"
+158,VALID,allergens,other food product / mixed
+159,VALID,allergens,fruits and vegetables
+160,VALID,allergens,fruits and vegetables
+161,VALID,biological,"meat, egg and dairy products"
+162,VALID,allergens,ices and desserts
+163,VALID,biological,other food product / mixed
+164,VALID,biological,"meat, egg and dairy products"
+165,VALID,fraud,"meat, egg and dairy products"
+166,VALID,chemical,fats and oils
+167,VALID,allergens,other food product / mixed
+168,VALID,biological,seafood
+169,VALID,biological,prepared dishes and snacks
+170,VALID,foreign bodies,"soups, broths, sauces and condiments"
+171,VALID,allergens,cereals and bakery products
+172,VALID,biological,"meat, egg and dairy products"
+173,VALID,biological,"meat, egg and dairy products"
+174,VALID,allergens,non-alcoholic beverages
+175,VALID,fraud,"meat, egg and dairy products"
+176,VALID,allergens,non-alcoholic beverages
+177,VALID,biological,prepared dishes and snacks
+178,VALID,allergens,non-alcoholic beverages
+179,VALID,organoleptic aspects,"meat, egg and dairy products"
+180,VALID,foreign bodies,other food product / mixed
+181,VALID,biological,seafood
+182,VALID,biological,"meat, egg and dairy products"
+183,VALID,biological,"meat, egg and dairy products"
+184,VALID,biological,prepared dishes and snacks
+185,VALID,foreign bodies,prepared dishes and snacks
+186,VALID,fraud,prepared dishes and snacks
+187,VALID,allergens,other food product / mixed
+188,VALID,allergens,other food product / mixed
+189,VALID,biological,"nuts, nut products and seeds"
+190,VALID,biological,"meat, egg and dairy products"
+191,VALID,biological,other food product / mixed
+192,VALID,biological,other food product / mixed
+193,VALID,biological,"meat, egg and dairy products"
+194,VALID,allergens,"nuts, nut products and seeds"
+195,VALID,allergens,other food product / mixed
+196,VALID,allergens,other food product / mixed
+197,VALID,allergens,other food product / mixed
+198,VALID,biological,prepared dishes and snacks
+199,VALID,allergens,cereals and bakery products
+200,VALID,allergens,cereals and bakery products
+201,VALID,allergens,"dietetic foods, food supplements, fortified foods"
+202,VALID,foreign bodies,"meat, egg and dairy products"
+203,VALID,allergens,cereals and bakery products
+204,VALID,allergens,prepared dishes and snacks
+205,VALID,allergens,"dietetic foods, food supplements, fortified foods"
+206,VALID,biological,"nuts, nut products and seeds"
+207,VALID,biological,other food product / mixed
+208,VALID,biological,"nuts, nut products and seeds"
+209,VALID,biological,fruits and vegetables
+210,VALID,biological,other food product / mixed
+211,VALID,allergens,cereals and bakery products
+212,VALID,biological,other food product / mixed
+213,VALID,biological,fruits and vegetables
+214,VALID,biological,"nuts, nut products and seeds"
+215,VALID,allergens,ices and desserts
+216,VALID,biological,"meat, egg and dairy products"
+217,VALID,biological,"meat, egg and dairy products"
+218,VALID,allergens,"meat, egg and dairy products"
+219,VALID,fraud,seafood
+220,VALID,allergens,"cocoa and cocoa preparations, coffee and tea"
+221,VALID,biological,"meat, egg and dairy products"
+222,VALID,allergens,"dietetic foods, food supplements, fortified foods"
+223,VALID,allergens,prepared dishes and snacks
+224,VALID,foreign bodies,herbs and spices
+225,VALID,foreign bodies,"meat, egg and dairy products"
+226,VALID,fraud,prepared dishes and snacks
+227,VALID,biological,"nuts, nut products and seeds"
+228,VALID,biological,"nuts, nut products and seeds"
+229,VALID,biological,"nuts, nut products and seeds"
+230,VALID,allergens,ices and desserts
+231,VALID,biological,seafood
+232,VALID,foreign bodies,"meat, egg and dairy products"
+233,VALID,allergens,"soups, broths, sauces and condiments"
+234,VALID,biological,"meat, egg and dairy products"
+235,VALID,allergens,"nuts, nut products and seeds"
+236,VALID,biological,confectionery
+237,VALID,fraud,fruits and vegetables
+238,VALID,allergens,cereals and bakery products
+239,VALID,allergens,other food product / mixed
+240,VALID,biological,cereals and bakery products
+241,VALID,biological,prepared dishes and snacks
+242,VALID,organoleptic aspects,"soups, broths, sauces and condiments"
+243,VALID,biological,prepared dishes and snacks
+244,VALID,biological,confectionery
+245,VALID,allergens,"soups, broths, sauces and condiments"
+246,VALID,allergens,"nuts, nut products and seeds"
+247,VALID,allergens,"soups, broths, sauces and condiments"
+248,VALID,biological,"meat, egg and dairy products"
+249,VALID,biological,"meat, egg and dairy products"
+250,VALID,foreign bodies,prepared dishes and snacks
+251,VALID,biological,"meat, egg and dairy products"
+252,VALID,allergens,"meat, egg and dairy products"
+253,VALID,biological,fruits and vegetables
+254,VALID,biological,"meat, egg and dairy products"
+255,VALID,foreign bodies,"meat, egg and dairy products"
+256,VALID,chemical,"soups, broths, sauces and condiments"
+257,VALID,chemical,seafood
+258,VALID,allergens,herbs and spices
+259,VALID,biological,ices and desserts
+260,VALID,biological,"meat, egg and dairy products"
+261,VALID,biological,"meat, egg and dairy products"
+262,VALID,biological,"meat, egg and dairy products"
+263,VALID,biological,herbs and spices
+264,VALID,biological,"meat, egg and dairy products"
+265,VALID,biological,"meat, egg and dairy products"
+266,VALID,biological,prepared dishes and snacks
+267,VALID,biological,cereals and bakery products
+268,VALID,allergens,prepared dishes and snacks
+269,VALID,foreign bodies,prepared dishes and snacks
+270,VALID,allergens,other food product / mixed
+271,VALID,allergens,prepared dishes and snacks
+272,VALID,allergens,herbs and spices
+273,VALID,foreign bodies,prepared dishes and snacks
+274,VALID,foreign bodies,"meat, egg and dairy products"
+275,VALID,biological,cereals and bakery products
+276,VALID,fraud,"meat, egg and dairy products"
+277,VALID,allergens,"soups, broths, sauces and condiments"
+278,VALID,allergens,"meat, egg and dairy products"
+279,VALID,foreign bodies,other food product / mixed
+280,VALID,allergens,confectionery
+281,VALID,allergens,other food product / mixed
+282,VALID,allergens,alcoholic beverages
+283,VALID,allergens,"soups, broths, sauces and condiments"
+284,VALID,fraud,other food product / mixed
+285,VALID,biological,"soups, broths, sauces and condiments"
+286,VALID,allergens,prepared dishes and snacks
+287,VALID,allergens,"meat, egg and dairy products"
+288,VALID,allergens,confectionery
+289,VALID,biological,"soups, broths, sauces and condiments"
+290,VALID,biological,seafood
+291,VALID,allergens,other food product / mixed
+292,VALID,allergens,"meat, egg and dairy products"
+293,VALID,fraud,prepared dishes and snacks
+294,VALID,allergens,"meat, egg and dairy products"
+295,VALID,foreign bodies,"meat, egg and dairy products"
+296,VALID,allergens,fruits and vegetables
+297,VALID,allergens,ices and desserts
+298,VALID,allergens,other food product / mixed
+299,VALID,fraud,"meat, egg and dairy products"
+300,VALID,allergens,prepared dishes and snacks
+301,VALID,biological,other food product / mixed
+302,VALID,allergens,other food product / mixed
+303,VALID,biological,fruits and vegetables
+304,VALID,foreign bodies,cereals and bakery products
+305,VALID,allergens,herbs and spices
+306,VALID,organoleptic aspects,"meat, egg and dairy products"
+307,VALID,foreign bodies,other food product / mixed
+308,VALID,biological,herbs and spices
+309,VALID,chemical,fruits and vegetables
+310,VALID,biological,prepared dishes and snacks
+311,VALID,allergens,other food product / mixed
+312,VALID,biological,herbs and spices
+313,VALID,allergens,ices and desserts
+314,VALID,other hazard,ices and desserts
+315,VALID,biological,"meat, egg and dairy products"
+316,VALID,biological,fruits and vegetables
+317,VALID,allergens,cereals and bakery products
+318,VALID,biological,"cocoa and cocoa preparations, coffee and tea"
+319,VALID,foreign bodies,fats and oils
+320,VALID,allergens,prepared dishes and snacks
+321,VALID,packaging defect,non-alcoholic beverages
+322,VALID,foreign bodies,"meat, egg and dairy products"
+323,VALID,foreign bodies,other food product / mixed
+324,VALID,fraud,"meat, egg and dairy products"
+325,VALID,chemical,"dietetic foods, food supplements, fortified foods"
+326,VALID,biological,other food product / mixed
+327,VALID,fraud,"meat, egg and dairy products"
+328,VALID,organoleptic aspects,non-alcoholic beverages
+329,VALID,allergens,seafood
+330,VALID,fraud,"meat, egg and dairy products"
+331,VALID,allergens,non-alcoholic beverages
+332,VALID,allergens,"meat, egg and dairy products"
+333,VALID,biological,fruits and vegetables
+334,VALID,biological,"meat, egg and dairy products"
+335,VALID,biological,"meat, egg and dairy products"
+336,VALID,allergens,cereals and bakery products
+337,VALID,biological,"meat, egg and dairy products"
+338,VALID,allergens,other food product / mixed
+339,VALID,foreign bodies,"meat, egg and dairy products"
+340,VALID,allergens,prepared dishes and snacks
+341,VALID,fraud,"meat, egg and dairy products"
+342,VALID,chemical,non-alcoholic beverages
+343,VALID,fraud,non-alcoholic beverages
+344,VALID,allergens,other food product / mixed
+345,VALID,organoleptic aspects,"soups, broths, sauces and condiments"
+346,VALID,allergens,"cocoa and cocoa preparations, coffee and tea"
+347,VALID,allergens,fruits and vegetables
+348,VALID,biological,"meat, egg and dairy products"
+349,VALID,allergens,prepared dishes and snacks
+350,VALID,allergens,"soups, broths, sauces and condiments"
+351,VALID,allergens,other food product / mixed
+352,VALID,foreign bodies,prepared dishes and snacks
+353,VALID,biological,"meat, egg and dairy products"
+354,VALID,allergens,"meat, egg and dairy products"
+355,VALID,allergens,other food product / mixed
+356,VALID,foreign bodies,prepared dishes and snacks
+357,VALID,allergens,"meat, egg and dairy products"
+358,VALID,organoleptic aspects,"soups, broths, sauces and condiments"
+359,VALID,foreign bodies,cereals and bakery products
+360,VALID,foreign bodies,fruits and vegetables
+361,VALID,allergens,prepared dishes and snacks
+362,VALID,allergens,"meat, egg and dairy products"
+363,VALID,biological,"meat, egg and dairy products"
+364,VALID,allergens,"soups, broths, sauces and condiments"
+365,VALID,allergens,ices and desserts
+366,VALID,fraud,seafood
+367,VALID,allergens,prepared dishes and snacks
+368,VALID,allergens,cereals and bakery products
+369,VALID,biological,"meat, egg and dairy products"
+370,VALID,allergens,prepared dishes and snacks
+371,VALID,foreign bodies,non-alcoholic beverages
+372,VALID,biological,fruits and vegetables
+373,VALID,allergens,cereals and bakery products
+374,VALID,biological,"nuts, nut products and seeds"
+375,VALID,biological,"meat, egg and dairy products"
+376,VALID,allergens,other food product / mixed
+377,VALID,biological,fruits and vegetables
+378,VALID,allergens,"meat, egg and dairy products"
+379,VALID,allergens,seafood
+380,VALID,biological,seafood
+381,VALID,foreign bodies,"soups, broths, sauces and condiments"
+382,VALID,allergens,"nuts, nut products and seeds"
+383,VALID,fraud,prepared dishes and snacks
+384,VALID,allergens,other food product / mixed
+385,VALID,allergens,other food product / mixed
+386,VALID,foreign bodies,"meat, egg and dairy products"
+387,VALID,biological,"meat, egg and dairy products"
+388,VALID,chemical,non-alcoholic beverages
+389,VALID,allergens,"soups, broths, sauces and condiments"
+390,VALID,foreign bodies,non-alcoholic beverages
+391,VALID,allergens,"dietetic foods, food supplements, fortified foods"
+392,VALID,allergens,prepared dishes and snacks
+393,VALID,allergens,fruits and vegetables
+394,VALID,foreign bodies,"meat, egg and dairy products"
+395,VALID,allergens,fruits and vegetables
+396,VALID,allergens,"dietetic foods, food supplements, fortified foods"
+397,VALID,allergens,cereals and bakery products
+398,VALID,foreign bodies,prepared dishes and snacks
+399,VALID,biological,herbs and spices
+400,VALID,allergens,prepared dishes and snacks
+401,VALID,allergens,other food product / mixed
+402,VALID,biological,cereals and bakery products
+403,VALID,allergens,"meat, egg and dairy products"
+404,VALID,allergens,"meat, egg and dairy products"
+405,VALID,biological,"meat, egg and dairy products"
+406,VALID,biological,"meat, egg and dairy products"
+407,VALID,biological,"soups, broths, sauces and condiments"
+408,VALID,biological,"meat, egg and dairy products"
+409,VALID,allergens,"cocoa and cocoa preparations, coffee and tea"
+410,VALID,biological,non-alcoholic beverages
+411,VALID,allergens,other food product / mixed
+412,VALID,biological,"meat, egg and dairy products"
+413,VALID,biological,"meat, egg and dairy products"
+414,VALID,biological,"meat, egg and dairy products"
+415,VALID,allergens,prepared dishes and snacks
+416,VALID,allergens,"nuts, nut products and seeds"
+417,VALID,biological,fruits and vegetables
+418,VALID,allergens,non-alcoholic beverages
+419,VALID,biological,"nuts, nut products and seeds"
+420,VALID,biological,prepared dishes and snacks
+421,VALID,allergens,prepared dishes and snacks
+422,VALID,biological,"meat, egg and dairy products"
+423,VALID,biological,prepared dishes and snacks
+424,VALID,foreign bodies,ices and desserts
+425,VALID,foreign bodies,"meat, egg and dairy products"
+426,VALID,allergens,prepared dishes and snacks
+427,VALID,allergens,other food product / mixed
+428,VALID,biological,seafood
+429,VALID,allergens,non-alcoholic beverages
+430,VALID,allergens,prepared dishes and snacks
+431,VALID,fraud,prepared dishes and snacks
+432,VALID,allergens,prepared dishes and snacks
+433,VALID,allergens,prepared dishes and snacks
+434,VALID,allergens,prepared dishes and snacks
+435,VALID,allergens,"nuts, nut products and seeds"
+436,VALID,allergens,"cocoa and cocoa preparations, coffee and tea"
+437,VALID,biological,other food product / mixed
+438,VALID,biological,seafood
+439,VALID,allergens,seafood
+440,VALID,allergens,prepared dishes and snacks
+441,VALID,biological,fruits and vegetables
+442,VALID,chemical,non-alcoholic beverages
+443,VALID,fraud,prepared dishes and snacks
+444,VALID,other hazard,seafood
+445,VALID,biological,"soups, broths, sauces and condiments"
+446,VALID,allergens,cereals and bakery products
+447,VALID,fraud,"meat, egg and dairy products"
+448,VALID,allergens,seafood
+449,VALID,allergens,ices and desserts
+450,VALID,biological,herbs and spices
+451,VALID,biological,fruits and vegetables
+452,VALID,allergens,"cocoa and cocoa preparations, coffee and tea"
+453,VALID,allergens,seafood
+454,VALID,biological,prepared dishes and snacks
+455,VALID,biological,fruits and vegetables
+456,VALID,biological,fruits and vegetables
+457,VALID,allergens,prepared dishes and snacks
+458,VALID,biological,"meat, egg and dairy products"
+459,VALID,allergens,ices and desserts
+460,VALID,allergens,confectionery
+461,VALID,biological,"meat, egg and dairy products"
+462,VALID,foreign bodies,"meat, egg and dairy products"
+463,VALID,allergens,"cocoa and cocoa preparations, coffee and tea"
+464,VALID,allergens,prepared dishes and snacks
+465,VALID,biological,"meat, egg and dairy products"
+466,VALID,organoleptic aspects,ices and desserts
+467,VALID,chemical,other food product / mixed
+468,VALID,foreign bodies,other food product / mixed
+469,VALID,biological,non-alcoholic beverages
+470,VALID,biological,confectionery
+471,VALID,chemical,cereals and bakery products
+472,VALID,biological,fruits and vegetables
+473,VALID,allergens,prepared dishes and snacks
+474,VALID,allergens,prepared dishes and snacks
+475,VALID,allergens,cereals and bakery products
+476,VALID,biological,prepared dishes and snacks
+477,VALID,chemical,herbs and spices
+478,VALID,foreign bodies,prepared dishes and snacks
+479,VALID,allergens,herbs and spices
+480,VALID,allergens,prepared dishes and snacks
+481,VALID,allergens,prepared dishes and snacks
+482,VALID,foreign bodies,"meat, egg and dairy products"
+483,VALID,biological,seafood
+484,VALID,allergens,cereals and bakery products
+485,VALID,allergens,cereals and bakery products
+486,VALID,allergens,other food product / mixed
+487,VALID,foreign bodies,ices and desserts
+488,VALID,allergens,ices and desserts
+489,VALID,chemical,non-alcoholic beverages
+490,VALID,biological,pet feed
+491,VALID,allergens,other food product / mixed
+492,VALID,biological,herbs and spices
+493,VALID,biological,sugars and syrups
+494,VALID,allergens,other food product / mixed
+495,VALID,allergens,"nuts, nut products and seeds"
+496,VALID,allergens,prepared dishes and snacks
+497,VALID,allergens,"soups, broths, sauces and condiments"
+498,VALID,allergens,cereals and bakery products
+499,VALID,allergens,other food product / mixed
+500,VALID,allergens,other food product / mixed
+501,VALID,biological,"meat, egg and dairy products"
+502,VALID,foreign bodies,cereals and bakery products
+503,VALID,biological,other food product / mixed
+504,VALID,allergens,fruits and vegetables
+505,VALID,biological,other food product / mixed
+506,VALID,biological,seafood
+507,VALID,allergens,"dietetic foods, food supplements, fortified foods"
+508,VALID,allergens,ices and desserts
+509,VALID,biological,fruits and vegetables
+510,VALID,chemical,fruits and vegetables
+511,VALID,chemical,"dietetic foods, food supplements, fortified foods"
+512,VALID,biological,herbs and spices
+513,VALID,allergens,"cocoa and cocoa preparations, coffee and tea"
+514,VALID,chemical,ices and desserts
+515,VALID,allergens,prepared dishes and snacks
+516,VALID,fraud,other food product / mixed
+517,VALID,foreign bodies,"meat, egg and dairy products"
+518,VALID,biological,"meat, egg and dairy products"
+519,VALID,fraud,prepared dishes and snacks
+520,VALID,biological,other food product / mixed
+521,VALID,biological,"meat, egg and dairy products"
+522,VALID,other hazard,feed materials
+523,VALID,biological,seafood
+524,VALID,fraud,fruits and vegetables
+525,VALID,foreign bodies,ices and desserts
+526,VALID,biological,prepared dishes and snacks
+527,VALID,allergens,other food product / mixed
+528,VALID,biological,fruits and vegetables
+529,VALID,allergens,confectionery
+530,VALID,allergens,fruits and vegetables
+531,VALID,biological,"nuts, nut products and seeds"
+532,VALID,biological,"meat, egg and dairy products"
+533,VALID,allergens,non-alcoholic beverages
+534,VALID,biological,prepared dishes and snacks
+535,VALID,allergens,prepared dishes and snacks
+536,VALID,other hazard,"meat, egg and dairy products"
+537,VALID,biological,fruits and vegetables
+538,VALID,foreign bodies,fruits and vegetables
+539,VALID,biological,"meat, egg and dairy products"
+540,VALID,chemical,other food product / mixed
+541,VALID,chemical,other food product / mixed
+542,VALID,chemical,fruits and vegetables
+543,VALID,allergens,"cocoa and cocoa preparations, coffee and tea"
+544,VALID,biological,pet feed
+545,VALID,foreign bodies,seafood
+546,VALID,other hazard,alcoholic beverages
+547,VALID,biological,prepared dishes and snacks
+548,VALID,allergens,fruits and vegetables
+549,VALID,allergens,prepared dishes and snacks
+550,VALID,allergens,"meat, egg and dairy products"
+551,VALID,biological,"cocoa and cocoa preparations, coffee and tea"
+552,VALID,biological,"cocoa and cocoa preparations, coffee and tea"
+553,VALID,biological,"nuts, nut products and seeds"
+554,VALID,allergens,ices and desserts
+555,VALID,allergens,herbs and spices
+556,VALID,biological,other food product / mixed
+557,VALID,chemical,"dietetic foods, food supplements, fortified foods"
+558,VALID,biological,"dietetic foods, food supplements, fortified foods"
+559,VALID,chemical,ices and desserts
+560,VALID,allergens,fruits and vegetables
+561,VALID,allergens,other food product / mixed
+562,VALID,foreign bodies,cereals and bakery products
+563,VALID,allergens,other food product / mixed
+564,VALID,allergens,"nuts, nut products and seeds"

@@ -1,0 +1,19 @@
+flowchart TB
+  visitor[Volunteer browser: isolated synthetic session, no password] --> cf[CloudFront HTTPS + VPC origin]
+  cf --> http
+  subgraph ec2[EC2 Python application · us-east-1]
+    http[HTTP application]
+    http --> human[Separate human evidence and hold endpoints]
+    http -->|First manual start| agent[Strands agent: investigate histories, choose up to 3 open tasks]
+    human -->|Accepted workflow events trigger follow-ups| agent
+    human -->|Validate and persist evidence / receipts| db[(SQLite on encrypted EBS: snapshots, tasks, events, receipts, reports)]
+    agent --> tools[Seven typed tools: scope comparisons, histories, work queue, briefing submission]
+    tools -->|Read current state| db
+    tools --> validator[Validate coverage and current task state; bind exact stored evidence]
+    validator -->|Only complete current briefings| http
+    fixtures[Pinned source bytes, hashes and reviewed scope] --> tools
+  end
+  agent <-->|Instance role| bedrock[Amazon Bedrock · Amazon Nova Lite]
+  s3[Private versioned encrypted S3 releases] -.-> ec2
+  ssm[Systems Manager maintenance: no SSH] -.-> ec2
+  human --- boundary[Human writes are not model tools; no automatic release or disposal]

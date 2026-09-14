@@ -1,0 +1,23 @@
+{
+  "decided_at": "2026-09-14T20:18:46.295562+00:00",
+  "winner": "pro-evidence",
+  "improved_on_validation": false,
+  "incumbent_validation_metrics": {
+    "official_st1_score": 0.7966116136945308,
+    "hazard_accuracy": 0.9469026548672567,
+    "product_accuracy": 0.7805309734513274
+  },
+  "product_accuracy": {
+    "pro-evidence": 0.7628318584070797,
+    "nova2-low-evidence": 0.7823008849557522
+  },
+  "hazard_accuracy": {
+    "pro-evidence": 0.9433628318584071,
+    "nova2-low-evidence": 0.9469026548672567
+  },
+  "candidate_scores": {
+    "pro-evidence": 0.7871912388601794,
+    "nova2-low-evidence": 0.7682939738609866
+  },
+  "plan_sha256": "8d5244aafe415943f4e2ddb994a9063ecca8648e84b41cbf89779b974c60bc54"
+}

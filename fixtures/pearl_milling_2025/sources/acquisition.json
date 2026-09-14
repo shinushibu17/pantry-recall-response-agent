@@ -1,0 +1,37 @@
+{
+  "state": "AVAILABLE",
+  "query": {
+    "search": "recall_initiation_date:[20250101 TO 20250131] AND product_description:\"Pearl Milling\"",
+    "sort": "recall_initiation_date:asc",
+    "limit": 2
+  },
+  "page_limit": 1,
+  "enforcement": {
+    "url": "https://api.fda.gov/food/enforcement.json?search=recall_initiation_date%3A%5B20250101+TO+20250131%5D+AND+product_description%3A%22Pearl+Milling%22&sort=recall_initiation_date%3Aasc&limit=2",
+    "resolved_url": "https://api.fda.gov/food/enforcement.json?search=recall_initiation_date%3A%5B20250101+TO+20250131%5D+AND+product_description%3A%22Pearl+Milling%22&sort=recall_initiation_date%3Aasc&limit=2",
+    "retrieved_at": "2026-09-12T18:38:53.285421+00:00",
+    "http_date": "Sat, 12 Sep 2026 18:38:53 GMT",
+    "last_modified": null,
+    "sha256": "4d9b99cb4a0472c1c7d2d3fa454ef08767c379be337aa7c797a5214b1920a3df"
+  },
+  "notice": {
+    "url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/quaker-issues-limited-recall-undeclared-milk-pearl-milling-company-original-pancake-waffle-mix",
+    "resolved_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/quaker-issues-limited-recall-undeclared-milk-pearl-milling-company-original-pancake-waffle-mix",
+    "retrieved_at": "2026-09-12T18:38:54.880729+00:00",
+    "http_date": "Sat, 12 Sep 2026 18:38:54 GMT",
+    "last_modified": "Sat, 12 Sep 2026 18:38:53 GMT",
+    "sha256": "6a673602e79ce12b0942eaac97d730d6686099e33953f503797eefa2d3edd650"
+  },
+  "notice_text_sha256": "4edd12dcdc9c5b2c6300fe401a8a555babe667478dac9297e1a5b11ac2580ca7",
+  "record_identifiers": {
+    "recall_number": "F-0553-2025",
+    "event_id": "96134"
+  },
+  "source_timestamps": {
+    "api_last_updated": "2026-09-02",
+    "report_date": "20250219",
+    "recall_initiation_date": "20250114",
+    "company_announcement_date": "2025-01-14",
+    "fda_publish_date": "2025-01-15"
+  }
+}

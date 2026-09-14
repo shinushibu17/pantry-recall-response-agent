@@ -1,0 +1,16 @@
+{
+  "recorded_at": "2026-09-12T23:00:49.091410+00:00",
+  "original_stage": "agent-held-out (not blind deterministic evaluation)",
+  "original_status": "INCOMPLETE_TOOL_COVERAGE",
+  "original_compared_cases": 0,
+  "total_cases": 10,
+  "change": "One generic bounded continuation for missing successful tools/IDs. No recall-specific answers supplied. Incomplete-run prose is withheld from terminal display.",
+  "current_stage": "regression after inspecting first-run failure; no longer untouched held-out data",
+  "regression_report": "outputs/jif-remediation-agent-run.json",
+  "regression_status": "COMPLETE",
+  "regression_model_calls": 3,
+  "regression_runtime_seconds": 5.541597,
+  "regression_compared_cases": 10,
+  "regression_coverage_repairs_used": 0,
+  "limit": "The successful rerun needed no continuation, so this single rerun does not establish a causal reliability improvement. Stubbed SDK tests force the skipped-tool path and verify the bounded continuation."
+}

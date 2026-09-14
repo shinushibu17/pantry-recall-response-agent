@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1320" viewBox="0 0 2000 1320" role="img" aria-labelledby="title desc">
+  <title id="title">Pantry Recall Response Agent — deployed architecture</title>
+  <desc id="desc">An anonymous browser reaches Python on EC2 through CloudFront and a VPC origin. Separate human endpoints persist evidence and confirmations. Accepted events trigger a Strands agent, which calls Nova Lite on Bedrock and deterministic tools. SQLite on encrypted EBS retains state. Private S3 holds releases and Systems Manager supports maintenance. The model cannot write human confirmations.</desc>
+  <rect width="2000" height="1320" fill="#f2f5f7"/>
+  <rect x="0" y="0" width="2000" height="12" fill="#0e776b"/>
+  <g font-family="Segoe UI, Arial, sans-serif" fill="#172d3b">
+    <text x="60" y="88" font-size="48" font-weight="700">Pantry Recall Response Agent</text>
+    <text x="60" y="132" font-size="25" fill="#506675">One Strands agent. Exact source evidence. Human-confirmed actions.</text>
+
+    <rect x="60" y="190" width="380" height="140" rx="16" fill="#ffffff" stroke="#c6d3db" stroke-width="2"/>
+    <text x="88" y="235" font-size="29" font-weight="700">Volunteer browser</text>
+    <text x="88" y="271" font-size="23">No password • synthetic pantry</text>
+    <text x="88" y="303" font-size="23">Isolated visitor session</text>
+    <line x1="440" y1="260" x2="484" y2="260" stroke="#0e776b" stroke-width="4"/>
+    <polygon points="500,260 484,251 484,269" fill="#0e776b"/>
+
+    <rect x="500" y="190" width="380" height="140" rx="16" fill="#ffffff" stroke="#c6d3db" stroke-width="2"/>
+    <text x="528" y="235" font-size="29" font-weight="700">Amazon CloudFront</text>
+    <text x="528" y="271" font-size="23">Public HTTPS • VPC origin</text>
+    <text x="528" y="303" font-size="23">Visitor responses are not cached</text>
+    <line x1="880" y1="260" x2="924" y2="260" stroke="#0e776b" stroke-width="4"/>
+    <polygon points="940,260 924,251 924,269" fill="#0e776b"/>
+
+    <rect x="940" y="190" width="440" height="140" rx="16" fill="#ffffff" stroke="#c6d3db" stroke-width="2"/>
+    <text x="968" y="235" font-size="29" font-weight="700">Amazon EC2 • Python</text>
+    <text x="968" y="271" font-size="23">t3.small • Amazon Linux 2023</text>
+    <text x="968" y="303" font-size="23">Instance role • region us-east-1</text>
+    <line x1="1160" y1="330" x2="1160" y2="354" stroke="#0e776b" stroke-width="4"/>
+    <polygon points="1160,370 1151,354 1169,354" fill="#0e776b"/>
+
+    <rect x="1490" y="190" width="450" height="140" rx="16" fill="#e4f1ec"/>
+    <text x="1518" y="233" font-size="27" font-weight="700" fill="#0b655b">The model recommends.</text>
+    <text x="1518" y="270" font-size="27" font-weight="700" fill="#0b655b">The application validates.</text>
+    <text x="1518" y="307" font-size="27" font-weight="700" fill="#0b655b">The human confirms.</text>
+
+    <rect x="60" y="370" width="1320" height="810" rx="20" fill="#e5ecf1" stroke="#b7c8d3" stroke-width="2"/>
+    <text x="90" y="418" font-size="24" font-weight="700">INSIDE THE EC2 APPLICATION</text>
+
+    <rect x="100" y="455" width="540" height="210" rx="16" fill="#ffffff" stroke="#c6d3db" stroke-width="2"/>
+    <rect x="100" y="455" width="8" height="210" fill="#0e776b"/>
+    <text x="130" y="500" font-size="30" font-weight="700">Human workflow endpoints</text>
+    <text x="130" y="543" font-size="24">Label evidence + hold confirmation forms</text>
+    <text x="130" y="581" font-size="24">Check quantity, version and attestation</text>
+    <text x="130" y="619" font-size="24">Save accepted updates and receipts</text>
+    <text x="650" y="502" font-size="19" fill="#0b655b">Accepted</text>
+    <text x="650" y="528" font-size="19" fill="#0b655b">events trigger</text>
+    <text x="650" y="554" font-size="19" fill="#0b655b">follow-ups*</text>
+    <line x1="640" y1="579" x2="764" y2="579" stroke="#0e776b" stroke-width="4"/>
+    <polygon points="780,579 764,570 764,588" fill="#0e776b"/>
+
+    <rect x="780" y="455" width="550" height="210" rx="16" fill="#102f40"/>
+    <text x="810" y="500" font-size="31" font-weight="700" fill="#ffffff">Strands agent</text>
+    <text x="810" y="543" font-size="24" fill="#dbe9ee">Investigates additional case histories</text>
+    <text x="810" y="581" font-size="24" fill="#dbe9ee">Selects up to 3 open tasks + reasons</text>
+    <text x="810" y="619" font-size="24" fill="#dbe9ee">Bounded runs • advisory task ordering</text>
+
+    <rect x="1490" y="455" width="450" height="210" rx="16" fill="#ffffff" stroke="#dc923b" stroke-width="3"/>
+    <text x="1518" y="502" font-size="30" font-weight="700">Amazon Bedrock</text>
+    <text x="1518" y="546" font-size="27">Amazon Nova Lite</text>
+    <text x="1518" y="586" font-size="22">amazon.nova-lite-v1:0</text>
+    <text x="1518" y="624" font-size="23">Authenticated by EC2 instance role</text>
+    <text x="1340" y="520" font-size="20" fill="#945710">Model calls</text>
+    <line x1="1346" y1="559" x2="1474" y2="559" stroke="#c47c25" stroke-width="4"/>
+    <polygon points="1330,559 1346,550 1346,568" fill="#c47c25"/>
+    <polygon points="1490,559 1474,550 1474,568" fill="#c47c25"/>
+
+    <line x1="365" y1="665" x2="365" y2="804" stroke="#0e776b" stroke-width="4"/>
+    <polygon points="365,820 356,804 374,804" fill="#0e776b"/>
+    <text x="390" y="725" font-size="23" fill="#0b655b">Validated writes</text>
+    <text x="390" y="759" font-size="22" fill="#0b655b">Idempotent receipts</text>
+    <line x1="1055" y1="665" x2="1055" y2="804" stroke="#376786" stroke-width="4"/>
+    <polygon points="1055,820 1046,804 1064,804" fill="#376786"/>
+    <text x="1080" y="725" font-size="23" fill="#376786">7 typed tools</text>
+    <text x="1080" y="759" font-size="22" fill="#376786">No human-write tool</text>
+
+    <rect x="100" y="820" width="540" height="250" rx="16" fill="#ffffff" stroke="#c6d3db" stroke-width="2"/>
+    <text x="130" y="868" font-size="30" font-weight="700">SQLite + pinned evidence</text>
+    <text x="130" y="911" font-size="24">Source bytes, hashes and inventory versions</text>
+    <text x="130" y="950" font-size="24">Events, tasks, receipts and agent reports</text>
+    <text x="130" y="989" font-size="24">Pending follow-ups + shared usage budget</text>
+    <text x="130" y="1033" font-size="24" font-weight="700" fill="#0b655b">EBS • retained encrypted data volume</text>
+
+    <rect x="780" y="820" width="550" height="250" rx="16" fill="#ffffff" stroke="#c6d3db" stroke-width="2"/>
+    <text x="810" y="868" font-size="30" font-weight="700">Deterministic tools + validator</text>
+    <text x="810" y="911" font-size="24">Scope comparison: true / false / unknown</text>
+    <text x="810" y="950" font-size="24">Check coverage and current open tasks</text>
+    <text x="810" y="989" font-size="24">Bind exact stored task evidence</text>
+    <text x="810" y="1033" font-size="24" font-weight="700" fill="#376786">Incomplete or stale briefings withheld</text>
+    <text x="654" y="878" font-size="19" fill="#376786">Read current</text>
+    <text x="654" y="905" font-size="19" fill="#376786">case evidence</text>
+    <line x1="780" y1="940" x2="656" y2="940" stroke="#376786" stroke-width="4"/>
+    <polygon points="640,940 656,931 656,949" fill="#376786"/>
+
+    <rect x="1490" y="820" width="450" height="120" rx="16" fill="#ffffff" stroke="#c6d3db" stroke-width="2"/>
+    <text x="1518" y="867" font-size="28" font-weight="700">Private S3 release bucket</text>
+    <text x="1518" y="908" font-size="23">Versioned, encrypted source artifacts</text>
+    <line x1="1490" y1="880" x2="1396" y2="880" stroke="#8196a5" stroke-width="3" stroke-dasharray="8 7"/>
+    <polygon points="1380,880 1396,871 1396,889" fill="#8196a5"/>
+
+    <rect x="1490" y="980" width="450" height="120" rx="16" fill="#ffffff" stroke="#c6d3db" stroke-width="2"/>
+    <text x="1518" y="1027" font-size="28" font-weight="700">AWS Systems Manager</text>
+    <text x="1518" y="1068" font-size="23">Deployment and maintenance • no SSH</text>
+    <line x1="1490" y1="1040" x2="1396" y2="1040" stroke="#8196a5" stroke-width="3" stroke-dasharray="8 7"/>
+    <polygon points="1380,1040 1396,1031 1396,1049" fill="#8196a5"/>
+
+    <text x="100" y="1120" font-size="23" fill="#506675">*After the visitor starts the agent; updates coalesce while busy. Accepted writes survive inference failure.</text>
+    <text x="100" y="1156" font-size="23" fill="#506675">Human confirmation endpoints are unavailable to the model. No automatic release or disposal.</text>
+    <text x="60" y="1242" font-size="25" font-weight="700">Historical replay • synthetic inventory • 20 shared agent starts per UTC day • one concurrent run</text>
+    <text x="60" y="1282" font-size="22" fill="#506675">Implemented architecture as of September 14, 2026. Arrows show principal requests and event flow; responses are omitted except Bedrock.</text>
+  </g>
+</svg>

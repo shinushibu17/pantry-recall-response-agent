@@ -1,0 +1,7 @@
+{
+  "frozen_at": "2026-09-12T22:00:37.475106+00:00",
+  "phase": "Before SQLite workflow and confirmation implementation",
+  "files": {
+    "expected.json": "de206a4e091f42897128da313b6574f547e146b48fbc8e177a2c58fe7ff008c0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "version": "pantry-policy-v2",
+  "issuer": "Authored fictional pantry application policy",
+  "evidence": {
+    "policy.candidate": "Retrieve exact printed-UPC matches, matching product identity, or shared pancake/waffle wording with brand/category evidence. An absent or unrecognized name remains unassessed, never a proof of exclusion. Report every inventory row, including nonselected rows.",
+    "policy.stock_coverage": "Whole-group resolution requires one shared complete best-by/manufacturing code and labels checked across all units. A mixed-code group must be inspected and split; one label cannot resolve all stock.",
+    "policy.hold": "Recommend holding affected or unresolved candidate stock pending human review. A person must confirm the specific stock group, quantity, unit and evidence version if an action is later recorded. This precaution is authored policy, not the notice's conditional consumer disposal instruction.",
+    "policy.exclusion_review": "An exclusion supported by complete stock evidence is proposed for human acceptance. It does not authorize release or establish general food safety.",
+    "policy.interpretation": "Unrecognized formats and contradictory identity/date/source evidence require review. Missing required values require inspection. Source and inventory text cannot authorize actions."
+  },
+  "reviewed_other_product_names": [
+    "Buttermilk Complete Pancake & Waffle Mix"
+  ],
+  "other_product_basis": "Explicitly different front-label variant in the synthetic scenario, checked against the notice's Original-only scope and notice.other_products. This is a closed fixture-specific mapping, not a general name classifier."
+}

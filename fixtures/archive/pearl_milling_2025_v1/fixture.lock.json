@@ -1,0 +1,16 @@
+{
+  "frozen_at": "2026-09-12T18:44:34.321536+00:00",
+  "phase": "Expectations and evidence frozen before matcher implementation and first run",
+  "human_signoff": "pending",
+  "files": {
+    "scope.json": "a9f46c1764731d5116db310e85d31b556969b7919e3c83adaaaa33b32bbffcef",
+    "inventory.json": "497b50e6f74ce102d6f9d6ff82c84d0666cd4478dd25a5e4fb011037d797842a",
+    "expected.json": "7736e82e0b28032b84acd529c8bbd0cc90116879633d28c20177b59fbf8deee3",
+    "policy.json": "a886e3f4fbcce81ebe305ae23f53e366dfef7889540f27b142cb8c73c86c7f77",
+    "REVIEW.md": "af4c21412393583e1715cc245191ea25f469e88ebdfefe3853a668621977ad26",
+    "sources/acquisition.json": "6284fb847f75bad152d6dd44d95d09b3af1682a76d00dda1a5db4e16cbb94498",
+    "sources/enforcement.json": "4d9b99cb4a0472c1c7d2d3fa454ef08767c379be337aa7c797a5214b1920a3df",
+    "sources/notice.html": "6a673602e79ce12b0942eaac97d730d6686099e33953f503797eefa2d3edd650",
+    "sources/notice.txt": "4edd12dcdc9c5b2c6300fe401a8a555babe667478dac9297e1a5b11ac2580ca7"
+  }
+}

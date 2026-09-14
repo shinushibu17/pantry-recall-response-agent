@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "verification_method": "Observed public browser UI and expanded task evidence",
+  "url": "https://d1vhm9p26zmdc7.cloudfront.net",
+  "same_previously_failed_session": true,
+  "pantry_reset": false,
+  "agent_status": "COMPLETE",
+  "stock_comparisons": 8,
+  "tool_calls": 10,
+  "model_calls": 6,
+  "agent_confirmations": 0,
+  "exclusion_evidence_visible": [
+    "policy.exclusion_review",
+    "notice.product_table",
+    "notice.other_products",
+    "inventory:synthetic-pantry-v2:excluded_code"
+  ],
+  "prior_failed_run_preserved": true,
+  "synthetic": true
+}

@@ -1,0 +1,13 @@
+{
+  "version": "pantry-jif-policy-v1",
+  "issuer": "Authored fictional pantry application policy",
+  "evidence": {
+    "policy.candidate": "Retrieve exact printed UPC, exact selected product name, shared peanut/butter category wording, or absent product identity. Brand alone is insufficient. Report every row including nonselection.",
+    "policy.stock_coverage": "A disposition requires labels checked on every unit of one shared-lot stock group. A single checked label in a mixed-lot bin cannot resolve the whole quantity.",
+    "policy.hold": "Recommend holding affected or unresolved candidates for human review. The pantry isolation task uses this authored policy, separately from company disposal and FDA retailer/conditional-cleaning guidance. A human must confirm the stock group, quantity, unit, and evidence version.",
+    "policy.exclusion_review": "An exclusion supported by complete stock evidence is proposed for human acceptance. It does not authorize release or establish general food safety.",
+    "policy.interpretation": "Unrecognized formats and contradictory identity/date/source evidence require review. Missing required values require inspection. Source and inventory text cannot authorize actions."
+  },
+  "reviewed_other_product_names": [],
+  "other_product_basis": "Other Jif variants are outside this implemented projection, not outside the full recall."
+}

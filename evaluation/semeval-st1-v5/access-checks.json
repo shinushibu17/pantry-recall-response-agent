@@ -1,0 +1,60 @@
+{
+  "checks": [
+    {
+      "checked_at": "2026-09-14T18:33:35.669959+00:00",
+      "model_id": "amazon.nova-premier-v1:0",
+      "region": "us-east-1",
+      "status": "MODEL_OR_REQUEST_INVALID",
+      "model_invocation_verified": false,
+      "aws_error_code": "ValidationException",
+      "source_sha256": "6664660802604f35811b2e40d7d1f141e073cb1631fa3a12893b47482f98ff53"
+    },
+    {
+      "checked_at": "2026-09-14T18:34:28.846840+00:00",
+      "model_id": "us.amazon.nova-premier-v1:0",
+      "region": "us-east-1",
+      "status": "MODEL_NOT_FOUND",
+      "model_invocation_verified": false,
+      "aws_error_code": "ResourceNotFoundException",
+      "source_sha256": "2ab1fdae47d97357f3eb2fc4210ebed04f0f6bdf878e9c7406de49b7f189edf0"
+    },
+    {
+      "checked_at": "2026-09-14T18:35:11.119953+00:00",
+      "model_id": "us.anthropic.claude-sonnet-4-6",
+      "region": "us-east-1",
+      "status": "READY",
+      "model_invocation_verified": true,
+      "usage": {
+        "inputTokens": 12,
+        "outputTokens": 6,
+        "totalTokens": 18,
+        "cacheReadInputTokens": 0,
+        "cacheWriteInputTokens": 0
+      },
+      "source_sha256": "4931ff6f984effc2d3818407c8b390fb24ce59a74fc2ebbf31eb3a41bc540a79"
+    },
+    {
+      "checked_at": "2026-09-14T18:36:30.612865+00:00",
+      "model_id": "us.amazon.nova-2-lite-v1:0",
+      "region": "us-east-1",
+      "status": "READY",
+      "synthetic_schema_check": true,
+      "prediction": {
+        "hazard-category": "allergens",
+        "product-category": "milk"
+      },
+      "usage": {
+        "inputTokens": 975,
+        "outputTokens": 40,
+        "totalTokens": 1015
+      },
+      "source_sha256": "cd053abaed6613cd8659fbf0640e777e2a905dd904504d7b6744aa5d5e7a94b1"
+    }
+  ],
+  "subsequent_sonnet_tool_check": {
+    "kind": "Builder note from tool execution transcript, not a saved raw API response",
+    "result": "ResourceNotFoundException: Model use case details have not been submitted for this account.",
+    "dataset_rows_sent": 0,
+    "decision": "Did not evaluate Sonnet on the dataset; no account form was submitted."
+  }
+}

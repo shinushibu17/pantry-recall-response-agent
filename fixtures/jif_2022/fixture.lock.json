@@ -1,0 +1,18 @@
+{
+  "version": "jif-2022-v1",
+  "frozen_at": "2026-09-12T22:38:49.190631+00:00",
+  "phase": "Before Jif adapter implementation and first agent evaluation",
+  "files": {
+    "expected.json": "6f9d70f88b2f013b6a1e6f010f03210d3794496f29fcf3103c913ca9063b9389",
+    "inventory.json": "0d29a7187bd1c3addcbd5eadc058b002a543e5b7a96114f13a179e51d8aa9a60",
+    "policy.json": "f1622af7d5970d9495849c32ccd8727ff4bcab4054153eb0ac44d5d568b01e13",
+    "REVIEW.md": "8582a4c45d8add7e42c80a405abb572cd231617998bf8105480ee452045507e4",
+    "scope.json": "2913d136478f01e01567507056c2120e7ac2d467efdb03c04fe97490934f4863",
+    "sources/acquisition.json": "ffc32d596af09f2fbb2d9db47a1c5636157d197f150d571955f398cc02aa064e",
+    "sources/enforcement.json": "c03b7552d10496518d26ffc3266da724f8acecf379ab46d4f15110d09d20ece4",
+    "sources/investigation.html": "c6c53d348abefe61af921e81209077babe6b1d8e2ded958c734702ad2d0a161d",
+    "sources/investigation.txt": "3d9c5a386e29d3da123b61855d9345226456f780174094d737bedcea68d6fc55",
+    "sources/notice.html": "d6c399b209cac24c69baca54921fe1d66442557256e1b7e5d5596cc313acfe7b",
+    "sources/notice.txt": "5bba9465ac7045c1291fb9422c5723b427161f621e8ad5c19f38b147bfbb90ad"
+  }
+}

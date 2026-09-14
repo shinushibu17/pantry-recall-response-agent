@@ -1,0 +1,155 @@
+{
+  "version": "jif-2022-v1",
+  "profile": "jif_16oz_creamy_2022",
+  "recall_number": "F-1107-2022",
+  "event_id": "90255",
+  "review": {
+    "scope_status": "reviewed",
+    "author": "Assistant source review before matcher extension and agent evaluation; independent human sign-off pending"
+  },
+  "variant": {
+    "brand": "Jif",
+    "product_name": "Creamy Peanut Butter",
+    "package_size": "16 oz",
+    "upc": "5150025516",
+    "code_scope": "prefix_range_and_plant",
+    "lot_rule": {
+      "prefix_digits": 4,
+      "minimum": 1274,
+      "maximum": 2140,
+      "following_digits": "425"
+    }
+  },
+  "coverage": "Only the 16-ounce creamy UPC is projected from the larger recall. Other Jif variants require review and must not be excluded by this subset.",
+  "label_location_ref": "guidance.label_location",
+  "scope_refs": [
+    "notice.product_table",
+    "notice.lot_scope",
+    "guidance.lot_rule"
+  ],
+  "context_evidence_refs": [
+    "guidance.distribution"
+  ],
+  "instructions": [
+    {
+      "id": "consumer_disposal",
+      "action": "Dispose of the recalled product immediately.",
+      "audience": "consumers",
+      "trigger": "The consumer possesses a product matching the recalled description and lot conditions.",
+      "issuer": "The J. M. Smucker Co.",
+      "source_kind": "company_announcement_hosted_by_fda_archived",
+      "evidence_refs": [
+        "notice.consumer_instruction"
+      ],
+      "automatic_pantry_instruction": false
+    },
+    {
+      "id": "retailer_nonservice",
+      "action": "Do not sell or serve recalled peanut butter or products containing recalled peanut butter.",
+      "audience": "retailers, re-packers, and manufacturers",
+      "trigger": "The product is recalled peanut butter or contains recalled peanut butter.",
+      "issuer": "FDA",
+      "source_kind": "fda_guidance",
+      "evidence_refs": [
+        "guidance.retailer_instruction"
+      ],
+      "automatic_pantry_instruction": false
+    },
+    {
+      "id": "conditional_cleaning",
+      "action": "Wash and sanitize surfaces and utensils that could have touched the recalled peanut butter.",
+      "audience": "consumers; retailers, re-packers, and manufacturers via the steps above",
+      "trigger": "The recalled Jif peanut butter was used, and surfaces or utensils could have touched it.",
+      "issuer": "FDA",
+      "source_kind": "fda_guidance",
+      "evidence_refs": [
+        "guidance.cleaning_instruction"
+      ],
+      "automatic_pantry_instruction": false
+    }
+  ],
+  "evidence": {
+    "notice.product_table": {
+      "quote": "JIF 16 OUNCE CREAMY PEANUT BUTTER 5150025516",
+      "source_file": "sources/notice.txt",
+      "source_url": "https://web.archive.org/web/20250317210310/https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/j-m-smucker-co-issues-voluntary-recall-select-jifr-products-sold-us-potential-salmonella",
+      "source_sha256": "d6c399b209cac24c69baca54921fe1d66442557256e1b7e5d5596cc313acfe7b",
+      "text_sha256": "5bba9465ac7045c1291fb9422c5723b427161f621e8ad5c19f38b147bfbb90ad",
+      "start": 4041,
+      "end": 4085
+    },
+    "notice.other_recalled_variant": {
+      "quote": "JIF 16 OUNCE CRUNCHY PEANUT BUTTER 5150025537",
+      "source_file": "sources/notice.txt",
+      "source_url": "https://web.archive.org/web/20250317210310/https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/j-m-smucker-co-issues-voluntary-recall-select-jifr-products-sold-us-potential-salmonella",
+      "source_sha256": "d6c399b209cac24c69baca54921fe1d66442557256e1b7e5d5596cc313acfe7b",
+      "text_sha256": "5bba9465ac7045c1291fb9422c5723b427161f621e8ad5c19f38b147bfbb90ad",
+      "start": 4086,
+      "end": 4131
+    },
+    "notice.lot_scope": {
+      "quote": "Recalled products include the products below with lot codes 1274425 – 2140425.",
+      "source_file": "sources/notice.txt",
+      "source_url": "https://web.archive.org/web/20250317210310/https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/j-m-smucker-co-issues-voluntary-recall-select-jifr-products-sold-us-potential-salmonella",
+      "source_sha256": "d6c399b209cac24c69baca54921fe1d66442557256e1b7e5d5596cc313acfe7b",
+      "text_sha256": "5bba9465ac7045c1291fb9422c5723b427161f621e8ad5c19f38b147bfbb90ad",
+      "start": 3891,
+      "end": 3969
+    },
+    "notice.consumer_instruction": {
+      "quote": "If consumers have products matching the above description in their possession, they should dispose of it immediately.",
+      "source_file": "sources/notice.txt",
+      "source_url": "https://web.archive.org/web/20250317210310/https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/j-m-smucker-co-issues-voluntary-recall-select-jifr-products-sold-us-potential-salmonella",
+      "source_sha256": "d6c399b209cac24c69baca54921fe1d66442557256e1b7e5d5596cc313acfe7b",
+      "text_sha256": "5bba9465ac7045c1291fb9422c5723b427161f621e8ad5c19f38b147bfbb90ad",
+      "start": 6570,
+      "end": 6687
+    },
+    "guidance.lot_rule": {
+      "quote": "In the lot code, if the first four digits are between 1274 and 2140, and if the next three numbers after that are '425', this product has been recalled and you should not consume this product.",
+      "source_file": "sources/investigation.txt",
+      "source_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-salmonella-peanut-butter-may-2022",
+      "source_sha256": "c6c53d348abefe61af921e81209077babe6b1d8e2ded958c734702ad2d0a161d",
+      "text_sha256": "3d9c5a386e29d3da123b61855d9345226456f780174094d737bedcea68d6fc55",
+      "start": 4318,
+      "end": 4510
+    },
+    "guidance.label_location": {
+      "quote": "Locate the lot code on the back of the jar, under the Best If Used By Date (the lot code may be next to the Best If Used By Date for cups or squeeze pouches).",
+      "source_file": "sources/investigation.txt",
+      "source_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-salmonella-peanut-butter-may-2022",
+      "source_sha256": "c6c53d348abefe61af921e81209077babe6b1d8e2ded958c734702ad2d0a161d",
+      "text_sha256": "3d9c5a386e29d3da123b61855d9345226456f780174094d737bedcea68d6fc55",
+      "start": 4159,
+      "end": 4317
+    },
+    "guidance.retailer_instruction": {
+      "quote": "Do not sell or serve recalled peanut butter or products containing recalled peanut butter.",
+      "source_file": "sources/investigation.txt",
+      "source_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-salmonella-peanut-butter-may-2022",
+      "source_sha256": "c6c53d348abefe61af921e81209077babe6b1d8e2ded958c734702ad2d0a161d",
+      "text_sha256": "3d9c5a386e29d3da123b61855d9345226456f780174094d737bedcea68d6fc55",
+      "start": 5300,
+      "end": 5390
+    },
+    "guidance.cleaning_instruction": {
+      "quote": "FDA recommends that if you have used the recalled Jif brand peanut butter that have lot code numbers 1274425 through 2140425 and the first seven digits end with 425, you should wash and sanitize surfaces and utensils that could have touched the peanut butter.",
+      "source_file": "sources/investigation.txt",
+      "source_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-salmonella-peanut-butter-may-2022",
+      "source_sha256": "c6c53d348abefe61af921e81209077babe6b1d8e2ded958c734702ad2d0a161d",
+      "text_sha256": "3d9c5a386e29d3da123b61855d9345226456f780174094d737bedcea68d6fc55",
+      "start": 4725,
+      "end": 4984
+    },
+    "guidance.distribution": {
+      "quote": "Product Distribution: Nationwide and International (see below)",
+      "source_file": "sources/investigation.txt",
+      "source_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-salmonella-peanut-butter-may-2022",
+      "source_sha256": "c6c53d348abefe61af921e81209077babe6b1d8e2ded958c734702ad2d0a161d",
+      "text_sha256": "3d9c5a386e29d3da123b61855d9345226456f780174094d737bedcea68d6fc55",
+      "start": 5686,
+      "end": 5748
+    }
+  },
+  "date_interpretation": "No separate best-by condition is imposed by the official notice or FDA lot-identification steps. Enforcement code_info aggregates several best-by ranges across several package sizes without a per-UPC mapping. Preserve that text; never convert it into a pantry-specific exclusion window."
+}

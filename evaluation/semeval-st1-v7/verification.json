@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-09-14T20:26:05.560598+00:00",
+  "phases": [
+    {
+      "phase": "validation-pro-evidence",
+      "model_id": "amazon.nova-pro-v1:0",
+      "rows": 565,
+      "score_reproduced": 0.7871912388601794,
+      "requests_reconstructed": 565,
+      "model_attempts": 795,
+      "error_attempts": {
+        "ThrottlingException": 230
+      }
+    },
+    {
+      "phase": "validation-nova2-low-evidence",
+      "model_id": "us.amazon.nova-2-lite-v1:0",
+      "rows": 565,
+      "score_reproduced": 0.7682939738609866,
+      "requests_reconstructed": 565,
+      "model_attempts": 567,
+      "error_attempts": {
+        "UNAVAILABLE": 2
+      }
+    }
+  ],
+  "all_requests_reconstructed": 1130,
+  "raw_responses_equal_originals": 1130,
+  "unchanged_prior_manifested_artifacts": 175,
+  "selected_by_frozen_validation_rule": true,
+  "selected_protocol_predates_test_inference": null,
+  "full_taxonomy_rebuilt_from_training_only": true,
+  "training_only_example_reconstruction": true,
+  "target_answers_absent_from_reconstructed_requests": true,
+  "credentials_pattern_scan": "no matches",
+  "note": "Builder verification of recorded artifacts, not independent certification or fresh held-out evidence."
+}

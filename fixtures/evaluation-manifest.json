@@ -1,0 +1,19 @@
+{
+  "version": "evaluation-split-v1",
+  "assigned_at": "2026-09-12T22:38:49.200239+00:00",
+  "fixtures": [
+    {
+      "path": "pearl_milling_2025",
+      "family": "pearl-milling-2025",
+      "split": "development",
+      "scenarios": 8
+    },
+    {
+      "path": "jif_2022",
+      "family": "jif-event-90255",
+      "split": "agent-held-out",
+      "scenarios": 10
+    }
+  ],
+  "limits": "Jif withheld from agent prompt tuning; source adapter developed using its frozen answers. No blind deterministic generalization score or model-training-contamination claim. Related Jif products share one split."
+}

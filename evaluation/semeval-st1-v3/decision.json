@@ -1,0 +1,11 @@
+{
+  "decided_at": "2026-09-14T17:27:15.834555+00:00",
+  "winner": "title-weighted",
+  "improved_on_validation": true,
+  "incumbent_validation_score": 0.6657233276685435,
+  "candidate_scores": {
+    "title": 0.6530084413907327,
+    "title-weighted": 0.7239850784928603
+  },
+  "plan_sha256": "95cf63d10c6dfb660b0183e07a5c9b1cf39a88dcd23106a43d6969b87d7d4375"
+}

@@ -1,0 +1,17 @@
+# Jif May 2022 fixture review
+
+This is an internal **agent-held-out** check of a second recall family, event 90255. Expectations were authored from source evidence before the Jif adapter and first agent run. The deterministic adapter uses these answers during development, so this is **not** a blind deterministic-matcher evaluation or independent validation. All related Jif products belong to this same family/split. Independent human sign-off is pending.
+
+The selected enforcement record is F-1107-2022. This projection implements only Jif 16-ounce Creamy Peanut Butter, printed UPC 5150025516, from the much larger recall. The archived company table also lists 16-ounce Crunchy (5150025537): the lookalike scenario must stay under review, because a subset of supported variants is not an exclusion boundary for the full recall.
+
+The official FDA investigation links the exact archived FDA-hosted company notice used here (March 17, 2025 capture). The preserved current investigation includes January 24, 2023 information. Acquisition timestamps are in sources/acquisition.json. This is a retrospective source snapshot, not a claim about what was known on May 20, 2022. All notice HTML/text and enforcement metadata remain intact.
+
+FDA's lot rule requires first four digits 1274 through 2140 inclusive AND the next three digits 425. Extra trailing digits do not change those first-seven-digit conditions. The wrong-plant case 2000426 lies inside the naive numeric interval and must be excluded only by the complete compound rule, with complete label coverage and reviewer acceptance. The ambiguous letter O must remain unknown.
+
+The lot is printed by the Best If Used By date but is a separate identifier. No best-by restriction is imposed in the notice/FDA identification steps. The enforcement text aggregates several best-by ranges across many package sizes without per-UPC mapping and includes a concatenated pair of other UPCs. We preserve those imperfections and never infer a date window or repair unrelated identifiers. A contradictory or missing selected-source binding requires review.
+
+The 10 per-case rationales are in expected.json. These include both inclusive boundaries, below/above boundaries, wrong plant, missing/ambiguous lot, mixed coverage, another actually recalled variant, and unrelated food carrying the same numeric lot string. The early receipt date is context only. Every inventory row, code assertion, coverage assertion, and action is synthetic.
+
+Published instructions remain separate: Smucker directs consumers who possess matching recalled product to dispose of it; FDA directs retailers not to sell/serve recalled product and makes washing/sanitizing conditional on having used it. The pantry's proposed isolation task cites authored policy.hold. The agent neither completes those other obligations nor invents a human confirmation.
+
+Source quotations use zero-based, end-exclusive offsets in deterministic UTF-8 text derivatives. The notice retains its company attribution; FDA investigation text is US federal guidance. Source snapshots are factual evidence, not project-authored prose or an endorsement. Project Apache 2.0 licensing does not relicense source material. Original company URL, archive URL, FDA guidance URL, and retrieval hashes are retained in acquisition.json; reacquisition uses python -m tools.acquire_jif_fixture with a new destination.

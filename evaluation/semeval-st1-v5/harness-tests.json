@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-09-14T18:44:17.194284+00:00",
+  "status": "PASS",
+  "unit_tests": {
+    "run": 145,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "pantry_scope_scenarios": 18,
+  "original_pantry_tests": 112,
+  "benchmark_harness_tests": 33,
+  "source_sha256": "cded112e7cc6fc419322f85685b9b59d06af58b320dc0e3218973a6101459a98",
+  "command": "uv run --frozen --group evaluation python -m pantry_recall.evaluate --tests --output outputs/semeval-st1-v5/offline-check.json",
+  "note": "Synthetic/stubbed tests; live benchmark scores recorded separately."
+}

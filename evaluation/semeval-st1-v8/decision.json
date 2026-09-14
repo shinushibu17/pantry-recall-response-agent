@@ -1,0 +1,17 @@
+{
+  "decided_at": "2026-09-14T20:49:55.505099+00:00",
+  "winner": "h-v5-p-deepseek",
+  "improved_on_validation": true,
+  "candidate_scores": {
+    "h-v5-p-deepseek": 0.8073270068511035,
+    "h-v5-p-qwen": 0.7457803916378691,
+    "h-deepseek-p-v5": 0.7864189092087357,
+    "h-deepseek-p-deepseek": 0.7963254790300653,
+    "h-deepseek-p-qwen": 0.7358990068353526,
+    "h-qwen-p-v5": 0.74288799381349,
+    "h-qwen-p-deepseek": 0.7533691441568302,
+    "h-qwen-p-qwen": 0.7336943194936836
+  },
+  "plan_sha256": "04d529c067e2755207e0f82abe20dba5ead1c4246b712dc764f833b8ecf5fcba",
+  "test_launch_in_time": false
+}

@@ -1,0 +1,270 @@
+{
+  "recall_version": "jif-2022-v1",
+  "inventory_version": "synthetic-jif-v1",
+  "split": "agent-held-out",
+  "authorship": "Source-checked authored expectations frozen before Jif matcher extension and first Bedrock run. This fixture is held out from agent prompt tuning, not from deterministic rule development. Independent human label sign-off pending.",
+  "conventions": {
+    "source_derived": [
+      "brand",
+      "product_name",
+      "package_size",
+      "upc",
+      "lot_code"
+    ],
+    "policy_derived": [
+      "candidate",
+      "stock_group",
+      "identification_state",
+      "proposed_identification_state",
+      "missing_fields",
+      "review_fields",
+      "action_state",
+      "task_type"
+    ]
+  },
+  "cases": [
+    {
+      "inventory_id": "lower_boundary",
+      "candidate": true,
+      "conditions": {
+        "brand": "true",
+        "product_name": "true",
+        "package_size": "true",
+        "upc": "true",
+        "lot_code": "true",
+        "stock_group": "true"
+      },
+      "identification_state": "AFFECTED",
+      "action_state": "HOLD_RECOMMENDED",
+      "task_type": "PERFORM_ACTION",
+      "missing_fields": [],
+      "review_fields": [],
+      "proposed_identification_state": null,
+      "evidence_refs": [
+        "notice.product_table",
+        "guidance.lot_rule",
+        "policy.hold"
+      ],
+      "rationale": "1274 is the included lower prefix; following 425 matches. Receipt before recall and absent best-by date do not exclude."
+    },
+    {
+      "inventory_id": "upper_boundary",
+      "candidate": true,
+      "conditions": {
+        "brand": "true",
+        "product_name": "true",
+        "package_size": "true",
+        "upc": "true",
+        "lot_code": "true",
+        "stock_group": "true"
+      },
+      "identification_state": "AFFECTED",
+      "action_state": "HOLD_RECOMMENDED",
+      "task_type": "PERFORM_ACTION",
+      "missing_fields": [],
+      "review_fields": [],
+      "proposed_identification_state": null,
+      "evidence_refs": [
+        "notice.product_table",
+        "guidance.lot_rule",
+        "policy.hold"
+      ],
+      "rationale": "2140 is the included upper prefix; next three are 425. Additional printed digits do not change the FDA first-seven-digit condition."
+    },
+    {
+      "inventory_id": "below_range",
+      "candidate": true,
+      "conditions": {
+        "brand": "true",
+        "product_name": "true",
+        "package_size": "true",
+        "upc": "true",
+        "lot_code": "false",
+        "stock_group": "true"
+      },
+      "identification_state": "NEEDS_REVIEW",
+      "action_state": "REVIEW_REQUIRED",
+      "task_type": "REVIEW_SCOPE",
+      "missing_fields": [],
+      "review_fields": [],
+      "proposed_identification_state": "NOT_AFFECTED_BY_THIS_RECALL",
+      "evidence_refs": [
+        "notice.product_table",
+        "notice.lot_scope",
+        "guidance.lot_rule",
+        "policy.exclusion_review"
+      ],
+      "rationale": "1273 is below 1274. All stock labels were checked; exclusion still requires reviewer acceptance."
+    },
+    {
+      "inventory_id": "above_range",
+      "candidate": true,
+      "conditions": {
+        "brand": "true",
+        "product_name": "true",
+        "package_size": "true",
+        "upc": "true",
+        "lot_code": "false",
+        "stock_group": "true"
+      },
+      "identification_state": "NEEDS_REVIEW",
+      "action_state": "REVIEW_REQUIRED",
+      "task_type": "REVIEW_SCOPE",
+      "missing_fields": [],
+      "review_fields": [],
+      "proposed_identification_state": "NOT_AFFECTED_BY_THIS_RECALL",
+      "evidence_refs": [
+        "notice.product_table",
+        "notice.lot_scope",
+        "guidance.lot_rule",
+        "policy.exclusion_review"
+      ],
+      "rationale": "2141 is above 2140. All stock labels were checked; exclusion still requires reviewer acceptance."
+    },
+    {
+      "inventory_id": "wrong_plant",
+      "candidate": true,
+      "conditions": {
+        "brand": "true",
+        "product_name": "true",
+        "package_size": "true",
+        "upc": "true",
+        "lot_code": "false",
+        "stock_group": "true"
+      },
+      "identification_state": "NEEDS_REVIEW",
+      "action_state": "REVIEW_REQUIRED",
+      "task_type": "REVIEW_SCOPE",
+      "missing_fields": [],
+      "review_fields": [],
+      "proposed_identification_state": "NOT_AFFECTED_BY_THIS_RECALL",
+      "evidence_refs": [
+        "notice.product_table",
+        "notice.lot_scope",
+        "guidance.lot_rule",
+        "policy.exclusion_review"
+      ],
+      "rationale": "2000 is in range but following digits are 426. A plain seven-digit numeric interval would falsely match this. All stock labels were checked; exclusion still requires reviewer acceptance."
+    },
+    {
+      "inventory_id": "missing_lot",
+      "candidate": true,
+      "conditions": {
+        "brand": "true",
+        "product_name": "true",
+        "package_size": "true",
+        "upc": "true",
+        "lot_code": "unknown",
+        "stock_group": "true"
+      },
+      "identification_state": "NEEDS_EVIDENCE",
+      "action_state": "HOLD_RECOMMENDED",
+      "task_type": "IDENTIFY_STOCK",
+      "missing_fields": [
+        "lot_code"
+      ],
+      "review_fields": [],
+      "proposed_identification_state": null,
+      "evidence_refs": [
+        "notice.product_table",
+        "guidance.lot_rule",
+        "policy.hold"
+      ],
+      "rationale": "Inspect all four jars on Shelf J2 for the actual lot code; a separate best-by date is not a substitute."
+    },
+    {
+      "inventory_id": "ambiguous_lot",
+      "candidate": true,
+      "conditions": {
+        "brand": "true",
+        "product_name": "true",
+        "package_size": "true",
+        "upc": "true",
+        "lot_code": "unknown",
+        "stock_group": "true"
+      },
+      "identification_state": "NEEDS_REVIEW",
+      "action_state": "HOLD_RECOMMENDED",
+      "task_type": "REVIEW_SCOPE",
+      "missing_fields": [],
+      "review_fields": [
+        "lot_code"
+      ],
+      "proposed_identification_state": null,
+      "evidence_refs": [
+        "notice.product_table",
+        "guidance.lot_rule",
+        "policy.hold"
+      ],
+      "rationale": "The letter O is not a digit. Never silently repair it to zero or call it excluded."
+    },
+    {
+      "inventory_id": "mixed_lots",
+      "candidate": true,
+      "conditions": {
+        "brand": "true",
+        "product_name": "true",
+        "package_size": "true",
+        "upc": "true",
+        "lot_code": "false",
+        "stock_group": "unknown"
+      },
+      "identification_state": "NEEDS_EVIDENCE",
+      "action_state": "HOLD_RECOMMENDED",
+      "task_type": "IDENTIFY_STOCK",
+      "missing_fields": [
+        "stock_group"
+      ],
+      "review_fields": [],
+      "proposed_identification_state": null,
+      "evidence_refs": [
+        "notice.product_table",
+        "guidance.lot_rule",
+        "policy.hold"
+      ],
+      "rationale": "One excluded label cannot resolve nine mixed-lot jars."
+    },
+    {
+      "inventory_id": "other_recalled_variant",
+      "candidate": true,
+      "conditions": {
+        "brand": "true",
+        "product_name": "unknown",
+        "package_size": "true",
+        "upc": "unknown",
+        "lot_code": "true",
+        "stock_group": "true"
+      },
+      "identification_state": "NEEDS_REVIEW",
+      "action_state": "HOLD_RECOMMENDED",
+      "task_type": "REVIEW_SCOPE",
+      "missing_fields": [],
+      "review_fields": [
+        "product_name",
+        "upc"
+      ],
+      "proposed_identification_state": null,
+      "evidence_refs": [
+        "notice.product_table",
+        "guidance.lot_rule",
+        "policy.hold"
+      ],
+      "rationale": "Crunchy is also in the source recall. This creamy-only projection must request review, not declare an exclusion."
+    },
+    {
+      "inventory_id": "unrelated",
+      "candidate": false,
+      "conditions": {},
+      "identification_state": "PENDING",
+      "action_state": "NOT_ASSESSED",
+      "task_type": null,
+      "missing_fields": [],
+      "review_fields": [],
+      "proposed_identification_state": null,
+      "evidence_refs": [
+        "policy.candidate"
+      ],
+      "rationale": "Black beans remain unassessed; a matching numeric string on another product is not an affected match."
+    }
+  ]
+}
