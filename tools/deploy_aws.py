@@ -17,6 +17,8 @@ from botocore.exceptions import ClientError
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "outputs/deployment"
 STACK = "pantry-recall-demo"
+RUNTIME_MODELS = ("amazon.nova-lite-v1:0", "amazon.nova-pro-v1:0")
+DEFAULT_MODEL = "amazon.nova-pro-v1:0"
 
 
 def template(bucket, key, subnet, vpc, zone, prefix, ami, data_volume=None):
@@ -31,7 +33,7 @@ def template(bucket, key, subnet, vpc, zone, prefix, ami, data_volume=None):
             "ManagedPolicyArns":["arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"],
             "Policies":[{"PolicyName":"PantryRuntime", "PolicyDocument":{"Version":"2012-10-17", "Statement":[
                 {"Effect":"Allow","Action":["s3:GetObject"],"Resource":f"arn:aws:s3:::{bucket}/release/*"},
-                {"Effect":"Allow","Action":["bedrock:InvokeModel"],"Resource":"arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-lite-v1:0"},
+                {"Effect":"Allow","Action":["bedrock:InvokeModel"],"Resource":[f"arn:aws:bedrock:us-east-1::foundation-model/{model}" for model in RUNTIME_MODELS]},
                 {"Effect":"Allow","Action":"cloudformation:SignalResource","Resource":{"Ref":"AWS::StackId"}}
             ]}}]}},
         "ServerProfile": {"Type":"AWS::IAM::InstanceProfile", "Properties":{"Roles":[ref("ServerRole")]}},
@@ -123,7 +125,7 @@ def plan(session, data_volume=None):
     (OUTPUT/"plan.json").write_text(json.dumps({"status":"TEMPLATE_VALIDATED_NOT_DEPLOYED","stack":STACK,"region":"us-east-1",
         "instance_type":"t3.small","data_volume_gb":8,"root_volume_gb":16,"data_retained_on_stack_deletion":True,
         "runtime":"existing Python / SQLite / Strands / Bedrock", "access":"Public HTTPS; isolated anonymous demo sessions; no password or SSH",
-        "model":"amazon.nova-lite-v1:0","daily_agent_run_limit":20,"bundle_bytes":len(data)},indent=2))
+        "model":DEFAULT_MODEL,"daily_agent_run_limit":20,"bundle_bytes":len(data)},indent=2))
     return bucket, key, data, body
 
 
@@ -131,6 +133,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=["plan","deploy","advance","status","configure","update-code"])
     parser.add_argument("--profile", default="pantry-recall")
+    parser.add_argument("--model-id", choices=RUNTIME_MODELS, default=DEFAULT_MODEL, help="Model for configure; both supported models have bounded IAM access")
     parser.add_argument("--data-volume", help="Reattach an existing retained Pantry disk in its original availability zone")
     args = parser.parse_args()
     session = boto3.Session(profile_name=args.profile, region_name="us-east-1")
@@ -191,7 +194,7 @@ def main():
             url = outputs["Url"]
             if not url.startswith("https://") or not url.endswith(".cloudfront.net"):
                 raise ValueError("Unexpected deployment URL")
-            cmd = command(session,outputs["InstanceId"],[f"printf 'PANTRY_PUBLIC_URL={url}\\nAWS_EC2_METADATA_DISABLED=false\\n' > /etc/pantry-public.env","systemctl restart pantry-recall","systemctl is-active pantry-recall"])
+            cmd = command(session,outputs["InstanceId"],["set -eu",f"printf 'PANTRY_PUBLIC_URL={url}\\nAWS_EC2_METADATA_DISABLED=false\\nBEDROCK_MODEL_ID={args.model_id}\\n' > /etc/pantry-public.env","systemctl restart pantry-recall","systemctl is-active pantry-recall"])
             (OUTPUT/"live.json").write_text(json.dumps({**outputs,"configure_command_id":cmd},indent=2))
             print("Service configuration command:",cmd)
         elif args.action == "update-code":

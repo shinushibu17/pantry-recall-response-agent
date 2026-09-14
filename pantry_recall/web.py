@@ -29,13 +29,15 @@ LOG = logging.getLogger(__name__)
 def live_agent(store):
     from strands.models import BedrockModel
     from .agent import run_agent
-    from .aws_access import session_for, client_config, DEFAULT_MODEL
+    from .aws_access import session_for, client_config, agent_model_options, DEFAULT_MODEL
     session = session_for(os.getenv("AWS_PROFILE"), os.getenv("AWS_REGION", "us-east-1"))
-    model = BedrockModel(model_id=DEFAULT_MODEL, boto_session=session,
-                         boto_client_config=client_config(), streaming=False, temperature=0, max_tokens=2048)
+    model_id = os.getenv("BEDROCK_MODEL_ID", DEFAULT_MODEL)
+    model = BedrockModel(model_id=model_id, boto_session=session,
+                         boto_client_config=client_config(), **agent_model_options(model_id))
     report = run_agent(model, store.load_context(), store=store, investigate=True,
                        trigger=FollowUp(store).running_context())
-    report.update(provider="Amazon Bedrock", model_id=DEFAULT_MODEL, region=session.region_name)
+    report.update(provider="Amazon Bedrock", model_id=model_id, region=session.region_name)
+    report["model_options"] = agent_model_options(model_id)
     return report
 
 

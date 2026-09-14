@@ -59,8 +59,14 @@
                           "source_path":  "outputs/deployment/citation-fix-check/completed-hold.json",
                           "source_sha256":  "fdd43da0635344a9094386add0ec4d7692549a53e07f873010cc0eb95be0dfe5",
                           "transformation":  "Omitted report.workflow_database local server path; retained tool calls, model output, findings, evidence and original timing"
-                      }
-                  ],
+                      },
+{
+    "artifact": "agent-upgrade.json",
+    "sha256": "5e6e6f68bf9fbbe1bcb2fa8f84179889f417de30ac00834199b1f0467a441f78",
+    "source_path": "outputs/agent-upgrade",
+    "transformation": "Descriptive summary of all recorded upgrade attempts; checksum-linked archive retains exported traces and original hashes."
+}
+],
     "current_source_files":  [
                                  {
                                      "path":  "fixtures/jif_2022/fixture.lock.json",

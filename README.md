@@ -20,7 +20,7 @@ The system combines:
 
 - **Source-grounded matching:** pinned notices, exact evidence spans and reviewed
   product scope. Missing identifiers remain unknown rather than becoming mismatches.
-- **Agent-directed investigation:** Nova Lite uses seven typed tools to compare
+- **Agent-directed investigation:** Nova Pro uses seven typed tools to compare
   inventory, inspect histories and recommend up to three next checks.
 - **Event-triggered follow-ups:** accepted label evidence and hold receipts
   prompt a new briefing after the first manual start.
@@ -38,7 +38,7 @@ returns the agent to other open work.
 
 | Layer | Implementation |
 | --- | --- |
-| Investigation | Strands Agents SDK with Amazon Nova Lite on Bedrock |
+| Investigation | Strands Agents SDK with Amazon Nova Pro on Bedrock |
 | Scope and action rules | Python comparators and validated workflow transitions |
 | Persistence | SQLite events, evidence versions, tasks and human receipts |
 | Interface | Python HTTP service with HTML, CSS and JavaScript |
@@ -74,7 +74,7 @@ uv.lock             Locked dependency versions
 
 Requirements: **Python 3.11+** and **[uv](https://docs.astral.sh/uv/)**.
 Local live inference also requires an AWS profile with Bedrock access to
-`amazon.nova-lite-v1:0` in `us-east-1`.
+`amazon.nova-pro-v1:0` in `us-east-1`.
 
 ```sh
 git clone https://github.com/shinushibu17/pantry-recall-response-agent.git
@@ -119,9 +119,10 @@ uv run --frozen --group evaluation python -m pantry_recall.evaluate --tests
 
 | Evaluation | Observed result |
 | --- | --- |
-| Automated tests | **159 passed**: 112 pantry tests and 47 benchmark harness tests |
+| Automated tests | **165 passed**: 118 pantry tests and 47 benchmark harness tests |
 | Frozen recall scenarios | **18/18**: eight Pearl Milling and ten Jif cases |
-| Recorded public agent workflow | **4/4 stages completed**, with eight comparisons per stage |
+| Recorded public agent workflow (September 13, Nova Lite) | **4/4 stages completed**, with eight comparisons per stage |
+| Nova Pro upgrade | **8/8 local stages** across two replays; **4/4 public stages** after deployment |
 | Action confirmation boundary | Two simulated human receipts; **zero agent confirmations** in the recorded workflow |
 
 ### How evaluation changed the agent
@@ -130,6 +131,19 @@ uv run --frozen --group evaluation python -m pantry_recall.evaluate --tests
 | --- | --- | --- |
 | The first Jif run skipped scope comparisons: **0/10 executed** | Added one bounded continuation naming missing tools and stock IDs | Forced SDK tests cover recovery; the later live run completed **10/10** without needing the continuation |
 | A browser run repeatedly invented citation identifiers and exhausted its call limit | The agent selects existing task IDs; the application attaches exact stored evidence | The same previously failing session completed without a reset; the subsequent four-stage public check also completed |
+
+The classification evaluation also informed a production upgrade: **Nova Pro**,
+explicit task-type guidance, and case-linked retrieval of raw stock fields and
+exact source excerpts. Stock names are read alongside complete label conditions;
+shared branding or ingredients cannot establish a match. The agent still selects
+existing task IDs, and deterministic tools retain authority over findings.
+
+Early upgrade checks exposed a 12-call limit and malformed model tool output.
+A reproduced recovery sequence now fits a bounded **16-model-call / 20-tool-call**
+allowance. Nova uses greedy decoding and a 3,072-token output limit; model-output
+errors are distinguished from access failures. Two subsequent four-stage local
+replays passed, followed by all four stages on the deployed public demo. These are regression checks, not a measured reliability gain;
+Nova Pro was slower than the Lite baseline in these observations.
 
 These checks show how concrete failures changed the agent interface and execution
 controls. The Jif rerun alone does not establish a causal reliability gain, and
@@ -145,10 +159,10 @@ Nova Pro/DeepSeek combination scored **0.8073 on validation only**; it has no
 test result.
 
 SemEval evaluates report classification; the deployed agent uses reviewed recall
-scope and tools to investigate inventory. Its coverage and citation fixes came
-from the workflow evaluations above. **Nova Pro has not been compared with Nova
-Lite on the full agent workflow**, so the deployment still uses Nova Lite. ST1
-is not an accuracy percentage or an agent-workflow score. The test set was
+scope and tools to investigate inventory. The benchmark informed model selection and context design; the actual pantry
+workflow checks determined whether those changes could be deployed. Production
+context uses pantry task definitions and saved evidence, with no SemEval training
+examples or category labels. ST1 is not an accuracy percentage or an agent-workflow score. The test set was
 already exposed during development, and training/split overlaps limit
 generalization claims. The
 [benchmark summary](evaluation/README.md) links all results, protocols and raw

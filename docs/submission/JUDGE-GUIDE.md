@@ -38,9 +38,10 @@ four-stage public check completed. [EVIDENCE.md](EVIDENCE.md) links the preserve
 failures and follow-up records. These are specific regression checks, not a
 general reliability measurement.
 
-The separate SemEval classification benchmark did not change the deployed Nova
-Lite agent. Its best completed test ST1 is **0.7892**; the later **0.8073** result
-is validation-only. Neither is an accuracy score for this walkthrough.
+SemEval informed the deployed Nova Pro model and richer case context: raw stock
+fields, exact notice excerpts and explicit task definitions. Separate pantry
+workflow checks govern deployment. The benchmark's best completed test ST1 is
+**0.7892**; **0.8073** is validation-only. Neither measures this walkthrough's accuracy.
 
 ## Reproduce locally
 
@@ -57,7 +58,7 @@ Open http://127.0.0.1:8080. The evaluation uses pinned local fixtures and makes
 no model calls. Initial dependency installation needs internet access.
 
 For live inference, use your own AWS credentials with permission to invoke
-`amazon.nova-lite-v1:0` in `us-east-1`. In PowerShell, set your configured profile
+`amazon.nova-pro-v1:0` in `us-east-1`. In PowerShell, set your configured profile
 and region before starting the server:
 
 ```powershell

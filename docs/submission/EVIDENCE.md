@@ -5,7 +5,7 @@ certification or measured pantry outcomes.
 
 | Check | Result | Evidence |
 | --- | --- | --- |
-| Current automated suite | 159 tests pass: 112 pantry and 47 benchmark tests | [Test command](../../README.md#evaluation-results); archived harness report in the [benchmark release](../../evaluation/README.md#full-evidence-archive) |
+| Current automated suite | 165 tests pass: 118 pantry and 47 benchmark tests | [Test command](../../README.md#evaluation-results); archived harness report in the [benchmark release](../../evaluation/README.md#full-evidence-archive) |
 | Frozen scope cases | Pearl 8/8; Jif 10/10 | [Offline report](evidence/offline-evaluation.json), [Pearl review](../../fixtures/pearl_milling_2025/REVIEW.md), [Jif review](../../fixtures/jif_2022/REVIEW.md) |
 | Public workflow | Four COMPLETE briefings; two human receipts; zero agent confirmations | [Workflow report](evidence/public-workflow.json) |
 | Citation failure recovery | Same browser session completed without resetting its pantry | [Recovery report](evidence/browser-recovery.json) |
@@ -24,7 +24,36 @@ now accepts existing task IDs and reasons, while the application attaches exact
 stored evidence. The same previously failing session completed, followed by a
 successful four-stage public check. Original failed reports remain preserved.
 
-## Public workflow trace
+## Production upgrade from evaluation findings
+
+The deployed agent now uses **Nova Pro**, task-type guidance, and case-local
+retrieval of raw inventory fields, deterministic conditions and exact notice
+spans. Inventory evidence is resolved from its saved version; missing information
+remains unknown. SemEval category labels and training examples are not runtime data.
+
+Early upgrade attempts exposed a 12-call limit and malformed model tool output.
+A stubbed reproduction verifies recovery with a finite 16-model-call budget;
+the tool limit remains 20. Nova now uses temperature 0, topK 1 and a 3,072-token
+output limit, following [AWS guidance](https://docs.aws.amazon.com/nova/latest/userguide/tools-troubleshooting.html).
+The prompt permits normal tool reasoning; the host hides deliberation tags.
+No model-output retries or relaxed evidence/confirmation checks were added.
+
+Two subsequent local Nova Pro replays completed all eight stages. The Lite
+baseline also passed its four stages and was faster in these observations;
+these few adaptive regression checks do not establish a reliability gain.
+
+
+The deployed Nova Pro replay also completed **4/4 stages** on September 14,
+with eight comparisons each, two synthetic human receipts and zero agent
+confirmations. Its observed stage times were **15.49, 18.33, 18.50 and 25.72
+seconds**. All 13 deployment boundary checks passed, including persistence
+across restart. A first public attempt timed out before opening a pantry or
+invoking the model; that attempt is retained separately.
+
+[Upgrade record](evidence/agent-upgrade.json) includes every comparison arm,
+failed/interrupted attempts and a checksum-linked downloadable trace archive.
+
+## Historical public workflow trace (Nova Lite)
 
 Recorded on September 13, 2026 through the deployed app and Bedrock. Future
 model choices and timings can differ.
@@ -39,8 +68,9 @@ model choices and timings can differ.
 ## Separate classification benchmark
 
 Best completed SemEval ST1 test composite: **0.789229** on 997 reports. The later
-**0.807327** result is validation-only. Those experiments did not change the
-Nova Lite pantry agent. [Results and the downloadable archive](../../evaluation/README.md)
+**0.807327** result is validation-only. Those experiments informed the Nova Pro model upgrade, explicit pantry task
+definitions and case-linked source retrieval. Actual workflow checks govern
+promotion; the ST1 score is not a result for the deployed agent. [Results and the downloadable archive](../../evaluation/README.md)
 preserve all candidates, raw responses, protocols, failures and limitations.
 
 ## Interpretation and integrity
@@ -54,6 +84,6 @@ handling. Advisory model reasoning is not independently validated.
 
 [manifest.json](evidence/manifest.json) binds the portable workflow records and
 records their provenance. The offline report contains the 112-test pantry suite
-at its original packaging time; the current 159 includes benchmark tests.
+at its original packaging time; the current 165 includes benchmark and upgrade tests.
 Live records keep their original timestamps. A hash establishes content
 integrity, not independent verification or universal service availability.

@@ -13,7 +13,7 @@ Stack `pantry-recall-demo` runs in `us-east-1`.
 | CloudFront distribution and VPC origin | Public HTTPS; uncached visitor responses |
 | Encrypted 16 GB root EBS volume | OS and application |
 | Encrypted 8 GB gp3 data volume | SQLite state; retained on stack deletion |
-| Instance role | Nova Lite invocation, release-prefix S3 reads and Systems Manager |
+| Instance role | Nova Pro invocation (Nova Lite retained for rollback), release-prefix S3 reads and Systems Manager |
 | Private, versioned S3 bucket | Application release archives; separate from the stack |
 
 CloudFront reaches the private origin. The instance has outbound connectivity
@@ -43,7 +43,7 @@ uv run --frozen python tools/deploy_aws.py configure
 ```
 
 Run `configure` only once the distribution URL exists. It sets the service's
-HTTPS origin through Systems Manager and restarts the app. Deployment metadata
+HTTPS origin and Bedrock model through Systems Manager and restarts the app. Deployment metadata
 and command IDs stay in ignored `outputs/deployment/`.
 
 ## Verify and update
@@ -61,6 +61,15 @@ Publish application changes while preserving the data volume:
 
 ```sh
 uv run --frozen python tools/deploy_aws.py update-code
+```
+
+The default model is `amazon.nova-pro-v1:0`. The instance policy explicitly
+permits that model and Nova Lite; no wildcard model access is granted. Updating
+code alone does not change an existing IAM policy. For an older stack, review an
+IAM-only CloudFormation change set before selecting Pro. To select the fallback:
+
+```sh
+uv run --frozen python tools/deploy_aws.py configure --model-id amazon.nova-lite-v1:0
 ```
 
 Use Systems Manager for `systemctl status pantry-recall` and

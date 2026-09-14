@@ -13,7 +13,7 @@ flowchart TB
     validator -->|Only complete current briefings| http
     fixtures[Pinned source bytes, hashes and reviewed scope] --> tools
   end
-  agent <-->|Instance role| bedrock[Amazon Bedrock · Amazon Nova Lite]
+  agent <-->|Instance role| bedrock[Amazon Bedrock · Amazon Nova Pro]
   s3[Private versioned encrypted S3 releases] -.-> ec2
   ssm[Systems Manager maintenance: no SSH] -.-> ec2
   human --- boundary[Human writes are not model tools; no automatic release or disposal]

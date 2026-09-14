@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1320" viewBox="0 0 2000 1320" role="img" aria-labelledby="title desc">
   <title id="title">Pantry Recall Response Agent — deployed architecture</title>
-  <desc id="desc">An anonymous browser reaches Python on EC2 through CloudFront and a VPC origin. Separate human endpoints persist evidence and confirmations. Accepted events trigger a Strands agent, which calls Nova Lite on Bedrock and deterministic tools. SQLite on encrypted EBS retains state. Private S3 holds releases and Systems Manager supports maintenance. The model cannot write human confirmations.</desc>
+  <desc id="desc">An anonymous browser reaches Python on EC2 through CloudFront and a VPC origin. Separate human endpoints persist evidence and confirmations. Accepted events trigger a Strands agent, which calls Nova Pro on Bedrock and deterministic tools. SQLite on encrypted EBS retains state. Private S3 holds releases and Systems Manager supports maintenance. The model cannot write human confirmations.</desc>
   <rect width="2000" height="1320" fill="#f2f5f7"/>
   <rect x="0" y="0" width="2000" height="12" fill="#0e776b"/>
   <g font-family="Segoe UI, Arial, sans-serif" fill="#172d3b">
@@ -50,14 +50,14 @@
 
     <rect x="780" y="455" width="550" height="210" rx="16" fill="#102f40"/>
     <text x="810" y="500" font-size="31" font-weight="700" fill="#ffffff">Strands agent</text>
-    <text x="810" y="543" font-size="24" fill="#dbe9ee">Investigates additional case histories</text>
+    <text x="810" y="543" font-size="24" fill="#dbe9ee">Case histories + exact source evidence</text>
     <text x="810" y="581" font-size="24" fill="#dbe9ee">Selects up to 3 open tasks + reasons</text>
     <text x="810" y="619" font-size="24" fill="#dbe9ee">Bounded runs • advisory task ordering</text>
 
     <rect x="1490" y="455" width="450" height="210" rx="16" fill="#ffffff" stroke="#dc923b" stroke-width="3"/>
     <text x="1518" y="502" font-size="30" font-weight="700">Amazon Bedrock</text>
-    <text x="1518" y="546" font-size="27">Amazon Nova Lite</text>
-    <text x="1518" y="586" font-size="22">amazon.nova-lite-v1:0</text>
+    <text x="1518" y="546" font-size="27">Amazon Nova Pro</text>
+    <text x="1518" y="586" font-size="22">amazon.nova-pro-v1:0</text>
     <text x="1518" y="624" font-size="23">Authenticated by EC2 instance role</text>
     <text x="1340" y="520" font-size="20" fill="#945710">Model calls</text>
     <line x1="1346" y1="559" x2="1474" y2="559" stroke="#c47c25" stroke-width="4"/>

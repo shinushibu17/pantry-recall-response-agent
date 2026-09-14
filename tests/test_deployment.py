@@ -7,10 +7,20 @@ import tarfile
 import tempfile
 import unittest
 
-from tools.deploy_aws import bundle
+from tools.deploy_aws import bundle, template
 
 
 class ReleaseTests(unittest.TestCase):
+    def test_runtime_permission_is_bounded_to_upgrade_and_rollback_models(self):
+        body = template("test-bucket", "release/test", "subnet-test", "vpc-test", "us-east-1a", "pl-test", "ami-test")
+        statements = body["Resources"]["ServerRole"]["Properties"]["Policies"][0]["PolicyDocument"]["Statement"]
+        inference = [s for s in statements if s["Action"] == ["bedrock:InvokeModel"]]
+        self.assertEqual(len(inference), 1)
+        self.assertEqual(set(inference[0]["Resource"]), {
+            "arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-lite-v1:0",
+            "arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-pro-v1:0",
+        })
+
     def test_release_starts_from_only_packaged_files(self):
         with tempfile.TemporaryDirectory() as directory:
             with tarfile.open(fileobj=io.BytesIO(bundle()), mode="r:gz") as archive:

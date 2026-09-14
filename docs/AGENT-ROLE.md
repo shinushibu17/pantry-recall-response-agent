@@ -1,6 +1,6 @@
 # Agent design
 
-One Strands agent uses Amazon Nova Lite on Bedrock to investigate pantry cases
+One Strands agent uses Amazon Nova Pro on Bedrock to investigate pantry cases
 and recommend the next work. Reviewed scope comparisons and stored workflow
 state determine product identification and action quantities.
 
@@ -12,8 +12,8 @@ state determine product identification and action quantities.
 | `load_inventory` | Read the current stock groups |
 | `find_candidates` | Identify plausible recall matches |
 | `compare_scope` | Evaluate identifiers with true, false and unknown outcomes |
-| `get_work_queue` | Read open inspection, review and action tasks |
-| `get_case_history` | Investigate evidence and prior receipts |
+| `get_work_queue` | Read open tasks, their type definitions and submission requirements |
+| `get_case_history` | Retrieve raw stock, exact case-linked evidence, conditions and prior receipts |
 | `submit_briefing` | Propose up to three existing task IDs with advisory reasons |
 
 The host requires complete comparison coverage, histories for changed stock,
@@ -24,9 +24,16 @@ Its reasons remain advisory; evidence binding does not validate every sentence.
 
 ## Execution and follow-ups
 
-Runs are bounded to 12 model calls and 20 tool calls. Missing tool coverage can
+Runs are bounded to 16 model calls and 20 tool calls. Missing tool coverage can
 trigger one continuation naming only missing tools and stock IDs. Failed tools
 do not satisfy coverage; incomplete and stale briefings are withheld.
+
+Nova Pro uses temperature 0, topK 1 and at most 3,072 output tokens, following
+[AWS tool-use guidance](https://docs.aws.amazon.com/nova/latest/userguide/tools-troubleshooting.html).
+The application filters deliberation tags from advisory output. A model-output
+failure is reported separately from missing credentials or permissions.
+`BEDROCK_MODEL_ID` selects the web model and is recorded in every live report.
+The default is `amazon.nova-pro-v1:0`; Nova Lite remains available for rollback.
 
 After the first manual start, accepted evidence and hold receipts trigger
 follow-ups. Pending updates coalesce while a run is active. Event cursors,

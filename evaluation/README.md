@@ -1,14 +1,21 @@
 # Evaluation results
 
 The deployed pantry workflow and the SemEval classifier are separate evaluations.
-The application still uses Nova Lite; benchmark model changes were not deployed.
+The application now uses Nova Pro with pantry-specific context guidance.
+The benchmark informed that choice; separate workflow checks govern deployment.
 
 ## Pantry workflow
 
-- **159 tests pass:** 112 pantry tests and 47 benchmark harness tests.
+- **165 tests pass:** 118 pantry tests and 47 benchmark harness tests.
 - **18/18 frozen scenarios:** eight Pearl Milling and ten Jif stock groups.
 - **Four recorded public workflow stages completed**, with eight comparisons per
   stage, two simulated human hold receipts and zero agent confirmations.
+
+Two four-stage local Nova Pro replays passed after tool-use settings and a
+bounded recovery allowance were adjusted. Earlier model-output and call-limit
+failures remain preserved. These few checks do not establish a reliability or
+latency improvement. The deployed Nova Pro replay subsequently passed all
+four public stages, with eight comparisons each and zero agent confirmations.
 
 [Agent evidence](../docs/submission/EVIDENCE.md) includes the original Jif
 coverage failure and the later citation-failure recovery.

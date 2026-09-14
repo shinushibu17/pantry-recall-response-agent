@@ -61,6 +61,30 @@ class InvestigationTests(unittest.TestCase):
         brief=inv.submit([task["task_id"]],["policy.hold"],["New evidence resolves identification; the hold remains open."],self.ids())
         self.assertEqual(brief["physical_actions_confirmed"],0)
 
+    def test_case_context_preserves_unknowns_and_exact_source_bindings(self):
+        inv = self.investigator()
+        context = inv.history("missing_code")["decision_context"]
+        self.assertIsNone(context["stock"]["best_by_manufacturing_code"])
+        self.assertEqual(context["stock"]["product_name"], "Original Pancake & Waffle Mix")
+        self.assertEqual(context["source_evidence"]["notice.product_table"], inv.fixture["scope"]["evidence"]["notice.product_table"])
+        self.assertIn("BBD SEP 13 25 P", context["source_evidence"]["notice.product_table"]["quote"])
+        self.assertEqual(context["policy_evidence"]["policy.hold"], inv.fixture["policy"]["evidence"]["policy.hold"])
+        self.assertEqual(context["unresolved_evidence_refs"], [])
+        context["stock"]["best_by_manufacturing_code"] = "invented"
+        context["source_evidence"]["notice.product_table"]["quote"] = "invented"
+        reread = inv.history("missing_code")["decision_context"]
+        self.assertIsNone(reread["stock"]["best_by_manufacturing_code"])
+        self.assertNotEqual(reread["source_evidence"]["notice.product_table"]["quote"], "invented")
+        self.assertEqual(self.store.overview()["event_count"], self.baseline)
+
+    def test_case_context_uses_revised_stock_and_retains_missing_reference(self):
+        self.evidence()
+        inv = self.investigator()
+        del inv.fixture["scope"]["evidence"]["notice.product_table"]
+        context = inv.history("missing_code")["decision_context"]
+        self.assertEqual(context["stock"]["best_by_manufacturing_code"], "BBD SEP 13 25 P")
+        self.assertIn("notice.product_table", context["unresolved_evidence_refs"])
+
     def test_partial_receipt_changes_remaining_quantity_and_done_hold_is_ineligible(self):
         case=self.evidence()
         self.confirm(case,"first-two")
@@ -129,6 +153,43 @@ if HAS_STRANDS:
 
 @unittest.skipUnless(HAS_STRANDS,"Install locked Strands dependencies")
 class AdaptiveSDKTests(unittest.TestCase):
+    def test_serial_recovery_can_finish_after_twelfth_tool_call(self):
+        # Reproduce the Nova Pro completed-hold failure: premature submissions,
+        # late changed-stock history, and candidate discovery in the last tool call.
+        from pantry_recall.workflow import run_demo
+        with TemporaryDirectory() as temp:
+            store = Store(Path(temp)/"serial-recovery.sqlite3")
+            run_demo(store)
+            fixture = store.load_context()
+            inv = Investigation(store, fixture, store.overview(), {"kind": "workflow_change", "since_event": 0})
+            queue = inv.work_queue()
+            selected = [next(t for t in queue["open_tasks"] if t["inventory_id"] == key)
+                        for key in ("affected", "excluded_code", "mixed_codes")]
+            submission = {"task_ids": [t["task_id"] for t in selected], "reasons": ["Continue the stored open work."]*3}
+            calls = [("load_recall_fixture", {}), ("load_inventory", {}),
+                     ("compare_scope", {"inventory_ids": [r["inventory_id"] for r in fixture["inventory"]["rows"]]}),
+                     ("get_work_queue", {}), ("submit_briefing", submission),
+                     ("get_case_history", {"inventory_id": "affected"}),
+                     ("get_case_history", {"inventory_id": "excluded_code"}),
+                     ("get_case_history", {"inventory_id": "mixed_codes"}),
+                     ("submit_briefing", submission),
+                     ("get_case_history", {"inventory_id": "missing_code"}),
+                     ("submit_briefing", submission), ("find_candidates", {})]
+            model = agent_tests.AgentIntegrationTests.model(self)
+            with Stubber(model.client) as stub:
+                for index, (name, arguments) in enumerate(calls):
+                    stub.add_response("converse", agent_tests.response([{"toolUse": {
+                        "toolUseId": "serial-"+str(index), "name": name, "input": arguments}}], "tool_use"))
+                stub.add_response("converse", agent_tests.response([{"text": "Stored work reviewed; human receipts unchanged."}]))
+                report = run_agent(model, fixture, store=store, investigate=True,
+                                   trigger={"kind": "workflow_change", "since_event": 0})
+                stub.assert_no_pending_responses()
+            self.assertEqual(report["status"], "COMPLETE")
+            self.assertEqual(report["model_calls"], 13)
+            self.assertEqual(report["stored_confirmation_count"], 2)
+            self.assertEqual(report["physical_actions_confirmed"], 0)
+            self.assertEqual(report["execution_limits"], {"model_calls": 16, "tool_calls": 20})
+
     def test_failed_browser_selection_uses_stored_citations_without_model_retyping(self):
         from pantry_recall.agent import build_tools, RunTrace
         from pantry_recall.investigation import Investigation
@@ -185,6 +246,7 @@ class AdaptiveSDKTests(unittest.TestCase):
             self.assertEqual(result["tool_calls"],[{"tool":"load_inventory","arguments":{}}])
             self.assertEqual(result["model_calls"],2)
             self.assertEqual(result["failure"]["aws_error_code"],"ModelErrorException")
+            self.assertEqual(result["failure"]["status"],"MODEL_OUTPUT_ERROR")
             self.assertIsNone(result["briefing"])
             self.assertFalse(result["usage_complete"])
             self.assertEqual(store.overview()["confirmation_count"],0)

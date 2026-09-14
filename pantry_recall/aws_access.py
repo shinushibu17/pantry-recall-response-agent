@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 DEFAULT_REGION = "us-east-1"
-DEFAULT_MODEL = "amazon.nova-lite-v1:0"
+DEFAULT_MODEL = "amazon.nova-pro-v1:0"
 
 
 def session_for(profile: str | None = None, region: str | None = None):
@@ -29,6 +29,14 @@ def client_config():
                   retries={"mode": "standard", "total_max_attempts": 2})
 
 
+def agent_model_options(model_id: str) -> dict:
+    """Bounded generation; Nova tool-use settings follow AWS troubleshooting guidance."""
+    options = {"streaming": False, "temperature": 0, "max_tokens": 3072}
+    if model_id in ("amazon.nova-lite-v1:0", "amazon.nova-pro-v1:0"):
+        options["additional_request_fields"] = {"inferenceConfig": {"topK": 1}}
+    return options
+
+
 def error_details(error: Exception) -> dict:
     """Don't serialize SDK exceptions: they can contain credential-provider output."""
     from botocore.exceptions import ClientError, NoCredentialsError, ProfileNotFound
@@ -39,6 +47,9 @@ def error_details(error: Exception) -> dict:
         return {"status": "CREDENTIALS_MISSING", "next_step": "Configure a local AWS profile, then pass --profile NAME."}
     if isinstance(error, ClientError):
         code = error.response.get("Error", {}).get("Code", "Unknown")
+        if code == "ModelErrorException":
+            return {"status": "MODEL_OUTPUT_ERROR", "aws_error_code": code,
+                    "next_step": "The model failed to produce a valid response. Check tool-use decoding and output-token limits; this is not a credential or permission diagnosis."}
         states = {
             "AccessDeniedException": "ACCESS_DENIED", "AccessDenied": "ACCESS_DENIED",
             "ExpiredTokenException": "CREDENTIALS_EXPIRED", "ExpiredToken": "CREDENTIALS_EXPIRED",

@@ -1,0 +1,1297 @@
+{
+  "checked_at": "2026-09-14T22:41:37.447582+00:00",
+  "purpose": "Apply evaluation-inspired model/context changes to the pantry workflow. No SemEval labels, examples or expected answers enter production context.",
+  "limitations": "Reused synthetic regression scenarios; sequential adaptive changes; few runs; provider/network timing varies; no population reliability, causal gain, pantry accuracy or time-saving estimate. All failed and interrupted attempts retained. Full raw JSON exports redact only local workflow database paths; original hashes are listed.",
+  "runs": [
+    {
+      "arm": "lite",
+      "status": "FAIL",
+      "failure": "initial: agent did not complete a current briefing",
+      "stages": [
+        {
+          "stage": "initial",
+          "status": "FAILED",
+          "model_id": null,
+          "context_version": null,
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": null,
+          "tool_calls": 0,
+          "coverage_repairs": 0,
+          "comparisons": 0,
+          "runtime_seconds": null,
+          "usage": null,
+          "failure": null,
+          "agent_confirmations": null,
+          "stored_human_receipts": null
+        }
+      ]
+    },
+    {
+      "arm": "pro",
+      "status": "FAIL",
+      "failure": "initial: agent did not complete a current briefing",
+      "stages": [
+        {
+          "stage": "initial",
+          "status": "FAILED",
+          "model_id": null,
+          "context_version": null,
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": null,
+          "tool_calls": 0,
+          "coverage_repairs": 0,
+          "comparisons": 0,
+          "runtime_seconds": null,
+          "usage": null,
+          "failure": null,
+          "agent_confirmations": null,
+          "stored_human_receipts": null
+        }
+      ]
+    },
+    {
+      "arm": "pro-context",
+      "status": "FAIL",
+      "failure": "initial: agent did not complete a current briefing",
+      "stages": [
+        {
+          "stage": "initial",
+          "status": "FAILED",
+          "model_id": null,
+          "context_version": null,
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": null,
+          "tool_calls": 0,
+          "coverage_repairs": 0,
+          "comparisons": 0,
+          "runtime_seconds": null,
+          "usage": null,
+          "failure": null,
+          "agent_confirmations": null,
+          "stored_human_receipts": null
+        }
+      ]
+    },
+    {
+      "arm": "lite-authorized",
+      "status": "PASS",
+      "failure": null,
+      "stages": [
+        {
+          "stage": "after-evidence",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-lite-v1:0",
+          "context_version": null,
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 4,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 10.22831,
+          "usage": {
+            "inputTokens": 54902,
+            "outputTokens": 1143,
+            "totalTokens": 56045
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "completed-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-lite-v1:0",
+          "context_version": null,
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 4,
+          "tool_calls": 11,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 8.108644,
+          "usage": {
+            "inputTokens": 59787,
+            "outputTokens": 748,
+            "totalTokens": 60535
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 2
+        },
+        {
+          "stage": "initial",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-lite-v1:0",
+          "context_version": null,
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 6,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 10.391523,
+          "usage": {
+            "inputTokens": 86790,
+            "outputTokens": 861,
+            "totalTokens": 87651
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "partial-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-lite-v1:0",
+          "context_version": null,
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 6,
+          "tool_calls": 11,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 9.664236,
+          "usage": {
+            "inputTokens": 101147,
+            "outputTokens": 889,
+            "totalTokens": 102036
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 1
+        }
+      ]
+    },
+    {
+      "arm": "pro-authorized",
+      "status": "PASS",
+      "failure": null,
+      "stages": [
+        {
+          "stage": "after-evidence",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": null,
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 7,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 13.967597,
+          "usage": {
+            "inputTokens": 106425,
+            "outputTokens": 1188,
+            "totalTokens": 107613
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "completed-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": null,
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 9,
+          "tool_calls": 12,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 15.657207,
+          "usage": {
+            "inputTokens": 153070,
+            "outputTokens": 1261,
+            "totalTokens": 154331
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 2
+        },
+        {
+          "stage": "initial",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": null,
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 9,
+          "tool_calls": 10,
+          "coverage_repairs": 1,
+          "comparisons": 8,
+          "runtime_seconds": 20.413614,
+          "usage": {
+            "inputTokens": 144274,
+            "outputTokens": 1737,
+            "totalTokens": 146011
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "partial-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": null,
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 7,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 14.021882,
+          "usage": {
+            "inputTokens": 109137,
+            "outputTokens": 1230,
+            "totalTokens": 110367
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 1
+        }
+      ]
+    },
+    {
+      "arm": "pro-context-authorized",
+      "status": "PASS",
+      "failure": null,
+      "stages": [
+        {
+          "stage": "after-evidence",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 8,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 19.896853,
+          "usage": {
+            "inputTokens": 126416,
+            "outputTokens": 1396,
+            "totalTokens": 127812
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "completed-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 8,
+          "tool_calls": 11,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 19.477857,
+          "usage": {
+            "inputTokens": 132874,
+            "outputTokens": 1086,
+            "totalTokens": 133960
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 2
+        },
+        {
+          "stage": "initial",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 9,
+          "tool_calls": 10,
+          "coverage_repairs": 1,
+          "comparisons": 8,
+          "runtime_seconds": 14.166083,
+          "usage": {
+            "inputTokens": 163350,
+            "outputTokens": 1042,
+            "totalTokens": 164392
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "partial-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 8,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 23.490336,
+          "usage": {
+            "inputTokens": 128846,
+            "outputTokens": 1523,
+            "totalTokens": 130369
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 1
+        }
+      ]
+    },
+    {
+      "arm": "candidate-final",
+      "status": "FAIL",
+      "failure": "completed-hold: agent did not complete a current briefing",
+      "stages": [
+        {
+          "stage": "after-evidence",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 8,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 18.135618,
+          "usage": {
+            "inputTokens": 128525,
+            "outputTokens": 1197,
+            "totalTokens": 129722
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "completed-hold",
+          "status": "FAILED",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 12,
+          "tool_calls": 12,
+          "coverage_repairs": 1,
+          "comparisons": 8,
+          "runtime_seconds": 39.530211,
+          "usage": null,
+          "failure": {
+            "error_type": "RunLimit",
+            "status": "RUN_LIMIT"
+          },
+          "agent_confirmations": 0,
+          "stored_human_receipts": 2
+        },
+        {
+          "stage": "initial",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 9,
+          "tool_calls": 10,
+          "coverage_repairs": 1,
+          "comparisons": 8,
+          "runtime_seconds": 20.165025,
+          "usage": {
+            "inputTokens": 166792,
+            "outputTokens": 1671,
+            "totalTokens": 168463
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "partial-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 12,
+          "tool_calls": 11,
+          "coverage_repairs": 1,
+          "comparisons": 8,
+          "runtime_seconds": 48.068251,
+          "usage": {
+            "inputTokens": 281186,
+            "outputTokens": 2868,
+            "totalTokens": 284054
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 1
+        }
+      ]
+    },
+    {
+      "arm": "lite-context",
+      "status": "FAIL",
+      "failure": "completed-hold: agent did not complete a current briefing",
+      "stages": [
+        {
+          "stage": "after-evidence",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-lite-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 7,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 12.031123,
+          "usage": {
+            "inputTokens": 115493,
+            "outputTokens": 1104,
+            "totalTokens": 116597
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "completed-hold",
+          "status": "FAILED",
+          "model_id": "amazon.nova-lite-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 7,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 12.370897,
+          "usage": null,
+          "failure": {
+            "aws_error_code": "ModelErrorException",
+            "next_step": "Check this model's region and InvokeModel permission; re-login if credentials expired.",
+            "status": "AWS_ERROR"
+          },
+          "agent_confirmations": 0,
+          "stored_human_receipts": 2
+        },
+        {
+          "stage": "initial",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-lite-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 9,
+          "tool_calls": 11,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 14.182658,
+          "usage": {
+            "inputTokens": 158530,
+            "outputTokens": 1032,
+            "totalTokens": 159562
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "partial-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-lite-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 12,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 5,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 11.027718,
+          "usage": {
+            "inputTokens": 82731,
+            "outputTokens": 1030,
+            "totalTokens": 83761
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 1
+        }
+      ]
+    },
+    {
+      "arm": "pro-budget-1",
+      "status": "PASS",
+      "failure": null,
+      "stages": [
+        {
+          "stage": "after-evidence",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 7,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 19.616245,
+          "usage": {
+            "inputTokens": 120632,
+            "outputTokens": 1275,
+            "totalTokens": 121907
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "completed-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 8,
+          "tool_calls": 11,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 20.599402,
+          "usage": {
+            "inputTokens": 135606,
+            "outputTokens": 1141,
+            "totalTokens": 136747
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 2
+        },
+        {
+          "stage": "initial",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 7,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 13.470233,
+          "usage": {
+            "inputTokens": 113402,
+            "outputTokens": 1160,
+            "totalTokens": 114562
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "partial-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 7,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 25.672712,
+          "usage": {
+            "inputTokens": 122531,
+            "outputTokens": 1850,
+            "totalTokens": 124381
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 1
+        }
+      ]
+    },
+    {
+      "arm": "pro-budget-2",
+      "status": "RUNNER_INTERRUPTED",
+      "failure": null,
+      "stages": [
+        {
+          "stage": "after-evidence",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 11,
+          "tool_calls": 12,
+          "coverage_repairs": 1,
+          "comparisons": 8,
+          "runtime_seconds": 36.405373,
+          "usage": {
+            "inputTokens": 251720,
+            "outputTokens": 2205,
+            "totalTokens": 253925
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "initial",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 7,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 14.387547,
+          "usage": {
+            "inputTokens": 113743,
+            "outputTokens": 1213,
+            "totalTokens": 114956
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        }
+      ]
+    },
+    {
+      "arm": "pro-budget-2-repeat",
+      "status": "FAIL",
+      "failure": "completed-hold: agent did not complete a current briefing",
+      "stages": [
+        {
+          "stage": "after-evidence",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 8,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 21.951716,
+          "usage": {
+            "inputTokens": 127714,
+            "outputTokens": 1415,
+            "totalTokens": 129129
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "completed-hold",
+          "status": "FAILED",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 7,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 40.880546,
+          "usage": null,
+          "failure": {
+            "aws_error_code": "ModelErrorException",
+            "next_step": "Check this model's region and InvokeModel permission; re-login if credentials expired.",
+            "status": "AWS_ERROR"
+          },
+          "agent_confirmations": 0,
+          "stored_human_receipts": 2
+        },
+        {
+          "stage": "initial",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 7,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 17.099502,
+          "usage": {
+            "inputTokens": 113743,
+            "outputTokens": 1376,
+            "totalTokens": 115119
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "partial-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": null,
+          "model_calls": 7,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 17.489257,
+          "usage": {
+            "inputTokens": 122299,
+            "outputTokens": 1025,
+            "totalTokens": 123324
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 1
+        }
+      ]
+    },
+    {
+      "arm": "pro-greedy-1",
+      "status": "PASS",
+      "failure": null,
+      "stages": [
+        {
+          "stage": "after-evidence",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": {
+            "additional_request_fields": {
+              "inferenceConfig": {
+                "topK": 1
+              }
+            },
+            "max_tokens": 3072,
+            "streaming": false,
+            "temperature": 0
+          },
+          "model_calls": 8,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 21.847706,
+          "usage": {
+            "inputTokens": 128143,
+            "outputTokens": 1553,
+            "totalTokens": 129696
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "completed-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": {
+            "additional_request_fields": {
+              "inferenceConfig": {
+                "topK": 1
+              }
+            },
+            "max_tokens": 3072,
+            "streaming": false,
+            "temperature": 0
+          },
+          "model_calls": 9,
+          "tool_calls": 12,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 68.469634,
+          "usage": {
+            "inputTokens": 182216,
+            "outputTokens": 1577,
+            "totalTokens": 183793
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 2
+        },
+        {
+          "stage": "initial",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": {
+            "additional_request_fields": {
+              "inferenceConfig": {
+                "topK": 1
+              }
+            },
+            "max_tokens": 3072,
+            "streaming": false,
+            "temperature": 0
+          },
+          "model_calls": 8,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 18.247472,
+          "usage": {
+            "inputTokens": 120293,
+            "outputTokens": 1021,
+            "totalTokens": 121314
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "partial-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": {
+            "additional_request_fields": {
+              "inferenceConfig": {
+                "topK": 1
+              }
+            },
+            "max_tokens": 3072,
+            "streaming": false,
+            "temperature": 0
+          },
+          "model_calls": 8,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 23.122303,
+          "usage": {
+            "inputTokens": 130259,
+            "outputTokens": 1251,
+            "totalTokens": 131510
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 1
+        }
+      ]
+    },
+    {
+      "arm": "pro-greedy-2",
+      "status": "PASS",
+      "failure": null,
+      "stages": [
+        {
+          "stage": "after-evidence",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": {
+            "additional_request_fields": {
+              "inferenceConfig": {
+                "topK": 1
+              }
+            },
+            "max_tokens": 3072,
+            "streaming": false,
+            "temperature": 0
+          },
+          "model_calls": 8,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 21.79233,
+          "usage": {
+            "inputTokens": 128490,
+            "outputTokens": 1451,
+            "totalTokens": 129941
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "completed-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": {
+            "additional_request_fields": {
+              "inferenceConfig": {
+                "topK": 1
+              }
+            },
+            "max_tokens": 3072,
+            "streaming": false,
+            "temperature": 0
+          },
+          "model_calls": 9,
+          "tool_calls": 11,
+          "coverage_repairs": 1,
+          "comparisons": 8,
+          "runtime_seconds": 24.230963,
+          "usage": {
+            "inputTokens": 167955,
+            "outputTokens": 1180,
+            "totalTokens": 169135
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 2
+        },
+        {
+          "stage": "initial",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": {
+            "additional_request_fields": {
+              "inferenceConfig": {
+                "topK": 1
+              }
+            },
+            "max_tokens": 3072,
+            "streaming": false,
+            "temperature": 0
+          },
+          "model_calls": 7,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 33.496187,
+          "usage": {
+            "inputTokens": 113390,
+            "outputTokens": 1294,
+            "totalTokens": 114684
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "partial-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": {
+            "additional_request_fields": {
+              "inferenceConfig": {
+                "topK": 1
+              }
+            },
+            "max_tokens": 3072,
+            "streaming": false,
+            "temperature": 0
+          },
+          "model_calls": 8,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 18.17508,
+          "usage": {
+            "inputTokens": 130102,
+            "outputTokens": 1117,
+            "totalTokens": 131219
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 1
+        }
+      ]
+    },
+    {
+      "arm": "public",
+      "status": "FAIL",
+      "failure": "HTTPS read timeout opening /api/state before agent invocation. No model outcome observed.",
+      "stages": []
+    },
+    {
+      "arm": "public-repeat",
+      "status": "PASS",
+      "failure": null,
+      "stages": [
+        {
+          "stage": "after-evidence",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": {
+            "additional_request_fields": {
+              "inferenceConfig": {
+                "topK": 1
+              }
+            },
+            "max_tokens": 3072,
+            "streaming": false,
+            "temperature": 0
+          },
+          "model_calls": 8,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 18.326459,
+          "usage": {
+            "inputTokens": 127792,
+            "outputTokens": 1295,
+            "totalTokens": 129087
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "completed-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": {
+            "additional_request_fields": {
+              "inferenceConfig": {
+                "topK": 1
+              }
+            },
+            "max_tokens": 3072,
+            "streaming": false,
+            "temperature": 0
+          },
+          "model_calls": 10,
+          "tool_calls": 12,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 25.721248,
+          "usage": {
+            "inputTokens": 189742,
+            "outputTokens": 1631,
+            "totalTokens": 191373
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 2
+        },
+        {
+          "stage": "initial",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": {
+            "additional_request_fields": {
+              "inferenceConfig": {
+                "topK": 1
+              }
+            },
+            "max_tokens": 3072,
+            "streaming": false,
+            "temperature": 0
+          },
+          "model_calls": 8,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 15.486858,
+          "usage": {
+            "inputTokens": 120248,
+            "outputTokens": 1415,
+            "totalTokens": 121663
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 0
+        },
+        {
+          "stage": "partial-hold",
+          "status": "COMPLETE",
+          "model_id": "amazon.nova-pro-v1:0",
+          "context_version": "case-evidence-v1",
+          "limits": {
+            "model_calls": 16,
+            "tool_calls": 20
+          },
+          "model_options": {
+            "additional_request_fields": {
+              "inferenceConfig": {
+                "topK": 1
+              }
+            },
+            "max_tokens": 3072,
+            "streaming": false,
+            "temperature": 0
+          },
+          "model_calls": 8,
+          "tool_calls": 10,
+          "coverage_repairs": 0,
+          "comparisons": 8,
+          "runtime_seconds": 18.49953,
+          "usage": {
+            "inputTokens": 129983,
+            "outputTokens": 1361,
+            "totalTokens": 131344
+          },
+          "failure": null,
+          "agent_confirmations": 0,
+          "stored_human_receipts": 1
+        }
+      ]
+    },
+    {
+      "arm": "public-boundaries",
+      "status": "PASS",
+      "failure": null,
+      "stages": []
+    }
+  ],
+  "archive": {
+    "url": "https://github.com/shinushibu17/pantry-recall-response-agent/releases/download/agent-context-upgrade-2026-09-14/agent-context-evidence-2026-09-14.zip",
+    "sha256": "bd548af77236975788130c48dc9347304569ff33fff2e2b804fbb0673b6a6f80",
+    "bytes": 523469
+  }
+}
